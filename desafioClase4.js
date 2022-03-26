@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
   }
@@ -146,7 +148,7 @@ function getRandomInt(min, max) {
   };
   
   //Para probar si agrega si no esta repetido y para ingresar un primer objeto
-  //fileToUse.save(obj1, { id: getRandomInt(0, 999999) });
+  fileToUse.save(obj1, { id: getRandomInt(0, 999999) });
   
   //Para probar si encuentra el nro. de ID y no imprime repetida la instancia el mismo objeto (por eso esta el precio en aleatorio)
   //fileToUse.save(obj1, { id: 628109 });

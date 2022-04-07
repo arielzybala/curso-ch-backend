@@ -181,7 +181,12 @@
 //
 //
 //onsole.log(id)
-let objeto = [{id:1},{id:2},{id:3}]
-idbuscado=2
-const idFollow = objeto.map(({id})=> id === idbuscado)
-        console.log(idFollow);
+//let objeto = [{id:1},{id:2},{id:3}]
+//idbuscado=2
+//const idFollow = objeto.map(({id})=> id === idbuscado)
+//        console.log(idFollow);
+//
+let today = new Date();
+let actualHour = today.getHours();
+
+console.log(actualHour)

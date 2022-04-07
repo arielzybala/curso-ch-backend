@@ -1,0 +1,25 @@
+{
+  "name": "class6",
+  "version": "1.0.0",
+  "description": "Desafío de la clase 6: Proyecto de servidor basado en node.js, utiliza la librería Express, con los endpoints \\productos y \\productosRandom, con localhost  en el pueto 8080, con archivo externo con un objeto de elementos a ser requerido.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "startExpressNodemon": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arielzybala/curso-ch-backend.git"
+  },
+  "author": "Ariel Zybala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arielzybala/curso-ch-backend/issues"
+  },
+  "homepage": "https://github.com/arielzybala/curso-ch-backend#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "moment": "^2.29.2",
+    "nodemon": "^2.0.15"
+  }
+}

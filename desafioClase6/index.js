@@ -19,8 +19,9 @@ class Contenedor {
       fs.promises.readFile(`./${this.fileName}`, "utf-8")
         .then((data) => {
             app.get("/products", (req, res) => {
-                let prodArray = [];
-                prodArray.push(JSON.parse(data));
+              let prodArray = [];
+                let obj = JSON.parse(data).map(e => prodArray.push(e))
+                console.log(prodArray)
                 res.send(prodArray);
               })
         }).catch((err) => {
@@ -33,9 +34,9 @@ class Contenedor {
         fs.promises.readFile(`./${this.fileName}`, "utf-8")
         .then((data) => {
           app.get("/productRandom", (req, res) => {
-            let ident = getRandomID(1, 5)
+            let ident = getRandomID(1, 4)
             let obj = JSON.parse(data).find((e) => e.id == ident);
-            obj? res.send(`El id tiene esta instancia: ${JSON.stringify(obj)}`) : res.send("No se encontró una instancia del objeto con ese ID");
+            res.send(`Te tocó el producto: ${JSON.stringify(obj)}`)
           })
         }).catch((err) => {
           throw (err, "No se pudo realizar la consulta");

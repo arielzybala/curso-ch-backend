@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const moment = require('./practicas/node_modules/moment/ts3.1-typings/moment');
+const moment = require('moment');
 const app = express();
 const PORT = process.env.PORT || 8080;
 

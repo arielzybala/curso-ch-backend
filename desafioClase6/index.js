@@ -36,7 +36,7 @@ class Contenedor {
           app.get("/productRandom", (req, res) => {
             let ident = getRandomID(1, 4)
             let obj = JSON.parse(data).find((e) => e.id == ident);
-            res.send(`Te tocó el producto: ${JSON.stringify(obj)}`)
+            res.send(`Te tocó el producto: ${JSON.stringify(obj, null, 2)}`)
           })
         }).catch((err) => {
           throw (err, "No se pudo realizar la consulta");

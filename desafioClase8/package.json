@@ -1,0 +1,25 @@
+{
+  "name": "defclas8",
+  "version": "1.0.0",
+  "description": "Proyecto de servidor basado en node.js y express que ofrece una API RESTful de productos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arielzybala/curso-ch-backend.git"
+  },
+  "author": "Ariel Zybala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arielzybala/curso-ch-backend/issues"
+  },
+  "homepage": "https://github.com/arielzybala/curso-ch-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}

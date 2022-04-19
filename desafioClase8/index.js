@@ -5,15 +5,14 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({extended: false}));
-
+app.use(express.json());
 app.use('/static', express.static( __dirname + "./public"));
 
 
-app.use("/api", productsRoutes );
+app.use("/api/products", productsRoutes );
 
-app.get("/form", (req, res) =>{
+app.get("/", (req, res) =>{
     res.sendFile(__dirname + "/public/index.html")
 });
 

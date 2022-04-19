@@ -1,29 +1,49 @@
 const express = require("express");
-const stock = require("../assets/prodStock");
+const inventory = require("../assets/idAssigned");
 const { Router } = express;
 
 let router = new Router();
-let inventory = stock.map((e,i)=> {return {id: i + 1, ...e}})
 
-
-
-router.get("/products", (req, res) => {
-  res.send(inventory);
+router.get("/", (req, res) => {
+  res.send(JSON.stringify(inventory, null, 3));
 });
 
-
-router.get("/products/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   let check = inventory.some((e) => e.id == req.params.id);
   if (check == true) {
     let unidad = inventory.find((e) => e.id == req.params.id);
-    res.send(`${JSON.stringify(unidad, null, 2)}`);
+    res.send(
+      `Los datos del ID: ${req.params.id} consultado, son: ${JSON.stringify(
+        unidad,
+        null,
+        3
+      )}`
+    );
+  } else {
+    res.send(`El producto con ID:${req.params.id} no fue encontrado`);
+  }
+});
+
+router.delete("/:id", (req, res) => {
+  let check = inventory.some((e) => e.id == req.params.id);
+  if (check == true) {
+    let arrayCleared = inventory.filter((e) => {
+      return e.id != req.params.id;
+    });
+    res.send({
+      message: `The product with id: ${
+        req.params.id
+      }, has being deleted, the new stock is: ${JSON.stringify(
+        arrayCleared,
+        null
+      )}`,
+    });
   } else {
     res.sendStatus(404);
   }
 });
 
-
-router.post("/products/post", (req, res) => {
+router.post("/", (req, res) => {
   let newId = inventory.length + 1;
   let { title, price, thumbnail } = req.body;
   let prodNew = {
@@ -33,18 +53,30 @@ router.post("/products/post", (req, res) => {
     thumbnail,
   };
   inventory.push(prodNew);
-  res.send(`${JSON.stringify(inventory)}`);
+  res.send(
+    `El producto ${JSON.stringify(
+      prodNew
+    )} fue agregado, el inventario ahora es ${JSON.stringify(inventory)}`
+  );
 });
 
-
-router.delete("/products/delete/:id", (req, res)=>{
-  let check = inventory.some((e) => e.id == req.params.id);
-  if (check == true) {
-  let arrayCleared= inventory.filter((e) =>{return e.id != req.params.id})
-  res.send({message: `The product with id: ${req.params.id}, has being deleted, the new stock is: ${JSON.stringify(arrayCleared)}`});
+router.put("/:id", (req, res) => {
+  let productUpdate = inventory.find((e) => e.id == req.params.id);
+  if (productUpdate != undefined) {
+    let { title, price, thumbnail } = req.body;
+    productUpdate.title = title;
+    productUpdate.price = price;
+    productUpdate.thumbnail = thumbnail;
+    res.send(
+      `El producto con ID:${
+        req.params.id
+      }, fue actualizado, el stock actual es: ${JSON.stringify(productUpdate)}`
+    );
   } else {
-  res.sendStatus(404);
+    res.send(
+      `El producto con ID:${req.params.id} no fue encontrado, no se pudo eliminar.`
+    );
   }
-})
+});
 
 module.exports = router;

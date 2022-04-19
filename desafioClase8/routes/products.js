@@ -13,12 +13,7 @@ router.get("/:id", (req, res) => {
   if (check == true) {
     let unidad = inventory.find((e) => e.id == req.params.id);
     res.send(
-      `Los datos del ID: ${req.params.id} consultado, son: ${JSON.stringify(
-        unidad,
-        null,
-        3
-      )}`
-    );
+      `Los datos del ID: ${req.params.id} consultado, son:`, {message: unidad});
   } else {
     res.send(`El producto con ID:${req.params.id} no fue encontrado`);
   }
@@ -31,13 +26,7 @@ router.delete("/:id", (req, res) => {
       return e.id != req.params.id;
     });
     res.send({
-      message: `The product with id: ${
-        req.params.id
-      }, has being deleted, the new stock is: ${JSON.stringify(
-        arrayCleared,
-        null
-      )}`,
-    });
+      message: `The product with id: ${req.params.id}, has being deleted, the new stock is: ${JSON.stringify(arrayCleared,null)}`});
   } else {
     res.sendStatus(404);
   }
@@ -48,16 +37,12 @@ router.post("/", (req, res) => {
   let { title, price, thumbnail } = req.body;
   let prodNew = {
     id: newId,
-    title,
-    price,
-    thumbnail,
+    title:title,
+    price:price,
+    thumbnail:thumbnail
   };
   inventory.push(prodNew);
-  res.send(
-    `El producto ${JSON.stringify(
-      prodNew
-    )} fue agregado, el inventario ahora es ${JSON.stringify(inventory)}`
-  );
+  res.send({message: `El producto  ${prodNew} fue agregado, el inventario ahora es:`, result: inventory});
 });
 
 router.put("/:id", (req, res) => {
@@ -67,14 +52,10 @@ router.put("/:id", (req, res) => {
     productUpdate.title = title;
     productUpdate.price = price;
     productUpdate.thumbnail = thumbnail;
-    res.send(
-      `El producto con ID:${
-        req.params.id
-      }, fue actualizado, el stock actual es: ${JSON.stringify(productUpdate)}`
-    );
+    res.send({message:`El producto con ID:${req.params.id}, fue actualizado, el stock actual es:`, result: productUpdate});
   } else {
     res.send(
-      `El producto con ID:${req.params.id} no fue encontrado, no se pudo eliminar.`
+      `El producto con ID:${req.params.id} no fue encontrado.`
     );
   }
 });

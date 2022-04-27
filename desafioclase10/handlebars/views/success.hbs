@@ -1,0 +1,29 @@
+<h1 class="display-1 text-center mb-5">Productos Agregado</h1>
+<div class="w-100 row aling-items-center justify-content-center">
+  <div class="border border-2 w-25">
+    <ul class="list-group-flush col-auto">
+      <li class="list-group-item text-center">
+        <p class="fw-bold">
+          {{newProd.nombre}}
+        </p>
+      </li>
+      <li class="list-group-item text-center">
+        <p class="fw-bold">
+          {{newProd.marca}}
+        </p>
+      </li>
+      <li class="list-group-item text-center">
+        <p class="fst-italic">
+          {{newProd.precio}}
+        </p>
+      </li>
+        <li class="list-group-item text-center">
+          <img src="{{newProd.img}}" class="img-thumbnail" alt="producto electrónico">
+          <li/>
+      </li>
+    </ul>
+  </div>
+  <span class="text-center">
+    <a href="/api/products/" ping="" class="btn btn-primary mt-3">Ver Stock</a>
+  </span>
+</div>

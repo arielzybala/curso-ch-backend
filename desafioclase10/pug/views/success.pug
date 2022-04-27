@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/styles.css")
+        title Document
+    body
+        div(class="container")
+            div(class="container__frame")
+                table
+                    caption(class="container__title") PRODUCTO AGREGADO
+                        tbody
+                            tr(class="container__tableRow") 
+                                th(class="container__tableHead") Nombre
+                                th(class="container__tableHead") Marca
+                                th(class="container__tableHead") Precio
+                                th(class="container__tableHead") Vista Previa
+                        tbody
+                             tr(class="container__tableRow") 
+                                td(class="container__tableData" data-label="Nombre:")= newProd.nombre
+                                td(class="container__tableData" data-label="Marca:")= newProd.marca 
+                                td(class="container__tableData" data-label="Precio:")= newProd.precio
+                                td(class="container__tableData container__tableData-lastData" data-label="Vista Previa:")
+                                    img(class="container__img" src=newProd.img, alt="Producto de Electrónica")     
+                a(class="container__btn" href="/api/products/form") Agregar otro Producto    
+                a(class="container__btn" href="/api/products/") Ver Inventario    

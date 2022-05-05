@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const productsRoutes = require('./routes/products');
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 
 //Configura metodo de trabajo de datos
 app.set(express.json());

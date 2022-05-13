@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://localhost:8080/api/products/admin/add" class="card__btn">Agregar Nuevo Producto</a>
+    <a href="http://localhost:8080/api/cart" class="card__btn">Ver carrito</a>
+    <% data.forEach(function(stock){ %>
+        <div class ="card">
+            <div class="card__framming">
+                <div class="card__imageBox">
+                    <img class="card__image" src=<%= `${stock.foto}` %> alt="">
+        </div>
+        <div class="card__infoBox">
+            <div class="card__productCodesBox">
+                <p class="card__productCode">ID: <%= stock.id %></p>
+                <p class="card__productCode">Timestamp: <%= stock.timesStamp %></p>
+                <p class="card__productCode">Codigo: <%= stock.codigo %></p>
+                <p class="card__productCode">Stock: <%= stock.stock %></p>
+            </div>
+            <div class="card__descriptionBox">
+                <p class="card__productInfo"><%= stock.descripcion %></p>
+            </div>
+            <div class="card__lastCut">
+                <p class="card__productPrice">$ <%= stock.precio %> </p>
+                <a href="http://localhost:8080/api/products/<%= stock.id %>/put" class="card__btn">Actualizar Producto</a>
+                <a href="http://localhost:8080/api/products/<%= stock.id %>" class="card__btn" id=<%= `${stock.id}` %>>Seleccionar</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+</body>
+</html>
+
+

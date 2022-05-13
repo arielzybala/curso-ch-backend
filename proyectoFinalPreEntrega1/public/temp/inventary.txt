@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "nombre": "teclado",
+    "timesStamp": 2,
+    "descripcion": 3,
+    "codigo": "teclado-abc",
+    "stock": 4,
+    "precio": 4449,
+    "foto": "https://picsum.photos/200/300?random=2"
+  },
+  {
+    "id": "2",
+    "nombre": "teclado",
+    "timesStamp": 238,
+    "descripcion": 327,
+    "codigo": "teclado-abc",
+    "stock": 339,
+    "precio": 2229,
+    "foto": "https://picsum.photos/200/300?random=2"
+  },
+  {
+    "id": "4",
+    "nombre": "teclado",
+    "timesStamp": 458,
+    "descripcion": 457,
+    "codigo": "teclado-abc",
+    "stock": 459,
+    "precio": 90459,
+    "foto": "https://picsum.photos/200/300?random=2"
+  },
+  {
+    "id": "3",
+    "nombre": "teclado",
+    "timesStamp": 458,
+    "descripcion": 457,
+    "codigo": "teclado-abc",
+    "stock": 459,
+    "precio": 90459,
+    "foto": "https://picsum.photos/200/300?random=2"
+  },
+  {
+    "id": "135d6989-5a6d-4351-b4df-f387ce11f7fe",
+    "nombre": "12",
+    "timesStamp": 1652363112413,
+    "descripcion": "12",
+    "codigo": "12",
+    "stock": "12",
+    "precio": "12",
+    "foto": "https://picsum.photos/200/300?random=2"
+  }
+]

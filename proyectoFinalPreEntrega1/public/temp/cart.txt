@@ -1,0 +1,18 @@
+[
+    {
+    "id":, 
+    "timeStampCarrito":, 
+    "productos":, 
+        { 
+        "id:,
+        "timestamp:,
+        "nombre:,
+        "descripcion:,
+        "código:,
+        "foto:,
+        "precio:,
+        "stock":
+        }
+    }
+]
+

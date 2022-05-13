@@ -10,8 +10,9 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-//Configuración y formateo de los datos en JSON
+//Configuración y formateo de los datos en JSON para salida de datos desde la base de datos
 app.use(express.json());
+//Configuración y formateo de los datos en JSON para el ingreso de datos desde la página web
 app.use(express.urlencoded({ extended: true }));
 //Configuración de la carpeta para los archivos
 app.use(express.static(__dirname + "/src"));

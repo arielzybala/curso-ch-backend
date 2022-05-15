@@ -63,18 +63,9 @@ module.exports.deleteById = (ident) => {
         fs.promises.writeFile(
           "./public/temp/inventary.txt",
           JSON.stringify(inventary, null, 2),
-          "utf-8",
-          (err) => {
-            if (!err) {
-              return inventary;
-            } else {
-              console.log(
-                err,
-                `No se pudo encontra el ID: ${ident}, en la Base de datos.`
-              );
-            }
-          }
+          "utf-8"
         );
+        return inventary;
       } else {
         console.log(`El ID: ${ident} no se encuentra en la base de datos.`);
       }
@@ -98,12 +89,9 @@ module.exports.updateById = (productChanged) => {
       fs.promises.writeFile(
         "./public/temp/inventary.txt",
         JSON.stringify(inventary, null, 2),
-        "utf-8",
-        (err) => {
-          if (!err) return inventary;
-          else console.log(err, "Falla en la modificación.");
-        }
+        "utf-8"
       );
+      return inventary;
     })
     .catch((err) => {
       throw (err, "Falla al buscar la base de datos");

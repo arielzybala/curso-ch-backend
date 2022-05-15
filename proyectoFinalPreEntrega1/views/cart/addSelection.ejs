@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container__frame">
+      <h4>Agregar productos a la orden de compras: <%= idCarrito %></h4>
+      <form class="container__form" id="formProducts" method="POST">
+        <label for="productSelect" class="container__label">Selecciona el Producto</label>
+        <select name="productSelect" id="productSelect">
+          <% data.forEach(function(stock){ %>
+            <option value="<%= stock.id %>">
+              <%= stock.id %> - <%= stock.nombre %>
+            </option>
+            <% }) %>
+        </select>
+        <input class="container__btn" type="submit" value="Agregar" />
+      </form>
+      <div id="box">
+      </div>
+    </div>
+  </div>
+  
+  <script>    
+    const formProducts = document.querySelector("#formProducts");
+    const idProd = document.querySelector("#productSelect");
+    const box = document.querySelector("#box");
+    const idCarrito = "<%= idCarrito %>"
+
+    
+    formProducts.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = { id: idProd.value };
+      console.log(data)
+      box.innerHTML = `<p>El id seleccionado es id: ${idProd.value}</p>`
+      const options = {
+        method: "POST",
+      headers: {"Content-Type": "application/json",},
+      body: JSON.stringify(data),
+      }
+      return fetch(`/api/carritos/${idCarrito}/productos/`, options)
+    }
+  );
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+[
+    {
+      "idCarrito": "f4996222-97af-44bc-ba64-3a91121788cb",
+      "timesStampCarrito": 1652593095655,
+      "productos": [
+          {
+    "id": "cff9b84f-577d-4ac6-813f-b67996a2243c",
+    "nombre": "12",
+    "timesStamp": 1652590151125,
+    "descripcion": "12",
+    "codigo": "12",
+    "stock": "12",
+    "precio": "12",
+    "foto": "https://picsum.photos/200/300?random=1"
+  }
+      ]
+    }
+  ]

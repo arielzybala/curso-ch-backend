@@ -34,6 +34,7 @@ router.delete("/:id/", (req, res) => {
 router.delete("/:id/productos/:id_prod/", (req, res) => {
   let idCarrito = req.params.id;
   let idProducto = req.params.id_prod;
+  console.log(idCarrito, idProducto)
   deleteProductBasket(idCarrito, idProducto)
     .then((data) => {
       res.render("cart/basket", { data });

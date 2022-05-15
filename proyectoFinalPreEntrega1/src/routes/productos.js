@@ -19,7 +19,7 @@ router.get("/", (_req, res)=>{
     .catch((err) => res.send(err));
 })
 
-router.get("/:id", (req, res) => {
+router.get("/:id/", (req, res) => {
   let id = req.params.id;
     followById(id)
       .then((product) => res.render("products/productById", { data: product }))
@@ -109,3 +109,4 @@ router.post("/admin/:add", (req, res) => {
 });
 
 module.exports = router;
+

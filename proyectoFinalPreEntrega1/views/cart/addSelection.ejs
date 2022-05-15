@@ -39,7 +39,7 @@
       e.preventDefault();
       let productSelected = idProd.value
       const data = {id: productSelected};
-      box.textContent = `El id seleccionado es id: ${idProd.value}`
+      box.textContent = `El producto con ID: ${idProd.value} ha sido agregado a su orden de compras.`
       const options = {
       method: "POST",
       headers: {'Content-Type' : 'application/json'},

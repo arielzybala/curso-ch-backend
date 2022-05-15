@@ -1,15 +1,5 @@
 [
   {
-    "id": "2",
-    "nombre": "teclado",
-    "timesStamp": 458,
-    "descripcion": 457,
-    "codigo": "teclado-abc",
-    "stock": 459,
-    "precio": 90459,
-    "foto": "https://picsum.photos/200/300?random=2"
-  },
-  {
     "id": "3",
     "nombre": "teclado",
     "timesStamp": 458,
@@ -97,6 +87,26 @@
     "codigo": "12",
     "stock": "12",
     "precio": "12",
+    "foto": "https://picsum.photos/200/300?random=1"
+  },
+  {
+    "id": "3c7d30ac-db8a-4868-8459-c08c92b91e1d",
+    "nombre": "mouse logitech",
+    "timesStamp": 1652653324672,
+    "descripcion": "mouse optico",
+    "codigo": "mouse-mq101",
+    "stock": 300,
+    "precio": 1000,
+    "foto": "https://picsum.photos/200/300?random=1"
+  },
+  {
+    "id": "2",
+    "nombre": "mouse logitech",
+    "timesStamp": "12:00",
+    "descripcion": "mouse optico",
+    "codigo": "mouse-mq101",
+    "stock": 300,
+    "precio": 1000,
     "foto": "https://picsum.photos/200/300?random=1"
   }
 ]

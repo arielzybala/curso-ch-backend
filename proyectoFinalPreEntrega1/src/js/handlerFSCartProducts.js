@@ -78,6 +78,7 @@ module.exports.deleteProductBasket = (idCarrito, idProduct) => {
     .readFile(`./public/temp/${idCarrito}.txt`, "utf-8")//REALIZA LECTURA DEL CUERPO DEL CARRITO
     .then((data) => {//MANEJA RESULTADOS
       let list = [];
+      console.log("1")
       let allselected = JSON.parse(data).map((e) => list.push(e));//CON ESTA VARIABLE SE PUSHEA DENTRO DE LIST EL CUERPO DEL CARRITO -SE PODRÍA ABREVIAR EL PASO, PERO ASÍ FUNCIONA BIEN
       let obj = list[0].productos.filter((e) => e.id != idProduct);//CON ESTA VARIABLE SE APLICA UN FILTRO Y SE DEJA POR FUERA TODO PRODUCTO QUE NO TENGA EL ID DEL PRODUCTO QUE SE QUIERE BORRAR
       list[0].productos = obj;//SE CONSOLIDA EL NUEVO CUERPO DE LA CANASTA CON UN NUEVO ATRIBUTO PRODUCTOS
@@ -88,6 +89,7 @@ module.exports.deleteProductBasket = (idCarrito, idProduct) => {
           "utf-8"
         )
         .then(() => {
+        console.log("2")
           return list;
         })
         .catch((err) => {

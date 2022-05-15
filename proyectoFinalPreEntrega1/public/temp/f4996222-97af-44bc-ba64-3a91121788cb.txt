@@ -1,18 +1,138 @@
 [
-    {
-      "idCarrito": "f4996222-97af-44bc-ba64-3a91121788cb",
-      "timesStampCarrito": 1652593095655,
-      "productos": [
-          {
-    "id": "cff9b84f-577d-4ac6-813f-b67996a2243c",
-    "nombre": "12",
-    "timesStamp": 1652590151125,
-    "descripcion": "12",
-    "codigo": "12",
-    "stock": "12",
-    "precio": "12",
-    "foto": "https://picsum.photos/200/300?random=1"
+  {
+    "idCarrito": "f4996222-97af-44bc-ba64-3a91121788cb",
+    "timesStampCarrito": 1652593095655,
+    "productos": [
+      {
+        "id": "cff9b84f-577d-4ac6-813f-b67996a2243c",
+        "nombre": "12",
+        "timesStamp": 1652590151125,
+        "descripcion": "12",
+        "codigo": "12",
+        "stock": "12",
+        "precio": "12",
+        "foto": "https://picsum.photos/200/300?random=1"
+      },
+      {
+        "id": "5473be35-4ab7-4db8-9909-1455d0b2c2c2",
+        "nombre": "12",
+        "timesStamp": 1652589999016,
+        "descripcion": "12",
+        "codigo": "12",
+        "stock": "12",
+        "precio": "12",
+        "foto": "https://picsum.photos/200/300?random=1"
+      },
+      {
+        "id": "f0964031-348d-4bfe-b3f8-c013d6eb9138",
+        "nombre": "12",
+        "timesStamp": 1652571840847,
+        "descripcion": "12",
+        "codigo": "12",
+        "stock": "12",
+        "precio": "12",
+        "foto": "https://picsum.photos/200/300?random=1"
+      },
+      {
+        "id": "5473be35-4ab7-4db8-9909-1455d0b2c2c2",
+        "nombre": "12",
+        "timesStamp": 1652589999016,
+        "descripcion": "12",
+        "codigo": "12",
+        "stock": "12",
+        "precio": "12",
+        "foto": "https://picsum.photos/200/300?random=1"
+      },
+      {
+        "id": "2",
+        "nombre": "teclado",
+        "timesStamp": 458,
+        "descripcion": 457,
+        "codigo": "teclado-abc",
+        "stock": 459,
+        "precio": 90459,
+        "foto": "https://picsum.photos/200/300?random=2"
+      },
+      {
+        "id": "3fc6356a-4175-49b7-b265-90a15e1b1ccd",
+        "nombre": "Mouse",
+        "timesStamp": 1652570586459,
+        "descripcion": "descripción del producto",
+        "codigo": "mouse-m1",
+        "stock": 100,
+        "precio": 10,
+        "foto": "https://picsum.photos/200/300?random=1"
+      },
+      {
+        "id": "f0964031-348d-4bfe-b3f8-c013d6eb9138",
+        "nombre": "12",
+        "timesStamp": 1652571840847,
+        "descripcion": "12",
+        "codigo": "12",
+        "stock": "12",
+        "precio": "12",
+        "foto": "https://picsum.photos/200/300?random=1"
+      },
+      {
+        "id": "f0964031-348d-4bfe-b3f8-c013d6eb9138",
+        "nombre": "12",
+        "timesStamp": 1652571840847,
+        "descripcion": "12",
+        "codigo": "12",
+        "stock": "12",
+        "precio": "12",
+        "foto": "https://picsum.photos/200/300?random=1"
+      },
+      {
+        "id": "3fc6356a-4175-49b7-b265-90a15e1b1ccd",
+        "nombre": "Mouse",
+        "timesStamp": 1652570586459,
+        "descripcion": "descripción del producto",
+        "codigo": "mouse-m1",
+        "stock": 100,
+        "precio": 10,
+        "foto": "https://picsum.photos/200/300?random=1"
+      },
+      {
+        "id": "2",
+        "nombre": "teclado",
+        "timesStamp": 458,
+        "descripcion": 457,
+        "codigo": "teclado-abc",
+        "stock": 459,
+        "precio": 90459,
+        "foto": "https://picsum.photos/200/300?random=2"
+      },
+      {
+        "id": "47a8e1f0-a57e-4168-b8a1-248871678896",
+        "nombre": "12",
+        "timesStamp": 1652571865826,
+        "descripcion": "12",
+        "codigo": "12",
+        "stock": "12",
+        "precio": "12",
+        "foto": "https://picsum.photos/200/300?random=1"
+      },
+      {
+        "id": "47a8e1f0-a57e-4168-b8a1-248871678896",
+        "nombre": "12",
+        "timesStamp": 1652571865826,
+        "descripcion": "12",
+        "codigo": "12",
+        "stock": "12",
+        "precio": "12",
+        "foto": "https://picsum.photos/200/300?random=1"
+      },
+      {
+        "id": "5473be35-4ab7-4db8-9909-1455d0b2c2c2",
+        "nombre": "12",
+        "timesStamp": 1652589999016,
+        "descripcion": "12",
+        "codigo": "12",
+        "stock": "12",
+        "precio": "12",
+        "foto": "https://picsum.photos/200/300?random=1"
+      }
+    ]
   }
-      ]
-    }
-  ]
+]

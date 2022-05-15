@@ -16,7 +16,7 @@
         <label for="productSelect" class="container__label">Selecciona el Producto</label>
         <select name="productSelect" id="productSelect">
           <% data.forEach(function(stock){ %>
-            <option value="<%= stock.id %>">
+            <option value=<%= stock.id %>>
               <%= stock.id %> - <%= stock.nombre %>
             </option>
             <% }) %>
@@ -28,7 +28,7 @@
     </div>
   </div>
   
-  <script>    
+  <script>
     const formProducts = document.querySelector("#formProducts");
     const idProd = document.querySelector("#productSelect");
     const box = document.querySelector("#box");
@@ -37,15 +37,15 @@
     
     formProducts.addEventListener("submit", (e) => {
       e.preventDefault();
-      const data = { id: idProd.value };
-      console.log(data)
-      box.innerHTML = `<p>El id seleccionado es id: ${idProd.value}</p>`
+      let productSelected = idProd.value
+      const data = {id: productSelected};
+      box.textContent = `El id seleccionado es id: ${idProd.value}`
       const options = {
-        method: "POST",
-      headers: {"Content-Type": "application/json",},
-      body: JSON.stringify(data),
+      method: "POST",
+      headers: {'Content-Type' : 'application/json'},
+      body:JSON.stringify(data) ,
       }
-      return fetch(`/api/carritos/${idCarrito}/productos/`, options)
+      return fetch(`/api/carrito/${idCarrito}/productos/`, options)
     }
   );
 

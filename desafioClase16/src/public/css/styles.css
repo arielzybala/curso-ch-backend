@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&family=Urbanist&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css");
+
+:root {
+  --headlines-fnt: "Dosis", Verdana, Tahoma, sans-serif;
+  --other-fnt: "Urbanist", Verdana, Tahoma, sans-serif;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(23, 0, 64);
+  background: linear-gradient(
+    145deg,
+    rgba(23, 0, 64, 1) 40%,
+    rgba(47, 0, 127, 1) 67%,
+    rgba(19, 0, 52, 1) 100%
+  );
+  min-height: 100vh;
+}
+
+.container {
+  margin: 1em;
+
+  border-radius: 5pc;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container__frame {
+  width: fit-content;
+  padding: 1em;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(137, 137, 137) inset;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.container__tableHead {
+  font-family: var(--headlines-fnt);
+  font-size: 1.2em;
+  font-weight: 200;
+}
+.container__title {
+  font-family: var(--headlines-fnt);
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 1em;
+}
+.container__tableData {
+  font-family: var(--other-fnt);
+  padding-right: 1em;
+  text-align: center;
+}
+
+.container__img {
+  width: 100px;
+  height: 100px;
+}
+.container__btn {
+  margin: 1em;
+  padding: 0.8em 1em;
+  text-decoration: none;
+  font-family: var(--other-fnt);
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  border-radius: 0.3em;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(75deg, rgb(0, 0, 0) 5%, rgb(47, 46, 62) 100%);
+  box-shadow: 0px 10px 14px -7px rgb(97, 97, 116);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.container__btn:hover {
+  background: linear-gradient(75deg, rgb(47, 46, 62) 5%, rgb(0, 0, 0) 100%);
+}
+
+.container__btn--delete{
+  border: 2px rgb(135, 13, 13) solid;
+  background: linear-gradient(75deg, rgb(178, 34, 34) 5%, rgb(135, 13, 13) 100%);
+}
+
+.container__btn--delete:hover {
+	background: linear-gradient(75deg, rgb(135, 13, 13) 5%, rgb(178, 34, 34) 100%);
+}
+
+.container__btn--update{
+  border: 2px rgb(22, 51, 51) solid;
+  background: linear-gradient(75deg,rgb(22, 51, 51) 5%, rgb(47, 79, 79) 100%);
+}
+
+.container__btn--update:hover {
+	background: linear-gradient(75deg, rgb(47, 79, 79) 5%, rgb(22, 51, 51) 100%);
+}
+
+@media (max-width: 640px) {
+  .container__tableHead {
+    display: none;
+  }
+  .container__tableData {
+    width: 100%;
+    text-align: end;
+    text-indent: 5px;
+    border-bottom: solid 2px rgb(112, 111, 111);
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
+  .container__tableData::before {
+    content: attr(data-label);
+    font-family: var(--headlines-fnt);
+    font-weight: bold;
+  }
+  .container__tableData-lastData {
+    padding-bottom: 2em;
+  }
+}
+
+/*Formulario clases propias*/
+.container__form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.container__label {
+  width: 100%;
+  text-align: left;
+  font-family: var(--headlines-fnt);
+}
+.container__input {
+  margin-bottom: 1em;
+  border: solid 2px gray;
+  border-radius: 5px;
+  resize: none;
+}
+
+.container__input-Numbers::-webkit-inner-spin-button,
+.container__input-Numbers::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.container__input-fileBtn {
+  display: none;
+}
+
+.container__label-fileBtn {
+  border-radius: 5px;
+  background: linear-gradient(75deg, rgb(22, 35, 51) 45%, rgb(46, 57, 99) 100%);
+  box-shadow: 0px 10px 14px -7px rgb(97, 97, 116);
+  font-family: var(--other-fnt);
+  font-size: 0.8em;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.container__label-fileBtn:hover {
+  background: linear-gradient(75deg, rgb(46, 57, 99) 45%, rgb(22, 35, 51) 100%);
+}
+.container__label-fileBtn-icon {
+  padding: 1em 1.5em;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: rgba(0, 0, 0, 0.14) -1px 0px 0px inset;
+}
+
+.container__label-fileBtn-text {
+  padding: 1em 1.5em;
+}
+
+
+/*Lista de mensajes*/
+.container__boxMessages{
+  background-color: transparent
+}
+
+.container__ul{
+  list-style: none;
+  display: flex;
+}
+.container__li{
+  font-family: var(--headlines-fnt);
+  padding: .5em;
+}
+.container__li--email{
+  font-weight: 700;
+  color: rgb(26, 68, 134);
+}
+.container__li--time{
+  font-family: var(--other-fnt);
+  color: rgb(186, 97, 33);
+}
+.container__li--message{
+  font-style: italic;
+  color: rgb(39, 128, 39);
+}

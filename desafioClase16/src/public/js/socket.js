@@ -12,3 +12,16 @@ const saveProduct = (name, brand, price, image) => {
     image,
   });
 };
+
+socket.on("server:renderMessages", (data) => {
+  
+  loadMessages(data);
+});
+
+const saveMessage = (nameChat, emailChat, messageChat) => {
+  socket.emit("user:saveMessage", {
+    nameChat,
+    emailChat,
+    messageChat,
+  });
+};

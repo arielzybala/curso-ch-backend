@@ -16,15 +16,15 @@
             <form class="container__form" id="formProducts">
 
                 <label for="name" class="container__label">Nombre</label>
-                <input class="container__input" id="name" name="name" type="text" placeholder="Producto" />
+                <input class="container__input" id="name" name="name" type="text" value="Producto" />
                 <label for="brand" class="container__label">Marca</label>
-                <input class="container__input" id="brand" name="brand" type="text" placeholder="Marca" />
+                <input class="container__input" id="brand" name="brand" type="text" value="Marca" />
                 <label for="price" class="container__label">Precio</label>
                 <input class="container__input container__input-Numbers" id="price" name="price" type="number"
-                    placeholder="0" />
+                    value="1" />
                 <label for="image" class="container__label">Marca</label>
                 <input class="container__input" id="image" name="image" type="text"
-                    placeholder="https://picsum.photos/200/300?random=1" />
+                    value="https://picsum.photos/200/300?random=1" />
                 <input class="container__btn" type="submit" value="Agregar">
             </form>
         </div>
@@ -59,11 +59,11 @@
 
                 <label for="emailChat" class="container__label">Email</label>
                 <input class="container__input" type="email" name="emailChat" id="emailChat"
-                    placeholder="dirección@casilla.com" required>
+                    value="direccion@casilla.com" required>
 
                 <label for="messageChat" class="container__label">Mensaje</label>
                 <textarea class="container__input" name="messageChat" id="messageChat" rows="10"
-                    placeholder="Ingrese un Mensaje" required>Mensaje</textarea>
+                    placeholder="Ingrese un Mensaje" required>Mensaje </textarea>
 
                 <input class="container__btn" type="submit" value="Enviar">
             </form>
@@ -79,7 +79,6 @@
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="../tools/regex.js"></script>
-    <script src="../tools/timesStamp.js"></script>
     <script src="../interface/ui.js"></script>
     <script src="../js/socket.js"></script>
     <script src="../js/main.js"></script>

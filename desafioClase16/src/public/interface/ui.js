@@ -27,19 +27,19 @@ const loadAllRows = (data) => {
 
 const boxMsg = document.querySelector("#boxMsg");
 
-const loadListItems = (data) => {
+const loadMessages = (data) => {
   let htmlMsg = data
     .map((m) => {
       return `
         <ul class="container__ul">
         <li class="container__li container__li--email">
-            ${m.emailChat}
+            ${m.email}
         </li>
         <li class="container__li container__li--time">
-            ${m.timeChat}
+            ${m.created_at}
         </li>
         <li class="container__li container__li--message">
-            ${m.messageChat}
+            ${m.message}
         </li>
     </ul>
         `;

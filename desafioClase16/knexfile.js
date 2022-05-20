@@ -7,7 +7,7 @@ module.exports = {
   development: {
     client: "sqlite3",
     connection: {
-      filename: "../desafioClase16/src/public/db/data/chat.db3",
+      filename: "../desafioClase16/src/public/db/data/ecommerce.db3",
     },
     useNullAsDefault: true,
   },

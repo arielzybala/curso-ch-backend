@@ -53,3 +53,6 @@ delete from productos where id="1";
 
 /*COMANDO PARA BORRAR TODOS LOS DATOS DE LA TABLA*/
 truncate productos;
+
+
+/*////////////////////SQLITE3//////////////////////////*/

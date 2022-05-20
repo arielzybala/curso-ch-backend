@@ -24,13 +24,11 @@ const messageChat = document.querySelector("#messageChat");
 
 formChat.addEventListener("submit", (e) => {
   e.preventDefault();
-
   validEmail(emailChat.value)
     ? saveMessage(
         nameChat.value,
         emailChat.value,
         messageChat.value,
-        formatDate()
       )
     : alert("error al redactar el correo");
 });

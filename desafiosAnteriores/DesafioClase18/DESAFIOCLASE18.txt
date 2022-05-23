@@ -1,0 +1,149 @@
+// Crear la Base de datos
+use ecommerce
+// Crear las dos Colecciones de "mensajes" y "productos"
+db.createCollection("mensajes")
+db.createCollection("productos")
+
+// PASO (1) (2) Se agregan 10 documentos en cada colección / Se define las claves de cada documento teniendo en cuenta las bases de datos del anterior entregable
+
+//Documentos agregados a la colección de Mensajes//
+
+// Agregar un documento a la vez:
+
+db.mensajes.insertOne({name:"Ariel" , email:"arielzybala@gmail.com" , mensaje:"Hola Mundo", date: ISODate()})
+
+// Agregar varios documentos al mismo tiempo:
+
+db.mensajes.insertMany([
+ {name:"juan" , email:"juan@gmail.com" , mensaje:"Hola Mundo2", date: ISODate()},
+ {name:"Pedro" , email:"pedro@gmail.com" , mensaje:"Hola Mundo3", date: ISODate()},
+ {name:"Mario" , email:"mario@gmail.com" , mensaje:"Hola Mundo4", date: ISODate()}, 
+ {name:"Raul" , email:"raul@gmail.com" , mensaje:"Hola Mundo5", date: ISODate()}, 
+ {name:"Pablo" , email:"pablo@gmail.com" , mensaje:"Hola Mundo6", date: ISODate()}, 
+ {name:"Ana" , email:"ana@gmail.com" , mensaje:"Hola Mundo7", date: ISODate()},
+ {name:"Mia" , email:"mia@gmail.com" , mensaje:"Hola Mundo8", date: ISODate()},
+ {name:"Pia" , email:"pia@gmail.com" , mensaje:"Hola Mundo9", date: ISODate()},
+ {name:"Roque" , email:"roque@gmail.com" , mensaje:"Hola Mundo10", date: ISODate()}
+])
+
+//Documentos agregados a la colección de Productos//
+
+db.productos.insertMany([
+{producto:"Iphone 12 Mini", marca:"Apple", stock:100, precio:4250, imagen:"https://picsum.photos/200/300?random-1"},
+{producto:"Iphone 12", marca:"Apple", stock:150, precio:3800, imagen:"https://picsum.photos/200/300?random-2"},
+{producto:"Iphone 12 Pro", marca:"Apple", stock:200, precio:4350, imagen:"https://picsum.photos/200/300?random-3"},
+{producto:"GStylus", marca:"Motorola", stock:250, precio:1800, imagen:"https://picsum.photos/200/300?random-4"},
+{producto:"Iphone 12 Pro Max", marca:"Apple", stock:400, precio:6650, imagen:"https://picsum.photos/200/300?random-5"},
+{producto:"G Power", marca:"Motorola", stock:900 , precio:1750, imagen:"https://picsum.photos/200/300?random-6"},
+{producto:"G Play", marca:"Motorola", stock:700 , precio:900, imagen:"https://picsum.photos/200/300?random-7"},
+{producto:"G71", marca:"Motorola", stock:700, precio:1200, imagen:"https://picsum.photos/200/300?random-8"},
+{producto:"G100", marca:"Motorola", stock:458, precio:1500, imagen:"https://picsum.photos/200/300?random-9"}, 
+{producto:"Pro 30", marca:"Motorola",stock:300, precio:2100, imagen:"https://picsum.photos/200/300?random-1"}
+])
+
+//PASO (3) y (4) LISTAR LOS DOCUMENTOS / MOSTRAR LA CANTIDAD
+db.productos.find().pretty()
+db.mensajes.find().pretty()
+
+// Paso (5)
+A)
+db.productos.insertOne({producto:"Pro 20 lite", marca:"Motorola",stock:150, precio:950, imagen:"https://picsum.photos/200/300?random=1"})
+
+B)
+i)
+db.productos.find({precio: {$lt:1000}})
+ii)
+db.productos.find({$and:[{precio:{$gt:1000}},{precio:{$lt: 3000}}]
+iii)
+db.productos.find({precio: {$gt:3000}})
+iv)
+db.productos.find({} , {producto:1}).sort({precio:1}).limit(1).skip(2)
+
+C)Este se puede hacer de dos maneras, 
+Si no tiene la clave "stock":
+db.productos.aggregate([{$addFields: {"stock": "100"}}])
+Si ya tienen la clave "stock":
+db.productos.updateMany({},{$set:{stock:100}})
+
+D)
+db.productos.updateMany({precio:{$gt: 4000}},{$set:{stock:0}})
+
+e)
+db.productos.deleteMany({precio:{$lt: 1000}})
+
+6) En cualquier otra maquina es:
+A)use ecommerce
+
+B)db.createUser({user:"pepe", pwd:"asd456", roles:[{role: "read" , db:"ecommerce"}]})
+
+C)db.getUsers()
+
+[{"_id" : "ecommerce.pepe","userId" : UUID("3a842e67-082b-4b76-993f-ea487c049977"),"user" : "pepe","db" : "ecommerce","roles" : [{"role" : "read","db" : "ecommerce"}],"mechanisms" : ["SCRAM-SHA-1","SCRAM-SHA-256"]}]
+
+D) Mi configuración al ser ejecutado el comando mongo, dejaba unrestricted la lectura y escritura. POR ESO EN MI CASO FUE NECESARIO:
+
+1.- Abro la consola, ejecuto mongo, creo el usuario root con: 
+use admin
+db.createUser({user: "root", pwd: passwordPrompt(), roles: [{ role: "userAdminAnyDatabase", db: "admin" },{ role: "readWriteAnyDatabase", db: "admin" }]})
+
+2.- Creado el usuario administrador. Cierro consola
+
+3.- En C:\Program Files\MongoDB\Server\5.0\bin> ejecuto el *.exe llamado mongod.exe
+Lo dejo en segundo plano.
+
+4.- Abro el archivo mongod.cfg
+borro # de security: 
+agrego inmediatamente abajo authorization: enabled
+
+5.- Voy a inicio hago click. Escribo ejecutar. Me abre una ventana, pongo services.msc
+
+6.- Voy al servicio de mongoDB. Voy a la segunda solapa LogOn o Iniciar sesión. Pongo mi usuario de windows.
+
+7.- Cierro la ventana y ejecuto reiniciar sobre el servicio mongoDB
+
+8.- Abro la consola, ejecuto mongo
+
+9.- 
+
+i)use ecommerce
+
+ii)db.createUser({user:"pepe", pwd:"asd456", roles:[{role: "read" , db:"ecommerce"}]})
+
+iii)db.getUsers()
+[{"_id" : "ecommerce.pepe",
+"userId" : UUID("3a842e67-082b-4b76-993f-ea487c049977"),
+"user" : "pepe",
+"db" : "ecommerce",
+"roles" : [{"role" : "read","db" : "ecommerce"}],"mechanisms" : ["SCRAM-SHA-1","SCRAM-SHA-256"]}]
+
+10.- Cierro la consola - Abro la consola: 
+Redirecciono con el comando:
+
+11.- cd C:\Program Files\MongoDB\Server\5.0\bin>
+
+12.- Pongo el comando: mongo -u "pepe" -p "asd456" --authenticationDatabase "ecommerce"
+
+13.- Ejecuto el comando insertOne y Obtengo:
+> db.productos.insertOne({producto:"Pro 20 lite", marca:"Motorola",stock:150, precio:950, imagen:"https://picsum.photos/200/300?random=1"})
+uncaught exception: WriteCommandError({
+        "ok" : 0,
+        "errmsg" : "not authorized on ecommerce to execute command { insert: \"productos\", ordered: true, lsid: { id: UUID(\"0d332446-1ab1-4079-9e59-223ee00ee456\") }, $db: \"ecommerce\" }",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+}) :
+WriteCommandError({
+        "ok" : 0,
+        "errmsg" : "not authorized on ecommerce to execute command { insert: \"productos\", ordered: true, lsid: { id: UUID(\"0d332446-1ab1-4079-9e59-223ee00ee456\") }, $db: \"ecommerce\" }",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+})
+WriteCommandError@src/mongo/shell/bulk_api.js:421:48
+executeBatch@src/mongo/shell/bulk_api.js:936:23
+Bulk/this.execute@src/mongo/shell/bulk_api.js:1182:21
+DBCollection.prototype.insertOne@src/mongo/shell/crud_api.js:264:9
+@(shell):1:1
+>
+
+7) Para hacer el DUMP:
+Abrir consola ejecutar: 
+mongodump -u pepe -p asd456 --authenticationDatabase ecommerce --db ecommerce

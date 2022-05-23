@@ -26,8 +26,8 @@ app.use("/", router);
 
 //Configuración de Socket
 io.on("connection", (socket) => {
-///////////////////// EMITE EL BACK //////////////////////////////////
-//--------------------CARGA INICIAL DE PRODUCTOS------------------------
+  ///////////////////// EMITE EL BACK //////////////////////////////////
+  //--------------------CARGA INICIAL DE PRODUCTOS------------------------
   showAllProducts()
     .then((data) => {
       socket.emit("server:renderProducts", data);
@@ -35,7 +35,7 @@ io.on("connection", (socket) => {
     .catch((err) => {
       throw (err, console.log(err));
     });
-//--------------------CARGA INICIAL DE MENSAJES------------------------
+  //--------------------CARGA INICIAL DE MENSAJES------------------------
   findAllMessage()
     .then((data) => {
       socket.emit("server:renderMessages", data);
@@ -43,7 +43,7 @@ io.on("connection", (socket) => {
     .catch((err) => {
       throw (err, console.log(err));
     });
-/////////////////////// CAPUTRA DEL FRONT ////////////////////////////////
+  /////////////////////// CAPUTRA DEL FRONT ////////////////////////////////
   socket.on("user:saveProduct", (data) => {
     //GUARDA LOS PRODUCTOS
     saveAdminProduct(data);
@@ -76,3 +76,5 @@ server.listen(PORT, (err) => {
       )
     : console.log(`El Servidor falló.`);
 });
+
+

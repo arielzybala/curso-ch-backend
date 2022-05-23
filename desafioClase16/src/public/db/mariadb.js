@@ -6,10 +6,10 @@ const knex = require('knex')({
       port : 3306,
       user : 'root',
       password :'',
-      database : 'def16'
+      database : 'ecommerceProductos'
     },
     pool: { min : 2 , max : 8 }
-  });
+  }); 
 
   knex.schema.createTableIfNotExists("productos", tbl =>{
       tbl.increments('id').primary();
@@ -28,23 +28,37 @@ const knex = require('knex')({
   module.exports = knex;
 
 
-  module.exports.saveAdminProduct = (data) =>{
-    const {name, brand, price, image} = data
-    let dataNew = {
-      name,
-      brand,
-      price,
-      image
-    };
-    knex("productos")
-      .insert(dataNew)
-      .then(() => {
-        console.log("Información ingresada a la tabla");;
-      })
-      .catch((err) => {
-        throw (err, console.log(err));
-      });
-  }
+//module.exports.saveAdminProduct = (data) =>{
+//  const {name, brand, price, image} = data
+//  let dataNew = {
+//    name,
+//    brand,
+//    price,
+//    image
+//  };
+//  knex("productos")
+//    .insert(dataNew)
+//    .then(() => {
+//      console.log("Información ingresada a la tabla");;
+//    })
+//    .catch((err) => {
+//      throw (err, console.log(err));
+//    });
+//}
+
+ module.exports.saveAdminProduct = (dataNew) => {
+   knex("productos")
+     .insert(dataNew)
+ 
+     .then(() => {
+       console.log("Información ingresada a la tabla");
+     })
+ 
+     .catch((err) => {
+       throw (err, console.log(err));
+     });
+ };
+
 
   module.exports.showAllProducts = () =>{
     return knex

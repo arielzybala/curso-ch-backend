@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container__frame">
+            <table>
+                <caption class="container__title">
+                    PRODUCTOS SELECCIONADOS <span>
+                        <p>Por usuario: <%= data[0].idCarrito %></p>
+                    </span>
+                </caption>
+                <tbody>
+                    <tr class="container__tableRow">
+                        <th class="container__tableHead">ID</th>
+                        <th class="container__tableHead">Time Stamp</th>
+                        <th class="container__tableHead">Nombre</th>
+                        <th class="container__tableHead">Descripción</th>
+                        <th class="container__tableHead">Código</th>
+                        <th class="container__tableHead">Imagen</th>
+                        <th class="container__tableHead">Precio</th>
+                        <th class="container__tableHead">Stock</th>
+                    </tr>
+                    <% data[0].productos.forEach(function(basket){ %>
+                        <tr class="container__tableRow">
+                            <td class="container__tableData" data-label="ID:">
+                                <%= basket.id %>
+                            </td>
+                            <td class="container__tableData" data-label="Times Stamp:">
+                                <%= basket.timesStamp %>
+                            </td>
+                            <td class="container__tableData" data-label="Nombre:">
+                                <%= basket.nombre %>
+                            </td>
+                            <td class="container__tableData" data-label="Descripción:">
+                                <%= basket.descripcion %>
+                            </td>
+                            <td class="container__tableData" data-label="Código">
+                                <%= basket.codigo %>
+                            </td>
+                            <td class="container__tableData container__tableData-lastData" data-label="Vista Previa:">
+                                <img class="container__img" alt="Producto de Electrónica" src=<%=`${basket.foto}`%>
+                            </td>
+                            <td class="container__tableData" data-label="Precio">
+                                <%= basket.precio %>
+                            </td>
+                            <td class="container__tableData" data-label="Stock">
+                                <%= basket.stock %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+        <a class="container__btn" href="/api/products/">Agregar nuevo Producto</a>
+    </div>
+</body>
+
+</html>

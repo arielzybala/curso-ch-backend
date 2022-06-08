@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class ="card">
+    <div class="card__framming">
+        <div class="card__imageBox">
+            <img class="card__image" src=<%= `${data.photo}` %> alt="">
+        </div>
+        <div class="card__infoBox">
+            <div class="card__productCodesBox">
+                <p class="card__productCode">ID: <%= data.id %></p>
+                <p class="card__productCode">Nombre: <%= data.name %></p>
+                <p class="card__productCode">Codigo: <%= data.code %></p>
+                <p class="card__productCode">Stock: <%= data.stock %></p>
+            </div>
+            <div class="card__descriptionBox">
+                <p class="card__productInfo"><%= data.description %></p>
+            </div>
+            <div class="card__lastCut">
+                <p class="card__productPrice">$ <%= data.price %> </p>
+                <a href="http://localhost:8080/api/products/" class="card__btn">Volver</a>
+            </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+
+

@@ -10,7 +10,4 @@ module.exports = class CartDaoMongo extends dtoMongo {
   async save(cart = { products: [] }) {
     return super.save(cart);
   }
-}
-
-
- 
+};

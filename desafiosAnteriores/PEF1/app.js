@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const methodOverride = require('method-override')
 const PORT = process.env.PORT || 8080;
 const productosRoutes = require("./src/routes/productos");
 const carritoRoutes = require("./src/routes/carrito");

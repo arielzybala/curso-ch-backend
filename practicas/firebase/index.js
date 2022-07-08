@@ -13,3 +13,4 @@ const query = db.collection("users")
         let doc = query.doc(`${Math.random()}`)
         await doc.create({name: "Ariel", age:"35"})
     }
+saveUser()

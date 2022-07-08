@@ -1,4 +1,4 @@
-const PERSISTENCE = process.env.PERSISTENCE || "fileSystem";
+const PERSISTENCE = process.env.PERSISTENCE || "";
 let productsDao;
 let cartDao;
 

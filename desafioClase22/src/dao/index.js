@@ -1,4 +1,4 @@
-const PERSISTENCE = process.env.PERSISTENCE || "firebase";
+const PERSISTENCE = process.env.PERSISTENCE || "mongo";
 let MessagesDao;
 
 switch (PERSISTENCE) {

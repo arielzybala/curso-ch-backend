@@ -22,13 +22,8 @@ class dtoMongo {
   }
 
   async addNewMessage(newDocument) {
-    console.log(newDocument)
     try {
       let doc = await this.coleccion.create(newDocument);
-      doc = asPOJO(doc);
-      renameField(doc, "_id", "id");
-      removeField(doc, "__v");
-      return doc;
     } catch (error) {
       throw new Error(`Error al guardar: ${error}`);
     }

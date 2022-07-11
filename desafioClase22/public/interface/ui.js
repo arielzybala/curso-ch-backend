@@ -1,7 +1,6 @@
 const boxMsg = document.querySelector("#boxMsg");
 
 const loadMessages = (data) => {
-
     let htmlMsg = data.map((m) => {
         return `
           <ul class="container__ul">

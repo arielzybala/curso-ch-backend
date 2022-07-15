@@ -1,4 +1,4 @@
-const PERSISTENCE = process.env.PERSISTENCE || "mongo";
+const PERSISTENCE = process.env.PERSISTENCE || "";
 let MessagesDao;
 
 switch (PERSISTENCE) {

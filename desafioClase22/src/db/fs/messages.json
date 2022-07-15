@@ -24,44 +24,5 @@
     "text": "Mensaje Test",
     "time": "11/7/22/ 0:0:15",
     "id": 2
-  },
-  {
-    "author": {
-      "emailChat": "direccion@casilla.com",
-      "nameChat": "Nombre",
-      "lastNameChat": "Apellido",
-      "yearsOldChat": "50",
-      "nickNameChat": "Apodo",
-      "urlAvatarChat": "https://i.pravatar.cc/150"
-    },
-    "text": "Mensaje Test",
-    "time": "11/7/22/ 0:0:21",
-    "id": 3
-  },
-  {
-    "author": {
-      "emailChat": "direccion@casilla.com",
-      "nameChat": "Nombre",
-      "lastNameChat": "Apellido",
-      "yearsOldChat": "50",
-      "nickNameChat": "Apodo",
-      "urlAvatarChat": "https://i.pravatar.cc/150"
-    },
-    "text": "Mensaje Test",
-    "time": "11/7/22/ 0:0:22",
-    "id": 4
-  },
-  {
-    "author": {
-      "emailChat": "direccion@casilla.com",
-      "nameChat": "Nombre",
-      "lastNameChat": "Apellido",
-      "yearsOldChat": "50",
-      "nickNameChat": "Apodo",
-      "urlAvatarChat": "https://i.pravatar.cc/150"
-    },
-    "text": "Mensaje Test",
-    "time": "11/7/22/ 0:26:1",
-    "id": 5
   }
 ]

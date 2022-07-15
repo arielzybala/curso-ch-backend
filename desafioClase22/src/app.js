@@ -5,6 +5,7 @@ const http = require("http");
 const server = http.createServer(app);
 const PORT = process.env.PORT || 8080;
 const router = require("./routes/main.js");
+const porcentage = require('./normalizr/normalizrTest')
 const { Server } = require("socket.io");
 const { MessagesDao } = require("./dao/index.js");
 const io = new Server(server);
@@ -18,17 +19,27 @@ app.set("views", path.join(__dirname + "/views"));
 
 app.use("/api", router);
 
+
 io.on("connection", async (socket) => {
+
   let reload = await MessagesDao.findAllMessage();
-  socket.emit("server:renderMessages", reload);
+  let normalizeData = porcentage(reload)
+  socket.emit("server:renderMessages", reload , normalizeData);
+
+
 
   socket.on("user:saveMessage", async (message) => {
-    let add = await MessagesDao.addNewMessage(message);
-    let load = await MessagesDao.findAllMessage().then((data) => data);
-    io.sockets.emit("server:renderMessages", load);
-  });
-});
 
+    let add = await MessagesDao.addNewMessage(message);
+
+    let load = await MessagesDao.findAllMessage().then((data) => data);
+    let normalizeData = porcentage(load)
+
+    io.sockets.emit("server:renderMessages", load , normalizeData);
+
+  });
+
+});
 server.listen(PORT, (err) => {
   !err
     ? console.log("Server RUN ON PORT: ", PORT)

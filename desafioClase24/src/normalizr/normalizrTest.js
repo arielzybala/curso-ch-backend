@@ -24,7 +24,7 @@ const normalizrTesting = (data) => {
 
   const uncompressedData = JSON.stringify(denormalizedData).length;
 
-  let percentage = `${parseInt((uncompressedData/compressedData ) * 100)}%`
+  let percentage = `${parseInt(100-(compressedData*100/uncompressedData))}%`
   return percentage
 
 };

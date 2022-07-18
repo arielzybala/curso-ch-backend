@@ -31,6 +31,7 @@ app.use(
       retries: 0,
     }),
     secret: mongoAtlas.secret,
+    rolling: true,
     resave: true,
     cookie: {
       maxAge: 60000,

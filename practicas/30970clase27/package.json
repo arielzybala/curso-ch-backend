@@ -1,5 +1,5 @@
 {
-  "name": "30970clase25passport",
+  "name": "30970clase27",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,10 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "express": "^4.18.1",
-    "express-session": "^1.17.3",
-    "passport": "^0.6.0",
-    "passport-local": "^1.0.0"
+    "minimist": "^1.2.6"
   }
 }

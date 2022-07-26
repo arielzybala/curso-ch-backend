@@ -1,47 +1,70 @@
-const getRoot = (_req, res, _next) => {res.send("acá se renderiza el front de la home")}
+const { createMocks } = require("../mocks/dataMock");
+const { asPOJO } = require("../utils/implements");
 
+//LOGIN//////////////////////////////////////////////////////////////////////////////////////////////
 const getLogin = (req, res, _next) => {
-    if(req.isAuthenticated()) {
-        console.log('user logueado');
-        res.status(200).send('aca se renderiza el profile del User')
-    } else{
-        console.log('user No logueado')
-        res.send("acá se renderiza el front del login")
-    }
-}
+  let data = [];
+  createMocks(5, data);
+  res.render("indexLogin", { mocks: data });
+};
 
-const postLogin = (req, res, _next) => {
-    res.send("aca se renderiza el profile del usuario -mismo contenido que postSignup(el render puede tener un include)-")
-}
+const postLogin = (req, res, next) => {
+  let data = [];
+  createMocks(5, data);
+  res.render("logged", { mocks: data, email: req.body.email });
+};
+//SIGNUP//////////////////////////////////////////////////////////////////////////////////////////////
+const getSignup = (req, res, next) => {
+  let data = [];
+  createMocks(5, data);
+  res.render("indexSignup", { mocks: data });
+};
 
-const getSignup = (_req, res, _next) => {
-    res.send("acá se renderiza el front para registrarse")
-}
+const postSignup = async (req, res, next) => {
+  let data = [];
+  createMocks(5, data);
+  res.render("logged", { mocks: data, email: req.body.email });
+};
 
-const postSignup = (req, res, _next) => {
-    const user = req.user
-    res.send("aca se renderiza el profile del usuario -mismo contenido que postLogin(el render puede tener un include)-")
-}
-
+//FAILURES//////////////////////////////////////////////////////////////////////////////////////////////
 const getFailLogin = (req, res, next) => {
-    console.log('error al loguearse')
-    res.send("Acá se renderiza en la pagina un ERROR LOGIN")
-}
+  res.render("failLogin");
+};
 
-const getFailSignUp = (req, res, next) => {res.send("ERROR SIGNUP")}
-
+const getFailSignUp = (req, res, next) => {
+  res.render("failSignup");
+};
+//LOGOUT//////////////////////////////////////////////////////////////////////////////////////////////
 const getLogout = async (req, res, next) => {
-    await req.logout((err) => {
-      if (err) return next(err);
-      res.send("acá va renderizado el logout");
-    });
-}
+  let user = req.body.user;
+  req.session.destroy((err) => {
+    if (!err) {
+      res.render("logout", { email: user.email });
+    } else {
+      res.send({ error: "Error al cerrar la sesión", body: err });
+    }
+  });
+};
+//CONTRO//////////////////////////////////////////////////////////////////////////////////////////////
+const getControl = async (req, res, next) => {
+  let dataUser = asPOJO({
+    sessionID: req.sessionID,
+    auth: req.isAuthenticated(),
+    expiration: req.session.cookie.expires,
+  });
+  console.log(req);
+  let data = [];
+  createMocks(5, data);
+  res.render("control", { mocks: data, dataUser: dataUser });
+};
 
-const failRoute = (req, res, next) => {res.status(404).send("Dirección que renderiza el error 404")}
-
-const getPrivate = (req, res, next) => {
-    res.send("Lo ves porque estas logueado")
-}
-
-module.exports = {getRoot, getLogin, postLogin, getSignup, postSignup, getFailLogin, getFailSignUp, getLogout, getPrivate, failRoute}
-
+module.exports = {
+  getLogin,
+  postLogin,
+  getSignup,
+  postSignup,
+  getFailLogin,
+  getFailSignUp,
+  getLogout,
+  getControl,
+};

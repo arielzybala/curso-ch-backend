@@ -1,4 +1,4 @@
-const formLog = document.querySelector("#formLog");
+const formLog = document.querySelector("#formSignup");
 const emailUser = document.querySelector("#email");
 const passwordUser = document.querySelector("#password");
 
@@ -12,5 +12,5 @@ formLog.addEventListener("submit", (e) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   };
-  return fetch(`/api/logged`, options);
+  return fetch(`/api/signup`, options);
 });

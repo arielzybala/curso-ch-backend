@@ -4,7 +4,8 @@ const path = require("path");
 const http = require("http");
 const server = http.createServer(app);
 const PORT = process.env.PORT || 8080;
-const router = require("./routes/userRoutes");
+const routerUser = require("./routes/userRoutes");
+const routerMain = require("./routes/mainRoutes");
 const porcentage = require("./normalizr/normalizrTest");
 const { Server } = require("socket.io");
 const { MessagesDao } = require("./dao/index.js");
@@ -13,6 +14,8 @@ const cp = require("cookie-parser");
 const session = require("express-session");
 const db = require('./db/mongodb');
 const passport = require('./routes/middleware/passport')
+const { mongoAtlas } = require("./config");
+const MongoStore = require("connect-mongo");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +28,13 @@ db.connect();
 app.use(cp());
 app.use(
   session({
-    secret: 'secret',
+    store: MongoStore.create({
+      mongoUrl: mongoAtlas.uri,
+      mongoOptions: mongoAtlas.advancedOptions,
+      ttl: 60,
+      retries: 0,
+    }),
+    secret: mongoAtlas.secret,
     resave: true,
     saveUninitialized: true,
     rolling: true,
@@ -40,7 +49,7 @@ app.use(passport.session())
 
 
 
-app.use("/api", router);
+app.use("/api", routerMain , routerUser);
 
 io.on("connection", async (socket) => {
   let reload = await MessagesDao.findAllMessage();

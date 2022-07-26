@@ -17,6 +17,7 @@ passport.use(
           return done(null, false);
         } else {
           const hash = await hashPassword(password);
+          console.log(hash);
           const user = await User.create({ email, password: hash });
           return done(null, user);
         }
@@ -39,10 +40,10 @@ passport.use(
         const user = await User.findOne({ email: email });
         if (!user) return done(null, false);
         const isMatch = await matchPassword(password, user.password);
+        console.log(isMatch);
         if (!isMatch) return done(null, false);
         return done(null, user);
       } catch (error) {
-        console.log(error);
         return done(error, false);
       }
     }

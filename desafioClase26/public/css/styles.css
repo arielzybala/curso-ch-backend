@@ -55,8 +55,15 @@ body {
   font-family: var(--headlines-fnt);
   font-size: 1.5em;
   font-weight: 700;
+  padding: 1.2em;
+}
+.container__subtitle {
+  font-family: var(--other-fnt);
+  font-size: 1em;
+  font-weight: 700;
   padding: 1em;
 }
+
 .container__tableData {
   font-family: var(--other-fnt);
   padding-right: 1em;
@@ -87,22 +94,30 @@ body {
   background: linear-gradient(75deg, rgb(47, 46, 62) 5%, rgb(0, 0, 0) 100%);
 }
 
-.container__btn--delete{
+.container__btn--delete {
   border: 2px rgb(135, 13, 13) solid;
-  background: linear-gradient(75deg, rgb(178, 34, 34) 5%, rgb(135, 13, 13) 100%);
+  background: linear-gradient(
+    75deg,
+    rgb(178, 34, 34) 5%,
+    rgb(135, 13, 13) 100%
+  );
 }
 
 .container__btn--delete:hover {
-	background: linear-gradient(75deg, rgb(135, 13, 13) 5%, rgb(178, 34, 34) 100%);
+  background: linear-gradient(
+    75deg,
+    rgb(135, 13, 13) 5%,
+    rgb(178, 34, 34) 100%
+  );
 }
 
-.container__btn--update{
+.container__btn--update {
   border: 2px rgb(22, 51, 51) solid;
-  background: linear-gradient(75deg,rgb(22, 51, 51) 5%, rgb(47, 79, 79) 100%);
+  background: linear-gradient(75deg, rgb(22, 51, 51) 5%, rgb(47, 79, 79) 100%);
 }
 
 .container__btn--update:hover {
-	background: linear-gradient(75deg, rgb(47, 79, 79) 5%, rgb(22, 51, 51) 100%);
+  background: linear-gradient(75deg, rgb(47, 79, 79) 5%, rgb(22, 51, 51) 100%);
 }
 
 @media (max-width: 640px) {
@@ -181,29 +196,28 @@ body {
   padding: 1em 1.5em;
 }
 
-
 /*Lista de mensajes*/
-.container__boxMessages{
-  background-color: transparent
+.container__boxMessages {
+  background-color: transparent;
 }
 
-.container__ul{
+.container__ul {
   list-style: none;
   display: flex;
 }
-.container__li{
+.container__li {
   font-family: var(--headlines-fnt);
-  padding: .5em;
+  padding: 0.5em;
 }
-.container__li--email{
+.container__li--email {
   font-weight: 700;
   color: rgb(26, 68, 134);
 }
-.container__li--time{
+.container__li--time {
   font-family: var(--other-fnt);
   color: rgb(186, 97, 33);
 }
-.container__li--message{
+.container__li--message {
   font-style: italic;
   color: rgb(39, 128, 39);
 }

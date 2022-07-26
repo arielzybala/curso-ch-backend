@@ -3,23 +3,22 @@ const { Router } = express;
 const userRouter = new Router();
 const userController = require('../controllers/userControllers')
 const passport = require('./middleware/passport');
-const checkAuth = require("./middleware/auth");
 
-
-
-userRouter.get('/', userController.getRoot)
 userRouter.get('/login', userController.getLogin)
-userRouter.post('/login', passport.authenticate('login', {failureRedirect: '/failLogin'}), userController.postLogin)
-userRouter.get('/failLogin', userController.getFailLogin)
+userRouter.post('/login', passport.authenticate('login', {failureRedirect: '/api/failLogin'}), userController.postLogin)
+
 userRouter.get('/signup', userController.getSignup)
-userRouter.post('/signup', passport.authenticate('signup', {failureRedirect: '/failSignup'}), userController.postSignup)
+userRouter.post('/signup', passport.authenticate('signup', {failureRedirect: '/api/failSignup'}), userController.postSignup)
+
+userRouter.get('/failLogin', userController.getFailLogin)
 userRouter.get('/failSignup', userController.getFailSignUp);
 
-userRouter.get('/onlylog', checkAuth, userController.getPrivate);
+userRouter.get('/control', userController.getControl);
 
-userRouter.post('/logout', userController.getLogout);
 
-userRouter.get('*', userController.failRoute)
+userRouter.get('/logout', userController.getLogout);
+
+
 
 
 

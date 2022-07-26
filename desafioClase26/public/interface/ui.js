@@ -27,6 +27,5 @@ const loadMessages = (data) => {
 const boxNormalizr = document.querySelector("#boxNormalizr");
 
 const chargePorcentage = (data) => {
-    console.log(data)
     boxNormalizr.innerHTML = `<p class="container__title">${data}</p>`
   }

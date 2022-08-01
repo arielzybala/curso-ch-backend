@@ -1,8 +1,9 @@
 {
-  "name": "30970clase27",
+  "name": "udemy-backend",
   "version": "1.0.0",
+  "title": "Test",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "minimist": "^1.2.6"
+    "dotenv": "^16.0.1",
+    "minimist": "^1.2.6",
+    "yargs": "^17.5.1"
   }
 }

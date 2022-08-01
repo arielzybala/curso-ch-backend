@@ -6,7 +6,7 @@ const randomNumber = (min, max) => {
 
 let arrayNum = [];
 
-const count = (cant=10000) => {
+const count = (cant=100000000) => {
     for(let i = 0; i <= cant; i++){
         arrayNum.push(randomNumber(1, 1000))
     }

@@ -5,8 +5,8 @@
   "main": "app.js",
   "type": "commonjs",
   "scripts": {
-    "CLUSTER": "nodemon ./src/app.js -m CLUSTER ",
-    "FORK": "nodemon ./src/app.js -m FORK",
+    "CLUSTER": "nodemon ./src/app.js -p 8081 -m CLUSTER ",
+    "FORK": "nodemon ./src/app.js -p 8080 -m FORK",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

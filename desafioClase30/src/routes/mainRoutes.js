@@ -14,6 +14,7 @@ const GV = process; // G de Global - V de variable (a diferencia de EV en config
 router.get("/", (_req, res) => {
   let data = [];
   createMocks(5, data);
+  console.log(`El servidor express (Nginx) en ${PORT} en PID ${process.pid} - ${new Date().toLocaleString()}`)
   res.render("index", { mocks: data });
 });
 

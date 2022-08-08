@@ -16,7 +16,7 @@
  * EL COMANDO PARA MATAR PROCESOS DESDE BASH
  * TASKKILL //PID:**** //F
  * 
- * 
+ * tasklist //fi "imagename eq node.exe"
  * 
  * 
  * /////////////////////MODULO FOREVER

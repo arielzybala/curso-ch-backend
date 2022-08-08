@@ -83,7 +83,7 @@ io.on("connection", async (socket) => {
 if(MODO == "FORK"){
   server.listen(PORT, (err) => {
     !err
-      ? console.log("Server RUN ON PORT: ", PORT)
+      ? console.log(`Server iniciado en modo:[${MODO}] con id de Proceso [${process.pid}] en puesto [${PORT}]`)
       : console.log("Server NOT RUN");
   });
 } else {

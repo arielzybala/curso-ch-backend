@@ -26,7 +26,7 @@ router.get("/info", (_req, res) => {
 
 
 router.get("/randoms/", (req, res) => {
-  const amount = req.query.cant;
+  const amount = req.query.amount;
   const child = fork('./src/routes/child.js') 
   child.send({amount})
   child.on('message', (message)=>{

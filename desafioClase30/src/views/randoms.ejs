@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("template/head") %>
+
+    <body>
+        <div class="container">
+            <div class="container__frame">
+                <h2 class="container__title"><%= text %></h2>
+                <p class="container__label">
+                    Valores de la cuenta <%= JSON.stringify(message, null, '\n') %>
+                </p>
+            </div>
+        </div>
+    </body>
+
+</html>

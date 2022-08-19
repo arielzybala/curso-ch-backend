@@ -1,0 +1,17 @@
+{
+  "name": "30970clase32",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node Autocannon.js",
+    "start": "0x servera.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autocannon": "^7.9.0",
+    "express": "^4.18.1"
+  }
+}

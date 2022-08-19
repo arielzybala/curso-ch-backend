@@ -1,0 +1,32 @@
+
+{"apiMensaje":"logChat","level":"warn","message":"hola"}
+{"apiMensaje":"logProducts","level":"warn","message":"hola"}
+{"apiMessage":"logChat","level":"warn","message":"hola"}
+{"apiProd":"logProducts","level":"warn","message":"hola"}
+2022-08-15T00:26:53.639Z warn: hola
+2022-08-15T00:26:53.647Z warn: hola
+2022-08-15T00:29:09.247Z warn: La suma es:3
+2022-08-15T00:29:10.751Z warn: recurso invalido
+2022-08-15T00:30:03.728Z warn: La suma es:3
+2022-08-15T00:34:00.830Z warn: hola
+2022-08-15T00:34:00.835Z warn: hola
+2022-08-15T00:34:05.164Z warn: La suma es:[object Object]
+2022-08-15T00:34:54.641Z warn: La suma es:[object Object]
+2022-08-15T00:35:16.920Z warn: La suma es:[object Object]
+2022-08-15T00:35:49.670Z warn: La suma es:[object Object]
+2022-08-15T00:35:58.112Z warn: hola
+2022-08-15T00:35:58.117Z warn: hola
+2022-08-15T00:36:00.912Z warn: La suma es:3
+2022-08-15T00:36:54.416Z warn: hola
+2022-08-15T00:36:54.422Z warn: hola
+2022-08-15T00:36:56.670Z warn: La suma es:3 "GET" "/suma"
+2022-08-15T00:42:16.990Z undefined warn: hola
+2022-08-15T00:42:16.995Z undefined warn: hola
+2022-08-15T00:43:03.350Z warn: hola
+2022-08-15T00:43:03.355Z warn: hola
+Hora del Registro:2022-08-15T01:17:25.846Z/ Nivel de Importancia: warn - Mensaje: hola
+Hora del Registro:2022-08-15T01:17:25.851Z/ Nivel de Importancia: warn - Mensaje: hola
+Hora del Registro:2022-08-15T01:18:11.352Z/ Nivel de Importancia: warn - Mensaje: hola
+Hora del Registro:2022-08-15T01:18:11.358Z/ Nivel de Importancia: warn - Mensaje: hola
+{"api":"Products","level":"warn","message":"hola"}
+{"api":"Chat","level":"warn","message":"hola"}

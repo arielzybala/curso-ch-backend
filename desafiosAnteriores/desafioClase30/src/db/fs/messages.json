@@ -1,0 +1,67 @@
+[
+  {
+    "author": {
+      "emailChat": "direccion@casilla.com",
+      "nameChat": "Nombre",
+      "lastNameChat": "Apellido",
+      "yearsOldChat": "50",
+      "nickNameChat": "Apodo",
+      "urlAvatarChat": "https://i.pravatar.cc/150"
+    },
+    "text": "Mensaje Test",
+    "time": "11/7/22/ 0:0:10",
+    "id": 1
+  },
+  {
+    "author": {
+      "emailChat": "direccion@casilla.com",
+      "nameChat": "Nombre",
+      "lastNameChat": "Apellido",
+      "yearsOldChat": "50",
+      "nickNameChat": "Apodo",
+      "urlAvatarChat": "https://i.pravatar.cc/150"
+    },
+    "text": "Mensaje Test",
+    "time": "11/7/22/ 0:0:15",
+    "id": 2
+  },
+  {
+    "author": {
+      "emailChat": "direccion@casilla.com",
+      "nameChat": "Nombre",
+      "lastNameChat": "Apellido",
+      "yearsOldChat": "50",
+      "nickNameChat": "Apodo",
+      "urlAvatarChat": "https://i.pravatar.cc/150"
+    },
+    "text": "Mensaje Test",
+    "time": "18/7/22/ 13:19:22",
+    "id": 3
+  },
+  {
+    "author": {
+      "emailChat": "direccion@casilla.com",
+      "nameChat": "Nombre",
+      "lastNameChat": "Apellido",
+      "yearsOldChat": "50",
+      "nickNameChat": "Apodo",
+      "urlAvatarChat": "https://i.pravatar.cc/150"
+    },
+    "text": "Mensaje Test",
+    "time": "25/7/22/ 22:42:41",
+    "id": 4
+  },
+  {
+    "author": {
+      "emailChat": "direccion@casilla.com",
+      "nameChat": "Nombre",
+      "lastNameChat": "Apellido",
+      "yearsOldChat": "50",
+      "nickNameChat": "Apodo",
+      "urlAvatarChat": "https://i.pravatar.cc/150"
+    },
+    "text": "Mensaje Test",
+    "time": "30/7/22/ 21:12:20",
+    "id": 5
+  }
+]

@@ -5,8 +5,9 @@
   "main": "./src/app.js",
   "type": "commonjs",
   "scripts": {
+    "start":"node ./src/app.js",
     "test": "node ./src/autocannon.js",
-    "start": "0x -- node --inspect ./src/app.js"
+    "start0x": "0x -- node --inspect ./src/app.js"
   },
   "keywords": [],
   "author": "",

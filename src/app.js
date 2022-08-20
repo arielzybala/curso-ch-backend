@@ -26,7 +26,7 @@ const compression = require("compression");
 const { logger } = require('./utils/logger');
 const yargs = require('yargs/yargs')(process.argv.slice(2))
 const args = yargs
-.alias({p: 'PORT', m: 'MODO' }).default({ PORT: 8080, MODO:"FORK" }).argv 
+.alias({p: 'PORT', m: 'MODO' }).default({ MODO:"FORK" }).argv 
 const PORT = args.PORT;
 const MODO = args.MODO;
 

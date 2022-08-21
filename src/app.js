@@ -1,21 +1,54 @@
+const NODE_ENV = process.env.NODE_ENV || 'development';
+require('dotenv').config({path: `.env.${NODE_ENV}`})
+const http = require('http');
 const express = require('express');
-const path = require("path");
-const http = require("http");
+const session = require('express-session');
+const cp = require('cookie-parser');
+const path = require('path');
+const MongoStore = require('connect-mongo');
 const yargs = require('yargs/yargs')(process.argv.slice(2))
 const args = yargs
 .alias({p: 'PORT', m: 'MODO' }).argv 
 const PORT = args.PORT || process.env.PORT || 8080;
 const app = express()
 const server = http.createServer(app);
-const routerMain = require("./routes/mainRoutes");
+const db = require('./db/mongodb');
+const { mongoAtlas } = require('./config');
+const routerMain = require('./routes/mainRoutes');
+const passport = require('./routes/middleware/passport')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.set('json spaces', 1)
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname + "/views"));
+
+db.connect();
+app.use(cp());
+app.use(
+  session({
+    store: MongoStore.create({
+      mongoUrl: mongoAtlas.uri,
+      mongoOptions: mongoAtlas.advancedOptions,
+      ttl: 60,
+      retries: 0,
+      touchAfter: 24 * 3600
+    }),
+    secret: mongoAtlas.secret,
+    resave: true,
+    saveUninitialized: true,
+    rolling: true,
+    cookie: {
+      maxAge: 10 * 60000,
+      httpOnly: true
+    }
+  })
+);
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use("/", routerMain);
 

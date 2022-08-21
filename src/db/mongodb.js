@@ -9,10 +9,10 @@ const connect = async () => {
   mongoose.createConnection(uri, mongooseModel.options);
   const db = mongoose.connections[0];
   db.on("error", () => {
-    logger.error("No se pudo conectar a la base de datos de los Usuarios");
+    logger.error("Error sin acceso a la DB chat");
   });
   db.once("open", () => {
-    logger.info("Conectado a la base de datos de los Usuarios")
+    logger.info("Conectado al chat")
   });
 };
 module.exports = { connect };

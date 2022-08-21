@@ -6,10 +6,10 @@ const {checkedLogin, alreadyLogged} = require("./middleware/auth");
 const passport = require('./middleware/passport');
 
 userRouter.get('/login', alreadyLogged, userController.getLogin)
-userRouter.post('/login', passport.authenticate('login', {failureRedirect: '/api/failLogin'}),  userController.postLogin)
+userRouter.post('/login', passport.authenticate('login', {failureRedirect: '/failLogin'}),  userController.postLogin)
 
 userRouter.get('/signup',alreadyLogged, userController.getSignup)
-userRouter.post('/signup', passport.authenticate('signup', {failureRedirect: '/api/failSignup'}),  userController.postSignup)
+userRouter.post('/signup', passport.authenticate('signup', {failureRedirect: '/failSignup'}),  userController.postSignup)
 
 userRouter.get('/failLogin', userController.getFailLogin)
 userRouter.get('/failSignup', userController.getFailSignUp);

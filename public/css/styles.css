@@ -29,7 +29,7 @@ body {
     rgba(19, 0, 52, 1) 100%
   );
   min-height: 100vh;
-  overflow: hidden;
+
 }
 
 header {
@@ -329,3 +329,7 @@ header {
   color: rgb(39, 128, 39);
 }
 
+.wrap{
+  display: flex;
+  flex-flow: wrap;
+}

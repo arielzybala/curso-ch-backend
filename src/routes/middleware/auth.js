@@ -1,13 +1,13 @@
 const checkedLogin = (req, res, next) => {
     if (!req.isAuthenticated()) {
-      return res.redirect("/api");
+      return res.redirect("/");
     }
     next();
   };
 
   const alreadyLogged = (req, res, next) => {
     if (req.isAuthenticated()) {
-        res.redirect("/api/logged")
+        res.redirect("/logged")
     }
     next();
   };

@@ -19,6 +19,7 @@ const mongoAtlas = {
   },
   secret: EV.MONGOATLAS_SECRET,
 };
+
 const mongooseModel = {
   uri: EV.MONGOOSEMODEL_URI,
   options: {

@@ -27,7 +27,7 @@ app.use(cp());
 app.use(
   session({
     store: mongoStore.create({
-      mongoUrl: mongoAtlas.uri,
+      mongoUrl: "mongodb+srv://ariel:Tita@agzch.gs9x3.mongodb.net/?retryWrites=true&w=majority",
       mongoOptions: mongoAtlas.advancedOptions,
       ttl: 60,
       retries: 0,

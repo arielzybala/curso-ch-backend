@@ -24,10 +24,8 @@ const UserSchema = new Schema({
   rol,
 });
 
-let uri =
-  "mongodb+srv://ariel:Tita@agzch.gs9x3.mongodb.net/Users?retryWrites=true&w=majority";
-
-let advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+let uri = mongoAtlas.uri
+let advancedOptions = mongoAtlas.advancedOptions
 
 mongoose.connect(uri, advancedOptions, (err) => {
   !err

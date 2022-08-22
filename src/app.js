@@ -27,13 +27,13 @@ app.use(cp());
 app.use(
   session({
     store: mongoStore.create({
-      mongoUrl: "mongodb+srv://ariel:Tita@agzch.gs9x3.mongodb.net/Sessions?retryWrites=true&w=majority",
+      mongoUrl: mongoAtlas.uri,
       mongoOptions: mongoAtlas.advancedOptions,
       ttl: 60,
       retries: 0,
       touchAfter: 3600,
     }),
-    secret: "secret",
+    secret: mongoAtlas.secret,
     resave: true,
     saveUninitialized: true,
     rolling: true,

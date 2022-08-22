@@ -4,18 +4,6 @@ const { Schema } = mongoose;
 const { mongoAtlas } = require("../config");
 const { logger } = require("../utils/logger");
 
-let uri ="mongodb+srv://ariel:Tita@agzch.gs9x3.mongodb.net/Users?retryWrites=true&w=majority"
-
-
-mongoose.connect(uri, {advancedOptions: {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,  
-}}, (err) => {
-  !err
-    ? logger.info("Conectado a la Base de Datos de los Usuarios")
-    : logger.error("No Conectado a la Base de Datos de los usuarios");
-});
-
 const email = Joi.string().required();
 const password = Joi.string().required();
 const nickname = Joi.string().required();
@@ -36,5 +24,22 @@ const UserSchema = new Schema({
   rol,
 });
 
+let uri =
+  "mongodb+srv://ariel:Tita@agzch.gs9x3.mongodb.net/Users?retryWrites=true&w=majority";
+
+mongoose.connect(
+  uri,
+  {
+    advancedOptions: {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
+  },
+  (err) => {
+    !err
+      ? logger.info("Conectado a la Base de Datos de los Usuarios")
+      : logger.error("No Conectado a la Base de Datos de los usuarios");
+  }
+);
 
 module.exports = mongoose.model("Users", UserSchema);

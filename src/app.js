@@ -33,7 +33,7 @@ app.use(
       retries: 0,
       touchAfter: 3600,
     }),
-    secret: mongoAtlas.secret,
+    secret: "secret",
     resave: true,
     saveUninitialized: true,
     rolling: true,

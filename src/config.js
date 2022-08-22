@@ -12,12 +12,12 @@ const mongoDBChat = {
 };
 
 const mongoAtlas = {
-  uri: EV.MONGOATLAS_URI,
+  uri: EV.MONGOURI,
   advancedOptions: {
-    useNewUrlParser: EV.MONGO_OPTIONS_UNUP,
-    useUnifiedTopology: EV.MONGO_OPTIONS_UUT,  
+    useNewUrlParser: true,
+    useUnifiedTopology: true,  
   },
-  secret: EV.MONGOATLAS_SECRET,
+  secret: EV.MONGOSECRET,
 };
 
 const mongooseModel = {

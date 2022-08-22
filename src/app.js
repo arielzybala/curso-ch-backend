@@ -1,5 +1,5 @@
 const NODE_ENV = process.env.NODE_ENV || "development";
-require("dotenv").config({ path: `.env.${NODE_ENV}` });
+require("dotenv").config({ path: `.env.${NODE_ENV}` });//Esto es por si hay que usar un .env.production, en algún momento
 const http = require("http");
 const express = require("express");
 const session = require("express-session");
@@ -8,7 +8,7 @@ const path = require("path");
 const mongoStore = require("connect-mongo");
 const yargs = require("yargs/yargs")(process.argv.slice(2));
 const args = yargs.alias({ p: "PORT", m: "MODO" }).argv;
-const PORT = args.PORT || process.env.PORT || 8080;
+const PORT = args.PORT || process.env.PORT || 8080; //Quedo modificado así por Heroku
 const app = express();
 const server = http.createServer(app);
 const { mongoAtlas } = require("./config");
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname + "/views"));
-
+console.log(mongoAtlas.uri ,  mongoAtlas.advancedOptions)
 app.use(cp());
 app.use(
   session({

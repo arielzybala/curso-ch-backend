@@ -1,15 +1,27 @@
-const checkedLogin = (req, res, next) => {
-    if (!req.isAuthenticated()) {
-      return res.redirect("/");
-    }
-    next();
-  };
+const {logger} = require('../../utils/logger')
 
-  const alreadyLogged = (req, res, next) => {
-    if (req.isAuthenticated()) {
-        res.redirect("/logged")
+const isAuth = (req, res, next) => {
+    if(req.isAuthenticated()){
+        let user = req.user
+        req.session.user = user
+        next()
+    }else{
+        res.redirect("/")
+        logger.info(`Usuario no logueado o registrado`)
     }
-    next();
-  };
-  
-  module.exports = {checkedLogin, alreadyLogged}
+}
+ 
+
+const itsLogged = (req, res, next) => {
+    if(req.isAuthenticated()){
+        let user = req.user
+        req.session.user = user
+        res.redirect("/itsLogged")
+        logger.info(`El Usuario ya esta logueado`)
+    }else{
+        next()
+    }
+}
+
+
+  module.exports = {isAuth, itsLogged}

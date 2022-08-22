@@ -28,6 +28,9 @@ const getFailSignUp = (req, res, next) => {
   res.render("failSignup");
 };
 
+const getItsLogged = (req, res, next) => {
+  res.render("itsLogged", { email: req.user.email });
+};
 //LOGGED//////////////////////////////////////////////////////////////////////////////////////////////
 const getLogged = async (req, res, next) => {
   res.render("logged", { email: req.user.email });
@@ -67,4 +70,5 @@ module.exports = {
   getLogout,
   getControl,
   getLogged,
+  getItsLogged
 };

@@ -4,6 +4,12 @@ const { Schema } = mongoose;
 const { mongoAtlas } = require("../config");
 const { logger } = require("../utils/logger");
 
+mongoose.connect(mongoAtlas.uri, mongoAtlas.advancedOptions, (err) => {
+  !err
+    ? logger.info("Conectado a la Base de Datos de los Usuarios")
+    : logger.error("No Conectado a la Base de Datos de los usuarios");
+});
+
 const email = Joi.string().required();
 const password = Joi.string().required();
 const nickname = Joi.string().required();
@@ -24,10 +30,5 @@ const UserSchema = new Schema({
   rol,
 });
 
-mongoose.connect(mongoAtlas.uri, mongoAtlas.advancedOptions, (err) => {
-  !err
-    ? logger.info("Conectado a la Base de Datos de los Usuarios")
-    : logger.error("No Conectado a la Base de Datos de los usuarios");
-});
 
 module.exports = mongoose.model("Users", UserSchema);

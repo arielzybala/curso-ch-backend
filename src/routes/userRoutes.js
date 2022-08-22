@@ -3,13 +3,14 @@ const { Router } = express;
 const userRouter = new Router();
 const userController = require('../controllers/userControllers');
 const {checkedLogin, alreadyLogged} = require("./middleware/auth");
+const uploader = require("./middleware/multer");
 const passport = require('./middleware/passport');
 
 userRouter.get('/login', alreadyLogged, userController.getLogin)
 userRouter.post('/login', passport.authenticate('login', {failureRedirect: '/failLogin'}),  userController.postLogin)
 
 userRouter.get('/signup',alreadyLogged, userController.getSignup)
-userRouter.post('/signup', passport.authenticate('signup', {failureRedirect: '/failSignup'}),  userController.postSignup)
+userRouter.post('/signup', uploader.single("avatar"), passport.authenticate('signup', {failureRedirect: '/failSignup'}),  userController.postSignup)
 
 userRouter.get('/failLogin', userController.getFailLogin)
 userRouter.get('/failSignup', userController.getFailSignUp);

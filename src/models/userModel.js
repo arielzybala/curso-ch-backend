@@ -10,6 +10,8 @@ const nickname = Joi.string().required();
 const age = Joi.number().required();
 const address = Joi.string().required();
 const phone = Joi.number().min(5).required();
+const avatar = Joi.string().required();
+const rol = Joi.string().required();
 
 const UserSchema = new Schema({
   email,
@@ -18,12 +20,14 @@ const UserSchema = new Schema({
   age,
   address,
   phone,
+  avatar,
+  rol,
 });
 
 mongoose.connect(mongoAtlas.uri, mongoAtlas.advancedOptions, (err) => {
   !err
     ? logger.info("Conectado a la Base de Datos de los Usuarios")
-    : logger.info("No Conectado a la Base de Datos de los usuarios");
+    : logger.error("No Conectado a la Base de Datos de los usuarios");
 });
 
 module.exports = mongoose.model("Users", UserSchema);

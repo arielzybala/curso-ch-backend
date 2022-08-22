@@ -19,6 +19,7 @@ passport.use(
           return done(null, false);
         } else {
           let user = req.body;
+          user.avatar = req.file.filename
           user.password = await hashPassword(password);
           user.rol = "user";
           await Users.create(user);

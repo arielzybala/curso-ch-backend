@@ -1,5 +1,6 @@
-const { asPOJO } = require("../utils/implements");
 const { logger } = require("../utils/logger");
+const { cartDao } = require("../dao/index");
+const { handleEmail } = require("../utils/nodemailer");
 
 //LOGIN//////////////////////////////////////////////////////////////////////////////////////////////
 const getLogin = async (req, res, next) => {
@@ -12,10 +13,23 @@ const postLogin = async (req, res, next) => {
 
 //SIGNUP//////////////////////////////////////////////////////////////////////////////////////////////
 const getSignup = async (req, res, next) => {
-  res.render("signup");
+  const fs = require("fs/promises");
+  const data = fs
+    .readFile("./src/mocks/countryCodes.json", "utf-8")
+    .then((info) => {
+      res.render("signup", { data: JSON.parse(info) });
+    })
+    .catch((error) => {
+      logger.error(
+        `No pude encontrar o leer el archivo con Prefijos internacionales ${error}`
+      );
+    });
 };
 
 const postSignup = async (req, res, next) => {
+  const data = req.user;
+  const message ="Datos del Nuevo Usuario creado"
+  await handleEmail([data.email, data.nickname, data.address, data.phone], process.env.USERNM, message);
   res.render("logged", { email: req.user.email });
 };
 
@@ -50,14 +64,11 @@ const getLogout = async (req, res, next) => {
     }
   });
 };
-//CONTROL//////////////////////////////////////////////////////////////////////////////////////////////
-const getControl = async (req, res, next) => {
-  let dataUser = asPOJO({
-    sessionID: req.sessionID,
-    auth: req.isAuthenticated(),
-    expiration: req.session.cookie.expires,
-  });
-  res.render("control", { mocks: data, dataUser: dataUser });
+//PROFILE//////////////////////////////////////////////////////////////////////////////////////////////
+const getProfile = async (req, res) => {
+  let cart = await cartDao.save();
+  req.session.cart = cart;
+  res.render("profile", { data: req.user });
 };
 
 module.exports = {
@@ -68,7 +79,7 @@ module.exports = {
   getFailLogin,
   getFailSignUp,
   getLogout,
-  getControl,
+  getProfile,
   getLogged,
-  getItsLogged
+  getItsLogged,
 };

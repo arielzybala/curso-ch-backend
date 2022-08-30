@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("template/head") %>
+
+    <body>
+        <%- include("template/headerLogged") %>
+            <div class="container">
+                <div class="container__frame">
+
+                    <h2 class="container__label">
+                        Bienvenido <%= email %>!
+                    </h2>
+                    <a href="/logout" class="container__btn">
+                        Log out
+                    </a>
+
+                </div>
+            </div>
+            <script src="/js/main.js"></script>
+    </body>
+
+</html>

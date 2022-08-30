@@ -1,16 +1,17 @@
+const NODE_ENV = process.env.NODE_ENV || "development";
+require("dotenv").config({ path: `.env.${NODE_ENV}` });//Esto es por si hay que usar un .env.production, en algún momento
 const path = require("path");
 const express = require("express");
 const app = express();
 const productRoutes = require("./routes/products");
 const cartRoutes = require("./routes/cart");
 
-
-//Configuración y formateo de los datos en JSON para salida de datos desde la base de datos
 app.use(express.json());
-//Configuración y formateo de los datos en JSON para el ingreso de datos desde la página web
-app.use(express.urlencoded({ extended: true }));
-//Configuración de ubicación de carpeta Pública
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, "../public")));
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname + "/views"));
 
 //configura las rutas de acceso
 app.use("/api/products", productRoutes);

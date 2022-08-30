@@ -23,7 +23,6 @@ module.exports = class dtoFs {
 
   async save(obj) {
     const objs = await this.listAll();
-
     let newId;
     if (objs.length == 0) {
       newId = 1;
@@ -33,7 +32,6 @@ module.exports = class dtoFs {
 
     const newObj = { ...obj, id: newId };
     objs.push(newObj);
-    console.log()
 
     try {
       await fs.writeFile(this.fileStorage, JSON.stringify(objs, null, 2));

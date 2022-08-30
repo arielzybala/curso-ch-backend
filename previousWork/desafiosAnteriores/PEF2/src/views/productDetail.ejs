@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("template/head") %>
+
+    <body>
+        <div class="hero">
+        </div>
+        <div class="cardProduct">
+            <div class="cardProduct__img">
+                <img id="thumbnailProduct" alt="imagen de producto" src=<%- `${productDetail.thumbnail}`-%>>
+            </div>
+            <div class="cardProduct__frame">
+                <div class="cardProduct__title">
+                    <h3 id="titleProduct"><%-productDetail.title-%></h3>
+                </div>
+                <div class="cardProduct__description">
+                    <p>
+                        <%-productDetail.text-%>
+                    </p>
+                </div>
+                <div class="cardProduct__price">
+                    <p>$
+                        <span id="priceProduct">
+                            <%-productDetail.price-%>
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <button class="cardProduct__btn --back">
+                        <a href="/api/products">volver</a>
+                    </button>
+                    <button class="cardProduct__btn" id=<%-productDetail.id-%>>
+                        Agregar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/detailProduct.js"></script>
+    </body>
+
+</html>

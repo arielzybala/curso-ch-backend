@@ -1,9 +1,14 @@
 const dtoFs = require("../../dto/dtoFs");
 module.exports = class CartDaoFs extends dtoFs {
-    constructor() {
-        super('cart.json')
+  constructor() {
+    super("cart.json");
+  }
+  async save(
+    cart = {
+      productos: { type: Array, required: true },
+      creation: { type: Date, required: false, max: 100 },
     }
-  async save(cart = { products: [] }) {
+  ) {
     return super.save(cart);
   }
 };

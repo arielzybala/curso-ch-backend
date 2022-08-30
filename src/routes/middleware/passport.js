@@ -2,6 +2,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const Users = require("../../models/userModel");
 const { hashPassword, matchPassword } = require("../../utils/implements");
+const { logger } = require("../../utils/logger");
 
 passport.use(
   "signup",
@@ -27,7 +28,7 @@ passport.use(
           return done(null, userData);
         }
       } catch (error) {
-        console.log(error);
+        logger.error({message: error});
       }
     }
   )

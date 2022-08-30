@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("template/head") %>
+
+    <body>
+        <%- include("template/header") %>
+            <div class="container wrap">
+                <div class="container__frame">
+                    <h2 class="container__title">Registrar Usuario</h2>
+                    <form class="container__form" id="formSignup" action="/signup" method="post"
+                        enctype="multipart/form-data">
+                        <!--Nombre de Usuario-->
+                        <label for="nickname" class="container__label">Nombre</label>
+                        <input class="container__input" type="text" name="nickname" id="nickname"
+                            autocomplete="nickname" required>
+                        <!--Dirección-->
+                        <label for="address" class="container__label">Domicilio</label>
+                        <input class="container__input" type="text" name="address" id="address"
+                            autocomplete="address-level1" required>
+                        <!--Edad-->
+                        <label for="age" class="container__label">Edad</label>
+                        <input class="container__input" type="number" name="age" id="age" max="100" min="18" value="18"
+                            required>
+                        <!--Teléfono-->
+                        <label for="phone" class="container__label">Teléfono</label>
+                        <input class="container__input" type="tel" name="phone" id="phone" pattern="[0-9]{11}"
+                            title="Ej: 01151119999" autocomplete="tel-local-suffix" required>
+                        <!--Correo-->
+                        <label for="email" class="container__label">Ingrese su Correo</label>
+                        <input class="container__input" id="email" type="text" name="email" required
+                            autocomplete="email">
+                        <!--Imagen-->
+                        <label for="avatar" class="container__label">Avatar de Usuario</label>
+                        <input class="container__input" type="file" name="avatar" id="avatar">
+                        <!--Pass-->
+                        <label for="password" class="container__label">Ingrese su Contraseña</label>
+                        <input class="container__input" id="password" type="password" name="password" required
+                            autocomplete="current-password">
+                        <!--SUBMIT-->
+                        <input class="container__btn" type="submit" value="Enviar">
+                    </form>
+                </div>
+                <br>
+                <div class="container">
+                    <div class="container__frame">
+                        <h2 class="container__subtitle"> Para Iniciar sesión:</h2>
+                        <a href="/login" class="container__btn">
+                            Login
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero">
+            </div>
+            <script src="/js/main.js"></script>
+    </body>
+
+</html>

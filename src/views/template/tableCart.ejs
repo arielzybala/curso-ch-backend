@@ -1,0 +1,30 @@
+<div class="container" id="cart">
+    <div class="container__frame">
+        <table>
+            <caption class="container__title">
+                PRODUCTOS SELECCIONADOS 
+            </caption>
+            <tbody>
+                <tr class="container__tableRow">
+                    <th class="container__tableHead">Imagen</th>
+                    <th class="container__tableHead">Nombre</th>
+                    <th class="container__tableHead">Precio</th>
+                </tr>
+                <% cart.forEach((products)=>{ %>
+                    <tr class="container__tableRow">
+                        <td class="container__tableData container__tableData-lastData" data-label="Vista Previa:">
+                            <img class="container__img" alt="Producto de Electrónica" src="../../media/products/<%-products.thumbnail%>"
+                        </td>
+                        <td class="container__tableData" data-label="Nombre:">
+                            <%= products.title %>
+                        </td>
+                        <td class="container__tableData" data-label="Precio">
+                            <%= products.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <a class="container__btn" href="/api/products/">Agregar nuevo Producto</a>
+</div>

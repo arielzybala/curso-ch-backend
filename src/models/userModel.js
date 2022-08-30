@@ -9,9 +9,12 @@ const password = Joi.string().required();
 const nickname = Joi.string().required();
 const age = Joi.number().required();
 const address = Joi.string().required();
+const codesCountry = Joi.required();
 const phone = Joi.number().min(5).required();
 const avatar = Joi.string().required();
 const rol = Joi.string().required();
+
+
 
 const UserSchema = new Schema({
   email,
@@ -19,6 +22,7 @@ const UserSchema = new Schema({
   nickname,
   age,
   address,
+  codesCountry,
   phone,
   avatar,
   rol,

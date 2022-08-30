@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("template/headProducts") %>
+
+    <body>
+        <%- include("template/headerProducts") %>
+        <%- include("template/tableCart") %>
+        <div class="container center">
+            <div class="container__frame">
+                <h5 class="container__title" id="totalToPay">Total a Pagar: $ <%- total %></h5>
+            </div>
+            <a class="container__btn orderToBuy" id=`id`>Finalizar Compra</a>
+        </div>
+    </body>
+    <script src="/js/main.js"></script>
+    <script src="/js/orderToBuy.js"></script>
+</html>

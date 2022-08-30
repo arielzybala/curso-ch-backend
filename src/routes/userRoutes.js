@@ -21,7 +21,7 @@ userRouter.post(
   "/signup",
   uploader.single("avatar"),
   passport.authenticate("signup", {
-    successRedirect: "/logged",
+    successRedirect: "/joined",
     failureRedirect: "/failSignup",
   }),
   userController.postSignup
@@ -30,11 +30,12 @@ userRouter.post(
 userRouter.get("/failLogin", userController.getFailLogin);
 userRouter.get("/failSignup", userController.getFailSignUp);
 
-userRouter.get("/control", isAuth, userController.getControl);
+userRouter.get("/profile", isAuth, userController.getProfile);
 
 userRouter.get("/itsLogged", userController.getItsLogged);
 
 userRouter.get("/logged", isAuth, userController.getLogged);
+userRouter.get("/joined", isAuth, userController.postSignup);
 
 userRouter.get("/logout", isAuth, userController.getLogout);
 

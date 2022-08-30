@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("template/head") %>
+
+  <body>
+    <%- include("template/headerLogged") %>
+    <div class="container wrap">
+      <div class="cardProfile">
+        <div class="cardProfile__main">
+          <img class="cardProfile__frame" src="./uploads/<%-data.avatar%>" />
+          <p>Rol de Usuario: <span> <%- data.rol %> </span></p>
+          <h3><%- data.nickname %></h3>
+          <p>E-mail: <span> <%- data.email %> </span></p>
+          <p>Edad: <span> <%- data.age %> </span></p>
+          <p>Teléfono: <span> <%- data.phone %> </span></p>
+          <p>Domicilio: <span> <%- data.address %> </span></p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <a class="container__btn" href="/api/products/">Agregar nuevo Producto</a>
+    </div>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

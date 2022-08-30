@@ -28,7 +28,6 @@ const createOrder = async(req, res, next)=>{
   const totalToPay = req.session.totalAmount
   const user = req.session.user
   const phone = ((user.codesCountry + user.phone).toString())
-  
   const products = cart.products
   products.map((e) => delete e.id && delete e.thumbnail)
   products.push(`Total a Pagar: $ ${totalToPay}`)

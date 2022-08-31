@@ -4,7 +4,6 @@ const { logger } = require("./logger");
 module.exports.handleEmail = async (data, addressee, message) => {
   data = `${message}: ${JSON.stringify(data)}`;
   addressee = JSON.stringify(addressee);
-  console.log(addressee)
   const transport = nodemailer.createTransport({
     service: "gmail",
     port: 587,

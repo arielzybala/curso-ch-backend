@@ -1,7 +1,6 @@
 const { logger } = require("../utils/logger");
-const { cartDao } = require("../dao/index");
 const { handleEmail } = require("../utils/nodemailer");
-
+const Users = require("../models/userModel");
 //LOGIN//////////////////////////////////////////////////////////////////////////////////////////////
 const getLogin = async (req, res, next) => {
   res.render("login");
@@ -27,7 +26,7 @@ const getSignup = async (req, res, next) => {
 };
 
 const postSignup = async (req, res, next) => {
-  const data = req.user;
+  const data = await Users.findById(req.user.id).lean()
   const message ="Datos del Nuevo Usuario creado"
   await handleEmail([data.email, data.nickname, data.address, data.phone], process.env.USERNM, message);
   res.render("logged", { email: req.user.email });
@@ -66,9 +65,8 @@ const getLogout = async (req, res, next) => {
 };
 //PROFILE//////////////////////////////////////////////////////////////////////////////////////////////
 const getProfile = async (req, res) => {
-  let cart = await cartDao.save();
-  req.session.cart = cart;
-  res.render("profile", { data: req.user });
+  const user = await Users.findById(req.user.id).lean()
+  res.render("profile", { data: user });
 };
 
 module.exports = {

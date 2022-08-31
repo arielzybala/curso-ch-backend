@@ -15,6 +15,6 @@ function createOrder (e) {
         body: JSON.stringify(data)
       };
     
-
+      alert("Ha realizado la compra")
     return fetch(`/api/cart/${e.target.id}/sendOrder`, options);
 }

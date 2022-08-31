@@ -2,10 +2,11 @@ const express = require("express");
 const { Router } = express;
 const controller = require("../controllers/productsControllers");
 const {userRole} = require("./middleware/role");
+const {haveCartAlredy} = require("./middleware/checkCart");
 
 const productRouter = new Router();
 
-productRouter.get("/", userRole, controller.getAllProducts)
+productRouter.get("/", userRole, haveCartAlredy, controller.getAllProducts)
 
 productRouter.get("/:id/", userRole, controller.getProductDetail)
 

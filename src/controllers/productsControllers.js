@@ -2,7 +2,7 @@ const {productsDao} = require("../dao/index");
 const { asPOJO } = require("../utils/implements");
 
 
-//Ruta para buscar todos los productos puestos como stock de la tienda es: http://localhost:8080/api/products/  
+ 
 const getAllProducts = async (req, res, next) => {
     const data = await productsDao.listAll()
     res.render("products", {products: data})

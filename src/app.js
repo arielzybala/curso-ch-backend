@@ -7,10 +7,13 @@ const cp = require("cookie-parser");
 const cors = require("cors")
 const mongoStore = require("connect-mongo");
 const http = require("http");
+const cluster = require('cluster')
+const {cpus} = require('os')
 const yargs = require("yargs/yargs")(process.argv.slice(2));
-const args = yargs.alias({ p: "PORT", m: "MODO" }).argv;
+const args = yargs.alias({ p: "PORT" }).argv;
 const PORT = args.PORT || process.env.PORT || 8080; //Quedo modificado así por Heroku
 const app = express();
+const numCPUS = cpus().length;
 const server = http.createServer(app);
 const { mongoAtlas } = require("./config");
 const routerMain = require("./routes/mainRoutes");
@@ -18,6 +21,7 @@ const routerUser = require("./routes/userRoutes");
 const routerCart = require("./routes/cartRoutes");
 const routerProducts = require("./routes/productsRoutes");
 const passport = require("./routes/middleware/passport");
+const { logger } = require("./utils/logger");
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -55,8 +59,27 @@ app.use("/api/cart", routerCart);
 app.use("/api/products", routerProducts)
 
 
-server.listen(PORT, (err) => {
-  !err
-    ? console.log(`Server iniciado [${PORT}]`)
-    : console.log("Server NOT RUN");
-});
+if(process.env.SERVERMODE == "FORK"){
+  server.listen(PORT, (err) => {
+    !err
+      ? logger.info(`Server iniciado en modo:[${process.env.SERVERMODE}] con id de Proceso [${process.pid}] en puesto [${PORT}]`)
+      : logger.error(`Server no funciona por error:[${err}`);
+  });
+} else {
+  if(cluster.isMaster){
+    for (let i = 0; i < numCPUS; i++) {
+        cluster.fork()
+    }
+    cluster.on('exit', (worker,code,signal)=>{
+        logger.info(`worker con id de proceso ${worker.process.pid} eliminado`)
+        //para mantener una cantidad de cluster activos acá se puede poner un
+        cluster.fork()
+        // sino al eliminar el último cluster las request al sitio por parte del cliente no tendran un cpu que lo procese
+    })
+} else if(process.env.SERVERMODE == "CLUSTER") {
+  server.listen(PORT, (err) => { 
+    !err
+      ? logger.info(`Server iniciado en modo:[${process.env.SERVERMODE}] con id de Proceso [${process.pid}] en puesto [${PORT}]`)
+      : logger.error(`Server no funciona por error:[${err}`);
+  });
+    }}

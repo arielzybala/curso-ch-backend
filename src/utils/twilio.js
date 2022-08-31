@@ -5,7 +5,7 @@ const { logger } = require("./logger");
 const sendMessage = async (receptor, dataFromCart) => {
   const phoneUser = `whatsapp:${receptor}`;
   const orderToBy = `${JSON.stringify(dataFromCart)}`;
-
+try{
   client.messages
     .create({
       body: orderToBy,
@@ -13,7 +13,8 @@ const sendMessage = async (receptor, dataFromCart) => {
       to: phoneUser,
     })
     .then((message) => logger.info(message.sid))
-    .done();
+    .done()
+}catch{((error)=> logger.info(`No pudo enviar el mensaje ${error}`))}
 };
 
 module.exports = sendMessage;

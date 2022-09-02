@@ -13,9 +13,9 @@ module.exports.handleEmail = async (data, addressee, message) => {
     },
   });
   //el pas queda de variable de entorno
-  const matter = "Nuevo Usuario Creado"; // Variables innecesarias
-  const content = data; // Variables innecesarias
-  const receptor = addressee; // Variables innecesarias
+  const matter = "HardwareBuls tiene un mensaje para ti"; 
+  const content = data; 
+  const receptor = addressee; 
 
   let opciones = {
     from: `HardwareBulls <${process.env.USERNM}>`,

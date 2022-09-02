@@ -1,0 +1,212 @@
+Statistical profiling result from test2-cluster9364.log, (18804 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+  17951   95.5%          C:\WINDOWS\SYSTEM32\ntdll.dll
+    819    4.4%          C:\Program Files\nodejs\node.exe
+      2    0.0%          C:\WINDOWS\System32\WS2_32.dll
+      1    0.0%          C:\WINDOWS\System32\KERNEL32.DLL
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      2    0.0%    6.5%  LazyCompile: *resolve node:path:158:10
+      2    0.0%    6.5%  LazyCompile: *deserializeObject C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\deserializer.js:65:27
+      1    0.0%    3.2%  RegExp: _%>[ \t]*
+      1    0.0%    3.2%  LazyCompile: *write node:buffer:593:12
+      1    0.0%    3.2%  LazyCompile: *toNamespacedPath node:path:618:19
+      1    0.0%    3.2%  LazyCompile: *slice node:buffer:594:12
+      1    0.0%    3.2%  LazyCompile: *serializeInto C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\serializer.js:553:23
+      1    0.0%    3.2%  LazyCompile: *readableAddChunk node:internal/streams/readable:236:26
+      1    0.0%    3.2%  LazyCompile: *getEncodingOps node:buffer:679:24
+      1    0.0%    3.2%  LazyCompile: *emit node:events:475:44
+      1    0.0%    3.2%  LazyCompile: *_copy node:buffer:201:15
+      1    0.0%    3.2%  Function: ^serializeNumber C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\serializer.js:44:25
+      1    0.0%    3.2%  Function: ^serializeInto C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\serializer.js:553:23
+      1    0.0%    3.2%  Function: ^processWaitQueue C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\cmap\connection_pool.js:406:21
+      1    0.0%    3.2%  Function: ^onceWrapper node:events:636:21
+      1    0.0%    3.2%  Function: ^onStreamRead node:internal/stream_base_commons:167:22
+      1    0.0%    3.2%  Function: ^measureRoundTripTime C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sdam\monitor.js:288:30
+      1    0.0%    3.2%  Function: ^listOnTimeout node:internal/timers:507:25
+      1    0.0%    3.2%  Function: ^isAbsolute node:path:402:13
+      1    0.0%    3.2%  Function: ^fromString C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\utils.js:370:22
+      1    0.0%    3.2%  Function: ^finishMaybe node:internal/streams/writable:731:21
+      1    0.0%    3.2%  Function: ^emitBeforeScript node:internal/async_hooks:510:26
+      1    0.0%    3.2%  Function: ^basename node:path:749:11
+      1    0.0%    3.2%  Function: ^_copy node:buffer:201:15
+      1    0.0%    3.2%  Function: ^Accepts.encoding.Accepts.encodings C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\accepts\index.js:127:40
+      1    0.0%    3.2%  Function: ^<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\utils.js:357:13
+      1    0.0%    3.2%  Function: ^<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sdam\monitor.js:304:58
+      1    0.0%    3.2%  Function: ^<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\cursor\find_cursor.js:54:79
+      1    0.0%    3.2%  Function: ^<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\cors\lib\index.js:204:37
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+     31    0.2%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+     23    0.1%   74.2%  GC
+  18773   99.8%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  17951   95.5%  C:\WINDOWS\SYSTEM32\ntdll.dll
+
+    819    4.4%  C:\Program Files\nodejs\node.exe
+    508   62.0%    C:\Program Files\nodejs\node.exe
+    111   21.9%      Function: ^compileFunction node:vm:308:25
+    109   98.2%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+    109  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+    106   97.2%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      3    2.8%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      2    1.8%        LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      2  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      2  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     24    4.7%      Function: ^handleWriteReq node:internal/stream_base_commons:45:24
+     12   50.0%        LazyCompile: *writeOrBuffer node:internal/streams/writable:365:23
+      9   75.0%          LazyCompile: *_write node:internal/streams/writable:283:16
+      9  100.0%            Function: ^Writable.write node:internal/streams/writable:333:36
+      3   25.0%          Function: ^_write node:internal/streams/writable:283:16
+      3  100.0%            Function: ^Writable.write node:internal/streams/writable:333:36
+     12   50.0%        Function: ^writeGeneric node:internal/stream_base_commons:147:22
+     12  100.0%          Function: ^Socket._writeGeneric node:net:791:42
+     12  100.0%            Function: ^Socket._write node:net:828:35
+     21    4.1%      C:\Program Files\nodejs\node.exe
+      4   19.0%        Function: ^databaseNamespace C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\utils.js:431:27
+      4  100.0%          Function: ^Msg C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\cmap\commands.js:317:16
+      4  100.0%            Function: ^command C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\cmap\connection.js:251:12
+      3   14.3%        Function: ^fromString C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\utils.js:316:22
+      3  100.0%          Function: ^ns C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\utils.js:294:12
+      2   66.7%            Function: ^measureRoundTripTime C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sdam\monitor.js:288:30
+      1   33.3%            LazyCompile: ~measureRoundTripTime C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sdam\monitor.js:288:30
+      2    9.5%        Function: ^hash C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express-session\index.js:596:14
+      1   50.0%          Function: ^save C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express-session\index.js:403:20
+      1  100.0%            Function: ^end C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express-session\index.js:250:27
+      1   50.0%          Function: ^inflate C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express-session\index.js:371:22
+      1  100.0%            Function: ^<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express-session\index.js:485:38
+      2    9.5%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2    9.5%        C:\Program Files\nodejs\node.exe
+      2  100.0%          Function: ^hash C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express-session\index.js:596:14
+      2  100.0%            Function: ^inflate C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express-session\index.js:371:22
+      1    4.8%        LazyCompile: ~parseOptions C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\connection_string.js:204:22
+      1  100.0%          LazyCompile: ~MongoClient C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\mongo_client.js:62:16
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\lib\connection.js:798:31
+      1    4.8%        LazyCompile: *scanLine C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\ejs\lib\ejs.js:815:22
+      1  100.0%          Function: ^<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\ejs\lib\ejs.js:742:32
+      1  100.0%            C:\Program Files\nodejs\node.exe
+      1    4.8%        LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      1    4.8%        Function: ^fromString C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\utils.js:370:22
+      1  100.0%          Function: ^ns C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\utils.js:348:12
+      1  100.0%            Function: ^measureRoundTripTime C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\sdam\monitor.js:287:30
+      1    4.8%        Function: ^clone C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sessions.js:563:17
+      1  100.0%          Function: ^completeEndSession C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sessions.js:138:40
+      1  100.0%            Function: ^<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sessions.js:133:52
+      1    4.8%        Function: ^checkInvalidHeaderChar node:_http_common:232:32
+      1  100.0%          Function: ^<anonymous> node:_http_outgoing:564:45
+      1  100.0%            Function: ^setHeader node:_http_outgoing:574:57
+      1    4.8%        Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%          Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1  100.0%            Function: ^require node:internal/modules/cjs/helpers:101:31
+      1    4.8%        Function: ^<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\ejs\lib\ejs.js:742:32
+      1  100.0%          C:\Program Files\nodejs\node.exe
+      1  100.0%            Function: ^generateSource C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\ejs\lib\ejs.js:721:28
+     17    3.3%      Function: ^stat node:internal/modules/cjs/loader:151:14
+      9   52.9%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      9  100.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      9  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      7   41.2%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      6   85.7%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      6  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   14.3%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    5.9%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+     16    3.1%      Function: ^realpathSync node:fs:2425:22
+     16  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+     15   93.8%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+     11   73.3%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      3   20.0%            Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1    6.7%            LazyCompile: ~finalizeEsmResolution node:internal/modules/cjs/loader:939:31
+      1    6.3%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     15    3.0%      Function: ^existsSync node:fs:290:20
+     15  100.0%        Function: ^getIncludePath C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\ejs\lib\ejs.js:156:24
+     15  100.0%          Function: ^includeFile C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\ejs\lib\ejs.js:309:21
+     15  100.0%            Function: ^include C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\ejs\lib\ejs.js:696:30
+     12    2.4%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     10   83.3%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1   10.0%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      1  100.0%            LazyCompile: ~get node:crypto:287:8
+      1   10.0%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:477:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1   10.0%          Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   10.0%          Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   10.0%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   10.0%          Function: ~<anonymous> node:internal/blocklist:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   10.0%          Function: ~<anonymous> node:crypto:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   10.0%          Function: ~<anonymous> node:cluster:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   10.0%          Function: ~<anonymous> node:_tls_wrap:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   10.0%          Function: ~<anonymous> node:_http_client:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2   16.7%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      2  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     11    2.2%      LazyCompile: *deserializeObject C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\deserializer.js:65:27
+      6   54.5%        LazyCompile: *deserializeObject C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\deserializer.js:65:27
+      4   66.7%          Function: ^deserialize C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\deserializer.js:36:21
+      4  100.0%            Function: ^deserialize C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\bson.js:161:21
+      2   33.3%          LazyCompile: *deserializeObject C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\deserializer.js:65:27
+      1   50.0%            LazyCompile: *deserializeObject C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\deserializer.js:65:27
+      1   50.0%            Function: ^deserialize C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\deserializer.js:36:21
+      5   45.5%        Function: ^deserialize C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\deserializer.js:36:21
+      5  100.0%          Function: ^deserialize C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\bson.js:161:21
+      3   60.0%            Function: ^parse C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\cmap\commands.js:426:10
+      2   40.0%            Function: ^parse C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\cmap\commands.js:426:10
+      9    1.8%      Function: ^statSync node:fs:1543:18
+      9  100.0%        Function: ^tryStat C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express\lib\view.js:174:17
+      9  100.0%          Function: ^resolve C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express\lib\view.js:146:42
+      9  100.0%            Function: ^lookup C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express\lib\view.js:104:40
+      8    1.6%      Function: ^openSync node:fs:576:18
+      8  100.0%        Function: ^readFileSync node:fs:450:22
+      6   75.0%          Function: ^fileLoader C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\ejs\lib\ejs.js:292:20
+      6  100.0%            Function: ^handleCache C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\ejs\lib\ejs.js:210:21
+      2   25.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      2  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      7    1.4%      Function: ^update node:internal/crypto/hash:95:40
+      5   71.4%        Function: ^entitytag C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\etag\index.js:39:20
+      5  100.0%          Function: ^etag C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\etag\index.js:70:15
+      5  100.0%            Function: ^generateETag C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express\lib\utils.js:273:32
+      1   14.3%        Function: ^exports.sign C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\cookie-signature\index.js:16:24
+      1  100.0%          Function: ^setcookie C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express-session\index.js:655:19
+      1  100.0%            Function: ^<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\express-session\index.js:220:28
+      1   14.3%        Function: ^HMAC C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\cmap\auth\scram.js:225:14
+      1  100.0%          LazyCompile: ~continueScramConversation C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\cmap\auth\scram.js:93:35
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\cmap\auth\scram.js:85:80
+      6    1.2%      Function: ^read node:internal/modules/package_json_reader:16:14
+      5   83.3%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      4   80.0%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      4  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1   20.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1   16.7%        LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+

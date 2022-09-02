@@ -1,0 +1,151 @@
+Statistical profiling result from test2-cluster4132.log, (18705 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+  18273   97.7%          C:\WINDOWS\SYSTEM32\ntdll.dll
+    416    2.2%          C:\Program Files\nodejs\node.exe
+      1    0.0%          C:\WINDOWS\System32\KERNELBASE.dll
+      1    0.0%          C:\WINDOWS\System32\KERNEL32.DLL
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      3    0.0%   21.4%  Function: ^processTimers node:internal/timers:487:25
+      2    0.0%   14.3%  Function: ^emit node:events:475:44
+      1    0.0%    7.1%  LazyCompile: *Long C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\long.js:59:18
+      1    0.0%    7.1%  Function: ^serializeLong C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\serializer.js:302:23
+      1    0.0%    7.1%  Function: ^pushAsyncContext node:internal/async_hooks:540:26
+      1    0.0%    7.1%  Function: ^peek node:internal/priority_queue:45:7
+      1    0.0%    7.1%  Function: ^deserializeObject C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\bson\lib\parser\deserializer.js:65:27
+      1    0.0%    7.1%  Function: ^command C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\cmap\connection.js:251:12
+      1    0.0%    7.1%  Function: ^_write node:internal/streams/writable:283:16
+      1    0.0%    7.1%  Function: ^MongoDBNamespace C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\utils.js:360:16
+      1    0.0%    7.1%  Function: ^<anonymous> node:internal/validators:168:39
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+     14    0.1%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+      7    0.0%   50.0%  GC
+  18691   99.9%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  18273   97.7%  C:\WINDOWS\SYSTEM32\ntdll.dll
+
+    416    2.2%  C:\Program Files\nodejs\node.exe
+    307   73.8%    C:\Program Files\nodejs\node.exe
+    108   35.2%      Function: ^compileFunction node:vm:308:25
+    108  100.0%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+    107   99.1%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+    105   98.1%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      2    1.9%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     24    7.8%      Function: ^stat node:internal/modules/cjs/loader:151:14
+     13   54.2%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+     12   92.3%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     12  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    7.7%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     11   45.8%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+     10   90.9%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+     10  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    9.1%          LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     20    6.5%      C:\Program Files\nodejs\node.exe
+      4   20.0%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      4  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      3   75.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   25.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      3   15.0%        Function: ^databaseNamespace C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\utils.js:377:27
+      3  100.0%          Function: ^Msg C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\cmap\commands.js:317:16
+      3  100.0%            Function: ^command C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\cmap\connection.js:251:12
+      2   10.0%        Function: ^fromString C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\utils.js:316:22
+      2  100.0%          Function: ^ns C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\utils.js:294:12
+      2  100.0%            Function: ^measureRoundTripTime C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sdam\monitor.js:288:30
+      1    5.0%        LazyCompile: ~updateRsNoPrimaryFromMember C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sdam\topology_description.js:315:37
+      1  100.0%          LazyCompile: ~update C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sdam\topology_description.js:131:11
+      1  100.0%            LazyCompile: ~serverUpdateHandler C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sdam\topology.js:321:24
+      1    5.0%        LazyCompile: ~isIPv6 node:internal/net:35:16
+      1  100.0%          LazyCompile: ~isIP node:internal/net:39:14
+      1  100.0%            LazyCompile: ~lookupAndConnect node:net:1017:26
+      1    5.0%        LazyCompile: ~isBad node:tls:189:17
+      1  100.0%          C:\Program Files\nodejs\node.exe
+      1  100.0%            LazyCompile: ~check node:tls:171:15
+      1    5.0%        LazyCompile: ~checkServer C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\sdam\monitor.js:143:21
+      1  100.0%          LazyCompile: ~<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\sdam\monitor.js:229:12
+      1  100.0%            LazyCompile: ~executeAndReschedule C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\utils.js:703:34
+      1    5.0%        LazyCompile: ~_assign C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\joi\lib\base.js:778:12
+      1  100.0%          LazyCompile: ~exports.type C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\joi\lib\extend.js:13:25
+      1  100.0%            LazyCompile: ~extend C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\joi\lib\base.js:447:11
+      1    5.0%        LazyCompile: ~MongoStore C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\connect-mongo\build\main\lib\MongoStore.js:75:16
+      1  100.0%          LazyCompile: ~create C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\connect-mongo\build\main\lib\MongoStore.js:135:18
+      1  100.0%            Function: ~<anonymous> C:\Users\Ari\Documents\repobackend\curso-ch-backend\src\app.js:1:1
+      1    5.0%        LazyCompile: ~HostAddress C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\utils.js:880:16
+      1  100.0%          LazyCompile: ~fromString C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\utils.js:931:22
+      1  100.0%            LazyCompile: ~get hostAddress C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongodb\lib\sdam\server_description.js:65:20
+      1    5.0%        Function: ^realpathSync node:fs:2425:22
+      1  100.0%          Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%            Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1    5.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    5.0%        Function: ^fromString C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\utils.js:370:22
+      1  100.0%          Function: ^ns C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\utils.js:348:12
+      1  100.0%            Function: ^measureRoundTripTime C:\Users\Ari\Documents\repobackend\curso-ch-backend\node_modules\mongoose\node_modules\mongodb\lib\sdam\monitor.js:287:30
+      1    5.0%        Function: ^FastBuffer node:internal/buffer:958:14
+      1  100.0%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1  100.0%            Function: ^createPool node:buffer:151:20
+     16    5.2%      Function: ^realpathSync node:fs:2425:22
+     16  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+     14   87.5%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+     13   92.9%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1    7.1%            Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      2   12.5%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     13    4.2%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      8   61.5%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2   25.0%          Function: ~<anonymous> node:crypto:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   12.5%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:477:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1   12.5%          LazyCompile: ~get BlockList node:net:1826:16
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1   12.5%          Function: ~<anonymous> node:tty:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   12.5%          Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   12.5%          Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   12.5%          Function: ~<anonymous> node:_http_client:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5   38.5%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      5  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      5  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     10    3.3%      Function: ^openSync node:fs:576:18
+     10  100.0%        Function: ^readFileSync node:fs:450:22
+     10  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      9   90.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1   10.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      6    2.0%      Function: ^read node:internal/modules/package_json_reader:16:14
+      5   83.3%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      3   60.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      3  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      2   40.0%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      2  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1   16.7%        LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      5    1.2%    Function: ^pushAsyncContext node:internal/async_hooks:540:26
+      5  100.0%      Function: ^emitBeforeScript node:internal/async_hooks:510:26
+      5  100.0%        Function: ^listOnTimeout node:internal/timers:507:25
+      5  100.0%          Function: ^processTimers node:internal/timers:487:25
+

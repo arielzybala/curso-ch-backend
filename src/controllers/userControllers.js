@@ -1,35 +1,45 @@
 const { logger } = require("../utils/logger");
 const { handleEmail } = require("../utils/nodemailer");
-const Users = require("../models/userModel");
+//const Users = require("../models/userModel");
+const { usersDao } = require("../dao/index");
+const { generateJwt } = require("../utils/handleJWT");
+const phoneCodes = require("../utils/countryCodes");
 //LOGIN//////////////////////////////////////////////////////////////////////////////////////////////
 const getLogin = async (req, res, next) => {
   res.render("login");
 };
 
-const postLogin = async (req, res, next) => {
-  res.render("logged", { email: req.user.email });
-};
+/**
+ * 
+ const postLogin = async (req, res, next) => {
+   res.render("logged", { email: req.user.email });
+  };
+*/
+const postLogin = async (req, res, next) => {};
 
 //SIGNUP//////////////////////////////////////////////////////////////////////////////////////////////
 const getSignup = async (req, res, next) => {
-  const fs = require("fs/promises");
-  const data = fs
-    .readFile("./src/mocks/countryCodes.json", "utf-8")
-    .then((info) => {
-      res.render("signup", { data: JSON.parse(info) });
-    })
-    .catch((error) => {
-      logger.error(
-        `No pude encontrar o leer el archivo con Prefijos internacionales ${error}`
-      );
-    });
+  const data = await phoneCodes();
+  res.render("signup", { data: data });
 };
+/**
+ *  
+ const postSignup = async (req, res, next) => {
+   console.log(req.header('jwt-token'))
+   const data = await usersDao.listById(req.user.id);
+  const token = await generateJwt(req.user.id)
+  const message = "Datos del Nuevo Usuario creado";
+  await handleEmail(
+    [data.email, data.nickname, data.address, data.phone],
+    process.env.USERNM,
+    message
+  );
+  res.header('jwt-token', token).render("logged", { email: req.user.email });
+};
+*/
 
 const postSignup = async (req, res, next) => {
-  const data = await Users.findById(req.user.id).lean()
-  const message ="Datos del Nuevo Usuario creado"
-  await handleEmail([data.email, data.nickname, data.address, data.phone], process.env.USERNM, message);
-  res.render("logged", { email: req.user.email });
+  res.json(req.user);
 };
 
 //FAILURES////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,7 +48,7 @@ const getFailLogin = (req, res, next) => {
 };
 
 const getFailSignUp = (req, res, next) => {
-  res.render("failSignup");
+
 };
 
 const getItsLogged = (req, res, next) => {
@@ -65,7 +75,7 @@ const getLogout = async (req, res, next) => {
 };
 //PROFILE//////////////////////////////////////////////////////////////////////////////////////////////
 const getProfile = async (req, res) => {
-  const user = await Users.findById(req.user.id).lean()
+  const user = await usersDao.findById(req.user.id);
   res.render("profile", { data: user });
 };
 

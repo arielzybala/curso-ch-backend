@@ -1,15 +1,14 @@
-const fs = require('fs/promises')
+const fs = require("fs/promises");
 const { logger } = require("./logger");
 
-module.exports.phoneCodes = async () =>{
+const phoneCodes = async () => {
+  try {
+    const data = await fs.readFile("./src/mocks/countryCodes.json", "utf-8");
+    return JSON.parse(data);
+  } catch (error) {
+    logger.error(`Error al leer el archivo: ${error}`);
+    return [];
+  }
+};
 
-    fs.readFile('./src/mocks/countryCodes.json', 'utf-8')
-    .then(info => {
-        return info
-    })
-    .catch(error => {
-        logger.error(`No pude encontrar o leer el archivo con Prefijos internacionales ${error}`)
-    })
-    
-}
-
+module.exports = phoneCodes;

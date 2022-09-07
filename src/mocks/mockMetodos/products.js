@@ -1,5 +1,5 @@
 const express = require("express");
-const { booleanVar } = require("../middleware/auth");
+const { booleanVar } = require("../../routes/middleware/auth");
 const {productsDao} = require("../../dao/index")
 const { Router } = express;
 let router = new Router();

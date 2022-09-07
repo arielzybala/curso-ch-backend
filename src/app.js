@@ -32,27 +32,41 @@ app.use(cors());
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname + "/views"));
-
 app.use(cp());
-app.use(
-  session({
-    store: mongoStore.create({
-      mongoUrl: mongoAtlas.uri,
-      mongoOptions: mongoAtlas.advancedOptions,
-      ttl: 60,
-      retries: 0,
-      touchAfter: 24 * 3600, //con esto la sesión dura 24hs
-    }),
-    secret: mongoAtlas.secret,
-    resave: true,
-    saveUninitialized: true,
-    rolling: true,
-    cookie: {
-      maxAge: 1000 * 60 * 60,
-      httpOnly: true,
-    },
-  })
-);
+app.use(session({
+  secret: 'ValorSecreto',
+  cookie:{
+      httpOnly: false,
+      secure: true,
+      maxAge: 60000
+  },
+  rolling: true,
+  resave: true,
+  saveUninitialized: false
+}))
+
+/**
+ * 
+ app.use(
+   session({
+     store: mongoStore.create({
+       mongoUrl: mongoAtlas.uri,
+       mongoOptions: mongoAtlas.advancedOptions,
+       ttl: 60,
+       retries: 0,
+       touchAfter: 24 * 3600, //con esto la sesión dura 24hs
+      }),
+      secret: mongoAtlas.secret,
+      resave: true,
+      saveUninitialized: true,
+      rolling: true,
+      cookie: {
+        maxAge: 1000 * 60 * 60,
+        httpOnly: true,
+      },
+    })
+    );
+    */
 
 app.use(passport.initialize());
 app.use(passport.session());

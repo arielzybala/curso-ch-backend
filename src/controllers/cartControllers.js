@@ -1,4 +1,4 @@
-const Users = require("../models/userModel");
+const {usersDao} = require("../dao/index");
 const { productsDao, cartDao } = require("../dao/index");
 const {handleEmail} = require("../utils/nodemailer");
 const orderAmount = require("../utils/orderAmount");
@@ -26,7 +26,7 @@ const deleteCart = async (req, res, next) => {
 const createOrder = async(req, res, next)=>{
   const cart = await cartDao.listById(req.session.cart.id);
   const totalToPay = req.session.totalAmount
-  const user = await Users.findById(req.user.id).lean()
+  const user = await usersDao.listById(req.user.id)
   const phone = ((user.codesCountry + user.phone).toString())
   const products = cart.products
   products.map((e) => delete e.id && delete e.thumbnail)

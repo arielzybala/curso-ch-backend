@@ -1,19 +1,19 @@
 const PERSISTENCE = process.env.PERSISTENCE || "";
-let MessagesDao;
+let messagesDao;
 
 switch (PERSISTENCE) {
   case "mongo":
     const MessagesDaoMongo = require("./messages/messagesMongo");
-    MessagesDao = new MessagesDaoMongo();
+    messagesDao = new MessagesDaoMongo();
     break;
   case "firebase":
     const MessagesDaoFirestore = require("./messages/messagesFirestore");
-    MessagesDao = new MessagesDaoFirestore();
+    messagesDao = new MessagesDaoFirestore();
     break;
   default:
     const MessagesDaoFs = require("./messages/messagesFs");
-    MessagesDao = new MessagesDaoFs();
+    messagesDao = new MessagesDaoFs();
     break;
 }
 
-module.exports = { MessagesDao };
+module.exports = { messagesDao };

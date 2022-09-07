@@ -27,6 +27,20 @@ class dtoFirestore {
     }
   }
 
+    async listByEmail(email) {
+    try {
+      const doc = await this.collectionDB.doc(email).get();
+      if (!doc.exists) {
+        return;
+      } else{
+        const data = doc.data();
+        return { ...data, email };
+      }
+    } catch (error) {
+      throw new Error(`Error al listar por email: ${error}`);
+    }
+  }
+
   async listAll() {
     try {
       const result = [];

@@ -12,6 +12,15 @@ module.exports = class ContenedorMemoria {
     }
   }
 
+  listByEmail(email) {
+      const document = this.element.find((e) => e.email == email);
+      if (document) {
+        return document;
+      } else{
+        return;
+      }
+  }
+
   listAll() {
     return [...this.element];
   }

@@ -20,6 +20,19 @@ class dtoMongo {
         return result;
       }
     } catch (error) {
+      throw new Error(`${error}`);
+    }
+  }
+
+  async listByEmail(email) {
+    try {
+      const docs = await this.coleccion.findOne({email});
+      if (docs) {
+        return docs;
+      } else{
+        return;
+      }
+    } catch (error) {
       throw new Error(`Error: ${error}`);
     }
   }

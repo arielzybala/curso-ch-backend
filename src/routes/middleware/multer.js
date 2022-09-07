@@ -1,5 +1,5 @@
 const multer = require("multer");
-const Users = require("../../models/userModel");
+const {usersDao} = require("../../dao/index");
 const mimeTypes = require("mime-types");
 const { logger } = require("../../utils/logger");
 
@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
     cb(null, "./public/uploads");
   },
   filename: async function (req, file, cb) {
-    const findUser = await Users.findOne({ email: req.body.email });
+    const findUser = await usersDao.listByEmail(req.body.email);
     if (!findUser) {
       cb("", String(Date.now()) + "." + mimeTypes.extension(file.mimetype));
     } else {

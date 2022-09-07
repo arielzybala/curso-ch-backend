@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 const router = require("./routes/main.js");
 const porcentage = require('./normalizr/normalizrTest')
 const { Server } = require("socket.io");
-const { MessagesDao } = require("./dao/index.js");
+const { messagesDao } = require("./dao/index.js");
 const io = new Server(server);
 
 app.use(express.json());
@@ -22,7 +22,7 @@ app.use("/api", router);
 
 io.on("connection", async (socket) => {
 
-  let reload = await MessagesDao.findAllMessage();
+  let reload = await messagesDao.findAllMessage();
   let normalizeData = porcentage(reload)
   socket.emit("server:renderMessages", reload , normalizeData);
 
@@ -30,9 +30,9 @@ io.on("connection", async (socket) => {
 
   socket.on("user:saveMessage", async (message) => {
 
-    let add = await MessagesDao.addNewMessage(message);
+    let add = await messagesDao.addNewMessage(message);
 
-    let load = await MessagesDao.findAllMessage().then((data) => data);
+    let load = await messagesDao.findAllMessage().then((data) => data);
     let normalizeData = porcentage(load)
 
     io.sockets.emit("server:renderMessages", load , normalizeData);

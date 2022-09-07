@@ -12,6 +12,12 @@ module.exports = class dtoFs {
     return result;
   }
 
+  async listByEmail(email) {
+    const objs = await this.listAll();
+    const result = objs.find((e) => e.email == email);
+    return result;
+  }
+
   async listAll() {
     try {
       const objs = await fs.readFile(this.fileStorage, "utf-8");

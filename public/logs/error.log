@@ -31,3 +31,5 @@
 {"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
 {"level":"error","message":"No hay un usuario registrado"}
 {"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: checkUser is not defined"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}

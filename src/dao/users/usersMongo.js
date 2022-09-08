@@ -25,4 +25,18 @@ module.exports = class UsersDaoMongo extends dtoMongo {
       role,
     });
   }
+
+  
+  async listByEmail(email) {
+    try {
+      const docs = await this.coleccion.findOne({email});
+      if (docs) {
+        return docs;
+      } else{
+        return;
+      }
+    } catch (error) {
+      throw new Error(`Error: ${error}`);
+    }
+  }
 };

@@ -1,9 +1,9 @@
-const admin = require("firebase-admin")
+const admin = require("firebase-admin");
 const { firebaseDB, firebaseURL } = require("../config");
 
 admin.initializeApp({
   credential: admin.credential.cert(firebaseDB),
-  databaseURL: firebaseURL
+  databaseURL: firebaseURL,
 });
 
 const db = admin.firestore();
@@ -27,19 +27,7 @@ class dtoFirestore {
     }
   }
 
-    async listByEmail(email) {
-    try {
-      const doc = await this.collectionDB.doc(email).get();
-      if (!doc.exists) {
-        return;
-      } else{
-        const data = doc.data();
-        return { ...data, email };
-      }
-    } catch (error) {
-      throw new Error(`Error al listar por email: ${error}`);
-    }
-  }
+
 
   async listAll() {
     try {
@@ -72,7 +60,7 @@ class dtoFirestore {
     } catch (error) {
       throw new Error(`Error al actualizar: ${error}`);
     }
-  } 
+  }
 
   async deleteById(id) {
     try {

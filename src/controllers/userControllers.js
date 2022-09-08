@@ -1,9 +1,8 @@
 const { logger } = require("../utils/logger");
 const { handleEmail } = require("../utils/nodemailer");
-//const Users = require("../models/userModel");
 const { usersDao } = require("../dao/index");
-const { generateJwt } = require("../utils/handleJWT");
 const phoneCodes = require("../utils/countryCodes");
+const { genNewJWToken, verifyJWToken } = require("../utils/handleJWT");
 //LOGIN//////////////////////////////////////////////////////////////////////////////////////////////
 const getLogin = async (req, res, next) => {
   res.render("login");
@@ -15,7 +14,13 @@ const getLogin = async (req, res, next) => {
    res.render("logged", { email: req.user.email });
   };
 */
-const postLogin = async (req, res, next) => {};
+const postLogin = async (req, res, next) => {
+
+  const token = genNewJWToken({user: req.user.id})
+  console.log(token)
+  const check = verifyJWToken(token)
+  console.log(check.user)
+}
 
 //SIGNUP//////////////////////////////////////////////////////////////////////////////////////////////
 const getSignup = async (req, res, next) => {
@@ -47,9 +52,7 @@ const getFailLogin = (req, res, next) => {
   res.render("failLogin");
 };
 
-const getFailSignUp = (req, res, next) => {
-
-};
+const getFailSignUp = (req, res, next) => {};
 
 const getItsLogged = (req, res, next) => {
   res.render("itsLogged", { email: req.user.email });

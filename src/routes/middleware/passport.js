@@ -19,9 +19,10 @@ passport.use(
 
       try {
         const checkUserEmail = await usersDao.listByEmail(email);
-        
         if (checkUserEmail) {
-          return done(null, false, { message: "Usuario existente" });
+          return done(null, false, logger.error({
+            message: `El usuario ya existe`,
+          }));
         } else {
           let user = req.body;
           user.avatar = req.file.filename;
@@ -29,7 +30,6 @@ passport.use(
           user.role = "user";
           await usersDao.save(user);
           const userData = await usersDao.listByEmail(email);
-          console.log(userData);
           return done(null, userData);
         }
       } catch (error) {
@@ -52,15 +52,17 @@ passport.use(
       try {
         const user = await usersDao.listByEmail(email);
         if (!user) {
-          return done(null, false, { message: "Usuario no fue encontrado" });
+          return done(null, false, logger.warn({
+            message: `El email no se corresponde con un usuario en la base de datos`,
+          }));
         }
         const validate = await matchPassword(password, user.password);
         if (!validate) {
-          return done(null, false, {
-            message: "Hay un error en la contraseña",
-          });
+          return done(null, false, logger.warn({
+            message: `El Password ingresado no es correcto`,
+          }));
         }
-        return done(null, user, { message: "Login existoso" });
+        return done(null, user);
       } catch (error) {
         logger.error({
           message: `Ha ocurrido un error al ingresar los datos ${error}`,

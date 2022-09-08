@@ -24,19 +24,6 @@ class dtoMongo {
     }
   }
 
-  async listByEmail(email) {
-    try {
-      const docs = await this.coleccion.findOne({email});
-      if (docs) {
-        return docs;
-      } else{
-        return;
-      }
-    } catch (error) {
-      throw new Error(`Error: ${error}`);
-    }
-  }
-
   async listAll() {
     try {
       let docs = await this.coleccion.find({}, { __v: 0 }).lean();

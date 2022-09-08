@@ -25,4 +25,13 @@ module.exports = class UsersDaoMemory extends dtoMemory {
       role,
     });
   }
+
+  listByEmail(email) {
+    const document = this.element.find((e) => e.email == email);
+    if (document) {
+      return document;
+    } else {
+      return;
+    }
+  }
 };

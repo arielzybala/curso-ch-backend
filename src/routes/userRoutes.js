@@ -2,7 +2,6 @@ const express = require("express");
 const { Router } = express;
 const userRouter = new Router();
 const userController = require("../controllers/userControllers");
-const { generateJwt } = require("../utils/handleJWT");
 const uploader = require("./middleware/multer");
 const passport = require("./middleware/passport");
 
@@ -11,7 +10,6 @@ userRouter.post(
   "/login",
   passport.authenticate("login", {
     session: false,
-    successRedirect: "/logged",
     failureRedirect: "/failLogin",
   }),
   userController.postLogin

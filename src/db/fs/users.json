@@ -2,7 +2,7 @@
   {
     "nickname": "ariel",
     "address": "avenida",
-    "age": "37",
+    "age": "36",
     "codesCountry": "+54",
     "phone": "91151118686",
     "email": "arielzybala@gmail.com",
@@ -10,5 +10,17 @@
     "avatar": "1662499724527.jpeg",
     "role": "admin",
     "id": 1
+  },
+  {
+    "nickname": "Pepe",
+    "address": "CH",
+    "age": "18",
+    "codesCountry": "+297",
+    "phone": "91151118686",
+    "email": "pepe@pepe.com",
+    "password": "$2b$10$aD1aqNvV2DGGrZJ4npugYuJTK6ivgs723xtRvj/jVsYKgpjxOELzS",
+    "avatar": "1662592221583.jpeg",
+    "role": "user",
+    "id": 2
   }
 ]

@@ -1,27 +1,6 @@
 const { verifyJWToken } = require("../../utils/handleJWT");
 const { logger } = require("../../utils/logger");
 
-const isAuth = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    let user = req.user;
-    req.session.user = user;
-    next();
-  } else {
-    res.redirect("/");
-    logger.info(`Usuario no logueado o registrado`);
-  }
-};
-
-const itsLogged = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    let user = req.user;
-    req.session.user = user;
-    res.redirect("/itsLogged");
-    logger.info(`El Usuario ya esta logueado`);
-  } else {
-    next();
-  }
-};
 
 const validateToken = (req, res, next) =>{
   const auth = req.headers.authorization;
@@ -30,8 +9,9 @@ const validateToken = (req, res, next) =>{
     verifyJWToken(token)
     next()
   } catch (error) {
+    logger.info("El cliente intentó ingresar a una ruta exclusiva para usuarios/administradores.")
     next("/failLogin")
   }
 }
 
-module.exports = { isAuth, itsLogged, validateToken };
+module.exports = { validateToken };

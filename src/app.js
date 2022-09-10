@@ -33,6 +33,7 @@ app.use(cors());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname + "/views"));
 app.use(cp());
+/**
 app.use(session({
   secret: 'ValorSecreto',
   cookie:{
@@ -44,9 +45,8 @@ app.use(session({
   resave: true,
   saveUninitialized: false
 }))
+*/
 
-/**
- * 
  app.use(
    session({
      store: mongoStore.create({
@@ -66,7 +66,6 @@ app.use(session({
       },
     })
     );
-    */
 
 app.use(passport.initialize());
 app.use(passport.session());

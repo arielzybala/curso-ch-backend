@@ -1,38 +1,16 @@
 const dtoMongo = require("../../dto/dtoMongo");
-const {
-  email,
-  password,
-  nickname,
-  age,
-  address,
-  codesCountry,
-  phone,
-  avatar,
-  role,
-} = require("../../utils/handleJoi");
 
 module.exports = class UsersDaoMongo extends dtoMongo {
   constructor() {
-    super("users", {
-      email,
-      password,
-      nickname,
-      age,
-      address,
-      codesCountry,
-      phone,
-      avatar,
-      role,
-    });
+    super("users");
   }
 
-  
   async listByEmail(email) {
     try {
-      const docs = await this.coleccion.findOne({email});
+      const docs = await this.coleccion.findOne({ email });
       if (docs) {
         return docs;
-      } else{
+      } else {
         return;
       }
     } catch (error) {

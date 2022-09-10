@@ -24,16 +24,18 @@
                         <!--Teléfono-->
                         <label for="codesCountry" class="container__label">País</label>
                         <select id="codesCountry" name="codesCountry" class="container__input">
-                            <% data.map(codes => {%>
-                                <option value="<%-codes.dial_code%>"><%-`${codes.name} ${codes.dial_code}`%></option>
-                            <% });%>
-                          </select>
+                            <% data.map(codes=> {%>
+                                <option value="<%-codes.dial_code%>">
+                                    <%-`${codes.name} ${codes.dial_code}`%>
+                                </option>
+                                <% });%>
+                        </select>
                         <label for="phone" class="container__label">Teléfono (ej: 9 11 5 1234567)</label>
                         <input class="container__input" type="tel" name="phone" id="phone" pattern="[0-9]{11}"
                             title="Ej: 91151119999" autocomplete="tel-local-suffix" required>
                         <!--Correo-->
                         <label for="email" class="container__label">Ingrese su Correo</label>
-                        <input class="container__input" id="email" type="text" name="email" required
+                        <input class="container__input" id="email" type="email" name="email" required
                             autocomplete="email">
                         <!--Imagen-->
                         <label for="avatar" class="container__label">Avatar de Usuario</label>
@@ -41,7 +43,11 @@
                         <!--Pass-->
                         <label for="password" class="container__label">Ingrese su Contraseña</label>
                         <input class="container__input" id="password" type="password" name="password" required
-                            autocomplete="current-password">
+                        title="Mín-3 Máx-30 caracteres y debe tener números y letras" autocomplete="current-password">
+                        <!--RepeatPass-->
+                        <label for="repeatPassword" class="container__label">Ingrese Nuevamente Contraseña</label>
+                        <input class="container__input" id="repeatPassword" type="Password" name="repeatPassword"
+                            required>
                         <!--SUBMIT-->
                         <input class="container__btn" type="submit" value="Enviar">
                     </form>
@@ -61,5 +67,3 @@
 
 
 </html>
-
-

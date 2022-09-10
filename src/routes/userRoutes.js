@@ -2,39 +2,52 @@ const express = require("express");
 const { Router } = express;
 const userRouter = new Router();
 const userController = require("../controllers/userControllers");
+const { createUserSchema, logUserSchema } = require("../utils/handleJoi");
+const {
+  genNewJwt,
+  itsValidToken,
+  haveAlreadyToken,
+} = require("./middleware/jsonWebToken");
 const uploader = require("./middleware/multer");
 const passport = require("./middleware/passport");
+const validatorJoi = require("./middleware/validatorJoi");
 
-userRouter.get("/login", userController.getLogin);
+/////////////////////////////////////////////////////////////
+userRouter.get("/login", haveAlreadyToken, userController.getLogin);
+
 userRouter.post(
   "/login",
+  validatorJoi(logUserSchema),
   passport.authenticate("login", {
     session: false,
     failureRedirect: "/failLogin",
   }),
+  genNewJwt,
   userController.postLogin
 );
+userRouter.get("/failLogin", userController.getFailLogin);
 
-userRouter.get("/signup", userController.getSignup);
+/////////////////////////////////////////////////////////////
+userRouter.get("/signup", haveAlreadyToken, userController.getSignup);
+
 userRouter.post(
   "/signup",
   uploader.single("avatar"),
+  validatorJoi(createUserSchema),
   passport.authenticate("signup", {
     session: false,
     failureRedirect: "/failSignup",
   }),
+  genNewJwt,
   userController.postSignup
 );
 
-userRouter.get("/failLogin", userController.getFailLogin);
 userRouter.get("/failSignup", userController.getFailSignUp);
 
-userRouter.get("/profile", userController.getProfile);
-
-userRouter.get("/itsLogged", userController.getItsLogged);
+/////////////////////////////////////////////////////////////
+userRouter.get("/profile", itsValidToken, userController.getProfile);
 
 userRouter.get("/logged", userController.getLogged);
-userRouter.get("/joined", userController.postSignup);
 
 userRouter.get("/logout", userController.getLogout);
 

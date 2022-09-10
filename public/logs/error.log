@@ -1,35 +1,15 @@
-{"level":"error","message":{}}
-{"level":"error","message":{}}
-{"level":"error","message":{}}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: usersDao.listByEmail is not a function"}
-{"level":"error","message":"No se pudo loguear al usuario ingresado: null"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: generateJwt is not a function"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Error al leer el archivo: SyntaxError: Unexpected token o in JSON at position 1"}
-{"level":"error","message":"Error al leer el archivo: SyntaxError: Unexpected token o in JSON at position 1"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: Expected \"payload\" to be a plain object."}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: Expected \"payload\" to be a plain object."}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: Expected \"payload\" to be a plain object."}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: secret must be a string or bufferor a KeyObject"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: \"jwtFromRequest\" is not allowed in \"options\""}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: \"jwtFromRequest\" is not allowed in \"options\""}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: \"jwtFromRequest\" is not allowed in \"options\""}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No hay un usuario registrado"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: checkUser is not defined"}
+
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
 {"level":"error","message":"El usuario ya existe"}
 {"level":"error","message":"El usuario ya existe"}

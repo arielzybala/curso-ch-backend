@@ -1,26 +1,15 @@
 [
   {
     "nickname": "ariel",
-    "address": "avenida",
-    "age": "36",
+    "address": "Domicilio 1234",
+    "age": "32",
     "codesCountry": "+54",
     "phone": "91151118686",
-    "email": "arielzybala@gmail.com",
-    "password": "$2b$10$UdZyUlxbKChLkO0dhkvR6.I9cJ12Wya10Ii/M/SubTMB11wfkktyq",
-    "avatar": "1662499724527.jpeg",
-    "role": "admin",
-    "id": 1
-  },
-  {
-    "nickname": "Pepe",
-    "address": "CH",
-    "age": "18",
-    "codesCountry": "+297",
-    "phone": "91151118686",
-    "email": "pepe@pepe.com",
-    "password": "$2b$10$aD1aqNvV2DGGrZJ4npugYuJTK6ivgs723xtRvj/jVsYKgpjxOELzS",
-    "avatar": "1662592221583.jpeg",
+    "email": "ariel@gmail.com",
+    "password": "$2b$10$8v.3SqEEOFa59sjLQAoX/OcCRNKDDESMD01wR5j1kqCQDsWEkLl7m",
+    "repeatPassword": "$2b$10$8v.3SqEEOFa59sjLQAoX/OcCRNKDDESMD01wR5j1kqCQDsWEkLl7m",
+    "avatar": "1662845710784.jpeg",
     "role": "user",
-    "id": 2
+    "id": 1
   }
 ]

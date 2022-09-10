@@ -1,36 +1,46 @@
-{"level":"warn","message":"TypeError: usersDao.listByEmail is not a function"}
-{"level":"error","message":{}}
-{"level":"error","message":{}}
-{"level":"error","message":{}}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: usersDao.listByEmail is not a function"}
-{"level":"error","message":"No se pudo loguear al usuario ingresado: null"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: generateJwt is not a function"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: promise is not defined"}
-{"level":"error","message":"Error al leer el archivo: SyntaxError: Unexpected token o in JSON at position 1"}
-{"level":"error","message":"Error al leer el archivo: SyntaxError: Unexpected token o in JSON at position 1"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: Expected \"payload\" to be a plain object."}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: Expected \"payload\" to be a plain object."}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: Expected \"payload\" to be a plain object."}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: secret must be a string or bufferor a KeyObject"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: \"jwtFromRequest\" is not allowed in \"options\""}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: \"jwtFromRequest\" is not allowed in \"options\""}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos Error: \"jwtFromRequest\" is not allowed in \"options\""}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No Conectado a la Base de Datos de los usuarios"}
-{"level":"error","message":"No hay un usuario registrado"}
-{"level":"error","message":"Ha ocurrido un error al ingresar los datos ReferenceError: checkUser is not defined"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"warn","message":"Token invalido"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"_original":{"address":"Domicilio1234","age":"20","codesCountry":"+54","email":"arielzybala@gmail.com","nickname":"1","password":"1234a","phone":"91151118686","repeatPassword":"1234a"},"details":[{"context":{"key":"nickname","label":"nickname","limit":3,"value":"1"},"message":"\"nickname\" length must be at least 3 characters long","path":["nickname"],"type":"string.min"}],"level":"warn"}
+{"level":"warn","message":"Token invalido"}
+{"_original":{"address":"Domicilio1234","age":"20","codesCountry":"+54","email":"arielzybala@gmail.com","nickname":"123","password":"1234a","phone":"91151118686","repeatPassword":"1234a"},"details":[{"context":{"key":"nickname","label":"nickname","regex":{},"value":"123"},"message":"\"nickname\" with value \"123\" fails to match the required pattern: /^[a-zA-Z]{3,30}$/","path":["nickname"],"type":"string.pattern.base"}],"level":"warn"}
+{"level":"warn","message":"Token invalido"}
+{"_original":{"address":"Domicilio1234","age":"20","codesCountry":"+54","email":"arielzybala@gmail.com","nickname":"Ariel","password":"1234A","phone":"91151118686","repeatPassword":"1234"},"details":[{"context":{"key":"repeatPassword","label":"repeatPassword","valids":[{"adjust":null,"ancestor":1,"depth":1,"display":"ref:password","in":false,"iterables":null,"key":"password","map":null,"path":["password"],"root":"password","separator":".","type":"value"}],"value":"1234"},"message":"\"repeatPassword\" must be [ref:password]","path":["repeatPassword"],"type":"any.only"}],"level":"warn"}
+{"level":"warn","message":"Token invalido"}
+{"_original":{"address":"Domicilio1234","age":"20","codesCountry":"+54","email":"arielzybala@gmail.com","nickname":"Ariel","password":"1234","phone":"91151118686","repeatPassword":"1234"},"details":[{"context":{"key":"role","label":"role"},"message":"\"role\" is required","path":["role"],"type":"any.required"}],"level":"warn"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"Token invalido"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"_original":{"address":"Domicilio 1234","age":"37","codesCountry":"+54","email":"arielzybala@gmail.com","nickname":"Ariel","password":"1234a","phone":"91151118686","repeatPassword":"1234a"},"details":[{"context":{"key":"address","label":"address","value":"Domicilio 1234"},"message":"\"address\" must only contain alpha-numeric characters","path":["address"],"type":"string.alphanum"}],"level":"warn"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
 {"level":"error","message":"El usuario ya existe"}
 {"level":"error","message":"El usuario ya existe"}

@@ -1,5 +1,4 @@
 const { productsDao } = require("../dao/index");
-const { asPOJO } = require("../utils/implements");
 
 const getAllProducts = async (req, res, next) => {
   const data = await productsDao.listAll();

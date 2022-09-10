@@ -3,12 +3,6 @@ const { Router } = express;
 const cartRouter = new Router();
 const controllers = require("../controllers/cartControllers");
 
-
-/**
- * Para calcular el total a pagar
- * const orderAmount = require("../utils/orderAmount");
- * const totalAmount = await orderAmount(data)
- */
 cartRouter.get("/", controllers.getAll);
 
 cartRouter.delete("/:id/", controllers.deleteCart);

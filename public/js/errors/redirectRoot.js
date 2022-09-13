@@ -1,3 +1,3 @@
 setTimeout(() => {
     location.href = '/'
-}, 2000)
+}, 3500)

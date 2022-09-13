@@ -2,7 +2,7 @@ const express = require("express");
 const { Router } = express;
 const userRouter = new Router();
 const userController = require("../controllers/userControllers");
-const { createUserSchema, logUserSchema } = require("../utils/handleJoi");
+const { logUserSchema } = require("../utils/handleJoi");
 const {
   genNewJwt,
   itsValidToken,
@@ -11,6 +11,10 @@ const {
 const uploader = require("./middleware/multer");
 const passport = require("./middleware/passport");
 const validatorJoi = require("./middleware/validatorJoi");
+const {
+  valuesToCheck,
+  validatorExpress,
+} = require("./middleware/validatorExpress");
 
 /////////////////////////////////////////////////////////////
 userRouter.get("/login", haveAlreadyToken, userController.getLogin);
@@ -33,7 +37,8 @@ userRouter.get("/signup", haveAlreadyToken, userController.getSignup);
 userRouter.post(
   "/signup",
   uploader.single("avatar"),
-  validatorJoi(createUserSchema),
+  valuesToCheck,
+  validatorExpress,
   passport.authenticate("signup", {
     session: false,
     failureRedirect: "/failSignup",
@@ -47,7 +52,7 @@ userRouter.get("/failSignup", userController.getFailSignUp);
 /////////////////////////////////////////////////////////////
 userRouter.get("/profile", itsValidToken, userController.getProfile);
 
-userRouter.get("/logged", userController.getLogged);
+userRouter.get("/logged", itsValidToken, userController.getLogged);
 
 userRouter.get("/logout", userController.getLogout);
 

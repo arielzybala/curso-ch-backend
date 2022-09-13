@@ -3,6 +3,7 @@ const { handleEmail } = require("../utils/nodemailer");
 const { usersDao } = require("../dao/index");
 const phoneCodes = require("../utils/countryCodes");
 const { checkTokenJwt } = require("../routes/middleware/jsonWebToken");
+const jwt = require('jsonwebtoken')
 
 //LOGIN///////////////////////////////////////////////////
 const getLogin = async (req, res, next) => {
@@ -11,9 +12,7 @@ const getLogin = async (req, res, next) => {
 
 const postLogin = async (req, res, next) => {
   const content = req.headers.authorization;
-  res
-    .cookie("jwt", content, { maxAge: 3600 * 1000 })
-    .render("logged", { email: req.user.email });
+  res.cookie("jwt", content, { maxAge: 3600 * 1000 }).render("logged", { email: req.user.email });
 };
 
 //SIGNUP///////////////////////////////////////////////////
@@ -24,17 +23,17 @@ const getSignup = async (req, res, next) => {
 };
 
 const postSignup = async (req, res, next) => {
-  const data = await usersDao.listById(req.user.id);
+  const user = await usersDao.listByEmail(req.user.email)
+  const token = req.headers.authorization;
   const message = "Datos del Nuevo Usuario creado";
   await handleEmail(
-    [data.email, data.nickname, data.address, data.phone],
+    [user.email, user.nickname, user.address, user.phone],
     process.env.USERNM,
     message
   );
-  const content = req.headers.authorization;
   res
-    .cookie("jwt", content, { maxAge: 3600 * 1000 })
-    .render("logged", { email: req.user.email });
+    .cookie("jwt", token, { maxAge: 3600 * 1000 })
+    .render("logged", { email: user.email });
 };
 
 //FAILURES/////////////////////////////////////////////////
@@ -60,7 +59,8 @@ const getProfile = async (req, res) => {
 const getLogged = async (req, res, next) => {
   const userCookie = await checkTokenJwt(req.cookies.jwt);
   const user = await usersDao.listById(userCookie.id);
-  res.render("logged", { data: user });
+  console.log(user)
+  res.render("logged", { email: user.email });
 };
 
 //LOGOUT///////////////////////////////////////////////////

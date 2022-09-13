@@ -1,14 +1,14 @@
 [
   {
-    "nickname": "ariel",
-    "address": "Domicilio 1234",
-    "age": "32",
+    "nickname": "Ariel",
+    "address": "Domicilio1234",
+    "age": "18",
     "codesCountry": "+54",
     "phone": "91151118686",
-    "email": "ariel@gmail.com",
-    "password": "$2b$10$8v.3SqEEOFa59sjLQAoX/OcCRNKDDESMD01wR5j1kqCQDsWEkLl7m",
-    "repeatPassword": "$2b$10$8v.3SqEEOFa59sjLQAoX/OcCRNKDDESMD01wR5j1kqCQDsWEkLl7m",
-    "avatar": "1662845710784.jpeg",
+    "email": "arielzybala@gmail.com",
+    "password": "$2b$10$E0felnHyBMmv78PVm6axfeiOTdyvCTMk0mMVaT5.jVgfD0oBvS9z.",
+    "repeatPassword": "$2b$10$E0felnHyBMmv78PVm6axfeiOTdyvCTMk0mMVaT5.jVgfD0oBvS9z.",
+    "avatar": "1662939588014.jpeg",
     "role": "user",
     "id": 1
   }

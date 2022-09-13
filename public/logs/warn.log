@@ -44,3 +44,53 @@
 {"level":"error","message":"El usuario ya existe"}
 {"level":"error","message":"El usuario ya existe"}
 {"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"El Password ingresado no es correcto"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"Ha ocurrido un error al ingresar los datos TypeError: Cannot read properties of undefined (reading 'filename')"}
+{"level":"error","message":"El usuario ya existe"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}

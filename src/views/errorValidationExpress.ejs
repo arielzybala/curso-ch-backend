@@ -4,11 +4,13 @@
 
     <body>
         <%- include("template/header") %>
+        <% error.forEach(function(message){ %>
             <div class="container">
                 <div class="container__frame">
-                    <h2 class="container__title">Error: <%- error %></h2>
+                    <h2 class="container__title">Error: <%- message.msg %></h2>
                 </div>
-
+                <% }) %>
+                
                 <script src="/js/errors/redirectRoot.js"></script>
     </body>
 

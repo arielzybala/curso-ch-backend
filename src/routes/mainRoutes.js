@@ -13,6 +13,9 @@ router.get("/test", async (req, res)=>{
   res.render("products", {products: data})
 });
 
+router.get("/chat", async (req, res)=>{
+  res.render("chatRoom")
+})
 
 
 

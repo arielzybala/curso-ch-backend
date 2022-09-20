@@ -36,4 +36,14 @@ const valuesToCheck = [
     .isLength({ min: 11 }),
 ];
 
-module.exports = { valuesToCheck, validatorExpress };
+const newProductDataValid = [
+  body("title").exists().isString(),
+  body("price").exists().isNumeric(),
+  body("text").exists().isString(),
+  body("thumbnail").exists().isString(),
+  body("code").exists().isString()
+
+]
+
+
+module.exports = { valuesToCheck, validatorExpress, newProductDataValid };

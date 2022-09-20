@@ -3,7 +3,6 @@ const { handleEmail } = require("../utils/nodemailer");
 const { usersDao } = require("../dao/index");
 const phoneCodes = require("../utils/countryCodes");
 const { checkTokenJwt } = require("../routes/middleware/jsonWebToken");
-const jwt = require('jsonwebtoken')
 
 //LOGIN///////////////////////////////////////////////////
 const getLogin = async (req, res, next) => {

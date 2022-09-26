@@ -2,14 +2,11 @@ const { cartDao } = require("../../dao");
 const { flatArray } = require("../../utils/flatArray");
 
 const haveCartAlredy = async (req, res, next) => {
-  const session = flatArray(req.session);
-  const findCart = session.find((e) => e == "cart");
-  if (findCart) {
+  if (req.cookies.cart) {
     next();
   } else {
     let cart = await cartDao.save();
-    console.log("abrió uno nuevo")
-    req.session.cart = cart;
+    res.cookie("cart", cart, { maxAge: 3600 * 1000 })
     next();
   }
 };

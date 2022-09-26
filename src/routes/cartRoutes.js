@@ -7,7 +7,7 @@ cartRouter.get("/", controllers.getAll);
 
 cartRouter.delete("/:id/", controllers.deleteCart);
 
-cartRouter.post("/:id/add", controllers.putOnCart);
+cartRouter.post("/:id/add", controllers.putInCart);
 
 cartRouter.post("/:id/sendOrder", controllers.createOrder);
 

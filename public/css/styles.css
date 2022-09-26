@@ -101,7 +101,9 @@ header {
   align-items: center;
   justify-content: center;
 }
+
 .container__tableHead {
+  padding: 0 10px;
   font-family: var(--headlines-fnt);
   font-size: 1.2em;
   font-weight: 200;

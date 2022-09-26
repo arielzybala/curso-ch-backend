@@ -1,362 +1,48 @@
 [
   {
-    "products": [],
+    "products": [
+      {
+        "title": "Microsoft Surface Pro 8",
+        "price": 450000,
+        "text": "Procesadores Intel Core 11° gen., 32 GB de RAM y hasta 2 TB de SSD.",
+        "thumbnail": "sp8.jpg",
+        "code": "msp8",
+        "id": 2,
+        "quantity": "1"
+      },
+      {
+        "title": "Dell XPS 13 OLED",
+        "price": 620000,
+        "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
+        "thumbnail": "dell13.jpg",
+        "code": "dxp13o",
+        "id": 1,
+        "quantity": "1"
+      }
+    ],
     "id": 1
   },
   {
-    "products": [],
+    "products": [
+      {
+        "title": "Microsoft Surface Pro 8",
+        "price": 450000,
+        "text": "Procesadores Intel Core 11° gen., 32 GB de RAM y hasta 2 TB de SSD.",
+        "thumbnail": "sp8.jpg",
+        "code": "msp8",
+        "id": 2,
+        "quantity": "1"
+      },
+      {
+        "title": "Dell XPS 17 9720",
+        "price": 899999,
+        "text": "Procesador Core i9 12° gen., 16 GB de RAM y hasta 1 TB SSD.",
+        "thumbnail": "dell17.jpg",
+        "code": "dx179",
+        "id": 6,
+        "quantity": "1"
+      }
+    ],
     "id": 2
-  },
-  {
-    "products": [],
-    "id": 3
-  },
-  {
-    "products": [],
-    "id": 4
-  },
-  {
-    "products": [],
-    "id": 5
-  },
-  {
-    "products": [],
-    "id": 6
-  },
-  {
-    "products": [],
-    "id": 7
-  },
-  {
-    "products": [],
-    "id": 8
-  },
-  {
-    "products": [],
-    "id": 9
-  },
-  {
-    "products": [],
-    "id": 10
-  },
-  {
-    "products": [],
-    "id": 11
-  },
-  {
-    "products": [],
-    "id": 12
-  },
-  {
-    "products": [],
-    "id": 13
-  },
-  {
-    "products": [],
-    "id": 14
-  },
-  {
-    "products": [],
-    "id": 15
-  },
-  {
-    "products": [],
-    "id": 16
-  },
-  {
-    "products": [],
-    "id": 17
-  },
-  {
-    "products": [],
-    "id": 18
-  },
-  {
-    "products": [],
-    "id": 19
-  },
-  {
-    "products": [],
-    "id": 20
-  },
-  {
-    "products": [],
-    "id": 21
-  },
-  {
-    "products": [],
-    "id": 22
-  },
-  {
-    "products": [],
-    "id": 23
-  },
-  {
-    "products": [],
-    "id": 24
-  },
-  {
-    "products": [],
-    "id": 25
-  },
-  {
-    "products": [],
-    "id": 26
-  },
-  {
-    "products": [],
-    "id": 27
-  },
-  {
-    "products": [],
-    "id": 28
-  },
-  {
-    "products": [],
-    "id": 29
-  },
-  {
-    "products": [],
-    "id": 30
-  },
-  {
-    "products": [],
-    "id": 31
-  },
-  {
-    "products": [],
-    "id": 32
-  },
-  {
-    "products": [],
-    "id": 33
-  },
-  {
-    "products": [],
-    "id": 34
-  },
-  {
-    "products": [],
-    "id": 35
-  },
-  {
-    "products": [],
-    "id": 36
-  },
-  {
-    "products": [],
-    "id": 37
-  },
-  {
-    "products": [],
-    "id": 38
-  },
-  {
-    "products": [],
-    "id": 39
-  },
-  {
-    "products": [],
-    "id": 40
-  },
-  {
-    "products": [],
-    "id": 41
-  },
-  {
-    "products": [],
-    "id": 42
-  },
-  {
-    "products": [],
-    "id": 43
-  },
-  {
-    "products": [],
-    "id": 44
-  },
-  {
-    "products": [],
-    "id": 45
-  },
-  {
-    "products": [],
-    "id": 46
-  },
-  {
-    "products": [],
-    "id": 47
-  },
-  {
-    "products": [],
-    "id": 48
-  },
-  {
-    "products": [],
-    "id": 49
-  },
-  {
-    "products": [],
-    "id": 50
-  },
-  {
-    "products": [],
-    "id": 51
-  },
-  {
-    "products": [],
-    "id": 52
-  },
-  {
-    "products": [],
-    "id": 53
-  },
-  {
-    "products": [],
-    "id": 54
-  },
-  {
-    "products": [],
-    "id": 55
-  },
-  {
-    "products": [],
-    "id": 56
-  },
-  {
-    "products": [],
-    "id": 57
-  },
-  {
-    "products": [],
-    "id": 58
-  },
-  {
-    "products": [],
-    "id": 59
-  },
-  {
-    "products": [],
-    "id": 60
-  },
-  {
-    "products": [],
-    "id": 61
-  },
-  {
-    "products": [],
-    "id": 62
-  },
-  {
-    "products": [],
-    "id": 63
-  },
-  {
-    "products": [],
-    "id": 64
-  },
-  {
-    "products": [],
-    "id": 65
-  },
-  {
-    "products": [],
-    "id": 66
-  },
-  {
-    "products": [],
-    "id": 67
-  },
-  {
-    "products": [],
-    "id": 68
-  },
-  {
-    "products": [],
-    "id": 69
-  },
-  {
-    "products": [],
-    "id": 70
-  },
-  {
-    "products": [],
-    "id": 71
-  },
-  {
-    "products": [],
-    "id": 72
-  },
-  {
-    "products": [],
-    "id": 73
-  },
-  {
-    "products": [],
-    "id": 74
-  },
-  {
-    "products": [],
-    "id": 75
-  },
-  {
-    "products": [],
-    "id": 76
-  },
-  {
-    "products": [],
-    "id": 77
-  },
-  {
-    "products": [],
-    "id": 78
-  },
-  {
-    "products": [],
-    "id": 79
-  },
-  {
-    "products": [],
-    "id": 80
-  },
-  {
-    "products": [],
-    "id": 81
-  },
-  {
-    "products": [],
-    "id": 82
-  },
-  {
-    "products": [],
-    "id": 83
-  },
-  {
-    "products": [],
-    "id": 84
-  },
-  {
-    "products": [],
-    "id": 85
-  },
-  {
-    "products": [],
-    "id": 86
-  },
-  {
-    "products": [],
-    "id": 87
-  },
-  {
-    "products": [],
-    "id": 88
-  },
-  {
-    "products": [],
-    "id": 89
-  },
-  {
-    "products": [],
-    "id": 90
   }
 ]

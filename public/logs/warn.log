@@ -94,3 +94,17 @@
 {"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
 {"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
 {"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"El Password ingresado no es correcto"}
+{"level":"warn","message":"El Password ingresado no es correcto"}
+{"level":"warn","message":"El Password ingresado no es correcto"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"level":"error","message":"Han modificado datos de la cookie"}
+{"level":"error","message":"Han modificado datos de la cookie"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error","message":"Han modificado datos de la cookie"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"level":"error","message":"El token no es válido"}

@@ -8,7 +8,9 @@
                 <tr class="container__tableRow">
                     <th class="container__tableHead">Imagen</th>
                     <th class="container__tableHead">Nombre</th>
-                    <th class="container__tableHead">Precio</th>
+                    <th class="container__tableHead">Unidades</th>
+                    <th class="container__tableHead">Precio C/U</th>
+
                 </tr>
                 <% cart.forEach((products)=>{ %>
                     <tr class="container__tableRow">
@@ -18,7 +20,10 @@
                         <td class="container__tableData" data-label="Nombre:">
                             <%= products.title %>
                         </td>
-                        <td class="container__tableData" data-label="Precio">
+                        <td class="container__tableData" data-label="Unidades">
+                            <%= products.quantity %>
+                        </td>
+                        <td class="container__tableData" data-label="Precio Unitario">
                             <%= products.price %>
                         </td>
                     </tr>

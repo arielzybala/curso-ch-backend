@@ -30,3 +30,4 @@
 {"level":"error"}
 {"level":"error","message":"Han modificado datos de la cookie"}
 {"level":"error","message":"El token no es válido"}
+{"level":"error","message":"El usuario ya existe"}

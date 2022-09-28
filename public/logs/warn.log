@@ -108,3 +108,5 @@
 {"level":"error","message":"Han modificado datos de la cookie"}
 {"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
 {"level":"error","message":"El token no es válido"}
+{"level":"warn","message":"El email no se corresponde con un usuario en la base de datos"}
+{"level":"error","message":"El usuario ya existe"}

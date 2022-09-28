@@ -70,11 +70,29 @@ class CartService {
     const user = await usersDao.listById(token.id);
     const cart = await cartDao.listById(cartId);
     const products = await productsDao.listAll();
-    const test = await checkIdandPrice(products, cart.products);
-    if (test) {
-      handleEmail;
-      sendMessage;
+    //Para controlar que lo que llega del front esta ok
+    const DataFromFrontTest = await checkIdandPrice(products, cart.products);
+    if (!DataFromFrontTest) {
+      handleEmail(
+        user,
+        process.env.USERNM,
+        "Se ingresaron datos distintos a los de la base de datos por este usuario"
+      );
     }
+    const totalToPay = await orderAmount(cart);
+    const listOfOrder = cart.products.map((e) => [
+      { Producto: e.title, Precio: `$ ${e.price}`, Cantidad: e.quantity },
+    ]);
+    listOfOrder.push(`Total a Pagar: $ ${totalToPay}`);
+    //correo al usuario
+    await handleEmail(
+      listOfOrder,
+      user.email,
+      "Productos que ha ingresado en su orden de compras"
+    );
+    //mensaje de whapps
+    const phone = (user.codesCountry + user.phone).toString();
+    await sendMessage(phone, listOfOrder);
   }
 }
 

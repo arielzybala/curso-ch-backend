@@ -13,7 +13,7 @@ module.exports.handleEmail = async (data, addressee, message) => {
     },
   });
   //el pas queda de variable de entorno
-  const matter = "HardwareBuls tiene un mensaje para ti"; 
+  const matter = "HardwareBuls"; 
   const content = data; 
   const receptor = addressee; 
 

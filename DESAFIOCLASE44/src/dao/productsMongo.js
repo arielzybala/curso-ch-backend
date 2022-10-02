@@ -1,4 +1,4 @@
-const dtoMongo = require("../../dto/dtoMongo");
+const dtoMongo = require("../dto/dtoMongo");
 
 module.exports = class ProductsDao extends dtoMongo {
   constructor() {

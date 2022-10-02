@@ -1,0 +1,31 @@
+type Product {
+  id: ID!
+  title: String
+  text: String
+  price: Int
+  thumbnail: String
+}
+
+type Query {
+  bringsAllProducts: [Product]
+  bringsProductById(id: ID!): Product
+}
+
+input ProductPayload {
+  id: ID!
+  title: String
+  text: String
+  price: Int
+  thumbnail: String
+}
+
+type Mutation {
+  saveProduct(
+    title: String
+    text: String
+    price: Int
+    thumbnail: String
+  ): Product
+  updateProduct(args: ProductPayload): Product
+  deleteProduct(id: ID!): [Product]
+}

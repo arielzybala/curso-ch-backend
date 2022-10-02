@@ -1,7 +1,6 @@
 const { usersDao } = require("../dao/index");
 const { checkTokenJwt } = require("../routes/middleware/jsonWebToken");
 const phoneCodes = require("../utils/countryCodes");
-const { logger } = require("../utils/logger");
 const { handleEmail } = require("../utils/nodemailer");
 
 class UserService {

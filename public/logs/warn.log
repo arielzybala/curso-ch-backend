@@ -110,3 +110,7 @@
 {"level":"error","message":"El token no es válido"}
 {"level":"warn","message":"El email no se corresponde con un usuario en la base de datos"}
 {"level":"error","message":"El usuario ya existe"}
+{"level":"warn","message":"El email no se corresponde con un usuario en la base de datos"}
+{"level":"warn","message":"El email no se corresponde con un usuario en la base de datos"}
+{"level":"warn","message":"El email no se corresponde con un usuario en la base de datos"}
+{"level":"warn","message":"El email no se corresponde con un usuario en la base de datos"}

@@ -1,5 +1,4 @@
 const { cartDao } = require("../../dao");
-const { flatArray } = require("../../utils/flatArray");
 
 const haveCartAlredy = async (req, res, next) => {
   if (req.cookies.cart) {

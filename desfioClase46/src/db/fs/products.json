@@ -1,0 +1,130 @@
+[
+  {
+    "title": "Dell XPS 13 OLED",
+    "price": 620000,
+    "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
+    "thumbnail": "dell13.jpg",
+    "code": "dxp13o",
+    "id": 1
+  },
+  {
+    "title": "Microsoft Surface Pro 8",
+    "price": 450000,
+    "text": "Procesadores Intel Core 11° gen., 32 GB de RAM y hasta 2 TB de SSD.",
+    "thumbnail": "sp8.jpg",
+    "code": "msp8",
+    "id": 2
+  },
+  {
+    "title": "Apple MacBook Air M2",
+    "price": 396000,
+    "text": "Procesador M2, 16 GB de RAM y hasta 2 TB de SSD.",
+    "thumbnail": "mbam2.jpg",
+    "code": "amam2",
+    "id": 3
+  },
+  {
+    "title": "Acer Swift 3 Ryzen",
+    "price": 208490,
+    "text": "Procesador Ryzen 7 4700U, 8 GB de RAM y 512 GB SSD.",
+    "thumbnail": "as3r.jpg",
+    "code": "as3r",
+    "id": 4
+  },
+  {
+    "title": "Apple MacBook Pro 16",
+    "price": 571699,
+    "text": "Procesador M1 Pro, 12 GB de RAM y hasta 1 TB SSD.",
+    "thumbnail": "ambp16.jpg",
+    "code": "amp16",
+    "id": 5
+  },
+  {
+    "title": "Dell XPS 17 9720",
+    "price": 899999,
+    "text": "Procesador Core i9 12° gen., 16 GB de RAM y hasta 1 TB SSD.",
+    "thumbnail": "dell17.jpg",
+    "code": "dx179",
+    "id": 6
+  },
+  {
+    "title": "iPhone 13 Pro Max ",
+    "price": 552000,
+    "text": "OLED de 6,7 pulgadas, resolución de 2.778 x 1.284 px, conexión 5G y procesador A15.",
+    "thumbnail": "i13pm.jpg",
+    "code": "i13pm",
+    "id": 7
+  },
+  {
+    "title": "Samsung Galaxy S22 Ultra",
+    "price": 899999,
+    "text": "Dynamic AMOLED 2x de 6,8 pulgadas, procesador Exynos 2200 de ocho núcleos y batería 5.000 mAh",
+    "thumbnail": "sgs22u.jpg",
+    "code": "sgs22u",
+    "id": 8
+  },
+  {
+    "title": "Huawei Mate 40 Pro",
+    "price": 351000,
+    "text": "Procesador Kirin 9000, conexion 5G, batería de 4.400 mAh, casi 20 hs de autonomía.",
+    "thumbnail": "hm40p.jpg",
+    "code": "hm20p",
+    "id": 9
+  },
+  {
+    "title": "OnePlus 10 Pro",
+    "price": 360000,
+    "text": "6,7 pulgadas Fluid AMOLED resolución QHD+, Qualcomm Snapdragon 8 Gen 1 y batería de 5.000 mAh.",
+    "thumbnail": "op10p.jpg",
+    "code": "op10p",
+    "id": 10
+  },
+  {
+    "title": "OPPO Find X3 Pro",
+    "price": 278740,
+    "text": "AMOLED de 6,7 pulgadas resolución QHD+. Procesador Qualcomm Snapdragon 888, 12GB de RAM y batería de 4.500 mAh.",
+    "thumbnail": "ofx3p.jpg",
+    "code": "ofx3p",
+    "id": 11
+  },
+  {
+    "title": "Xiaomi Mi pad 5 Pro",
+    "price": 197000,
+    "text": "Pantalla LCD 12,4 pulgadas, Procesador Snapdragon 870, RAM 12 GB LPDDR5 y Disco de 512 GB UFS 3.1",
+    "thumbnail": "xmp5p.jpg",
+    "code": "xmp5p",
+    "id": 12
+  },
+  {
+    "title": "Lenovo Tab P11 Pro",
+    "price": 289000,
+    "text": "Pantalla 11.5' OLED, Procesador Snapdragon 730G, 6 GB DRAM y Disco de 128 GB UFS 2.1",
+    "thumbnail": "ltp11p.jpg",
+    "code": "ltp11p",
+    "id": 13
+  },
+  {
+    "title": "Samsung Galaxy Tab S7",
+    "price": 179999,
+    "text": "Pantalla 11 pulgadas OLED, Procesador Snapdragon 865+, 6 GB RAM y Disco de 128 GB",
+    "thumbnail": "sgts7.jpg",
+    "code": "sgts7",
+    "id": 14
+  },
+  {
+    "title": "Huawei MatePad 10.4",
+    "price": 240000,
+    "text": "Pantalla 10.4 pulgadas IPS LCD Procesador Huawei Kirin 81, 4 GB RAM y Disco de 128 GB",
+    "thumbnail": "hm10.jpg",
+    "code": "thmp10",
+    "id": 15
+  },
+  {
+    "title": "Apple iPad Air 5° gen",
+    "price": 275000,
+    "text": "Pantalla 10.9 pulgadas AMOLED, Procesador Chip M1, 8 GB RAM y Disco de 256 GB",
+    "thumbnail": "aia5.jpg",
+    "code": "aia5",
+    "id": 16
+  }
+]

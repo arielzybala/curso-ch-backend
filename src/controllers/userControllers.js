@@ -56,18 +56,29 @@ const getLogged = async (req, res, next) => {
 //LOGOUT///////////////////////////////////////////////////
 
 const getLogout = async (req, res, next) => {
-
   const user = await service.takeUserFromCookie(req.cookies.jwt);
   if (!user.email) {
     logger.error(`No hay un usuario conectado`);
-    return res
-      .clearCookie("jwt", "cart")
-      .send({ error: "Error al cerrar la sesión", body: err });
+    return req.session.destroy(() => {
+      res
+        .clearCookie("jwt")
+        .clearCookie("cart")
+        .send({ error: "Error al cerrar la sesión", body: err });
+    });
   }
   //
-  req.session.destroy(
-    res.clearCookie("jwt", "cart").render("logout", { email: user.email })
-  );
+  req.session.destroy(() => {
+    res
+      .clearCookie("jwt")
+      .clearCookie("cart")
+      .render("logout", { email: user.email });
+  });
+};
+
+//OnlyUser///////////////////////////////////////////////////
+
+const onlyUser = async (_req, res, _next) => {
+  await res.render("onlyUsersView");
 };
 
 ////////////////////////////////////////////////////////////
@@ -81,4 +92,5 @@ module.exports = {
   getLogout,
   getProfile,
   getLogged,
+  onlyUser,
 };

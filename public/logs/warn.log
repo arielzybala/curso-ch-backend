@@ -114,3 +114,20 @@
 {"level":"warn","message":"El email no se corresponde con un usuario en la base de datos"}
 {"level":"warn","message":"El email no se corresponde con un usuario en la base de datos"}
 {"level":"warn","message":"El email no se corresponde con un usuario en la base de datos"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"level":"warn","message":"El Password ingresado no es correcto"}
+{"level":"warn","message":"El Password ingresado no es correcto"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be a string","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be a string","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be a string","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be a string","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be a string","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be a string","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}
+{"err":{"message":"jwt must be provided","name":"JsonWebTokenError"},"level":"warn","message":"Token invalido"}

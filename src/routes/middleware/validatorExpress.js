@@ -4,11 +4,19 @@ const validatorExpress = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     const message = errors.array();
-    return res.status(400).render("errorValidationExpress", { error: message });
+    return res.status(400).render("errorValidationExpress", { error: message, scripts: "/js/errors/redirectRoot.js"});
   }
   next();
 };
 
+const validatorUpload = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const message = errors.array();
+    return res.status(400).render("errorValidationExpress", { error: message, scripts: "../../js/errors/redirectRootProducts.js"});
+  }
+  next();
+};
 
 const passwordConfirmation = async (value, { req }) => {
 if (value !== req.body.password) {
@@ -36,14 +44,11 @@ const valuesToCheck = [
     .isLength({ min: 11 }),
 ];
 
-const newProductDataValid = [
-  body("title").exists().isString(),
-  body("price").exists().isNumeric(),
-  body("text").exists().isString(),
-  body("thumbnail").exists().isString(),
-  body("code").exists().isString()
-
+const valuesToCheckInventory = [
+  body("title", "Debe ingresar un nombre de producto").exists().isString().isLength({ min: 10 }),
+  body("price", "Debe ingresar un precio de Producto").exists().isNumeric(),
+  body("text", "Debe ingresar una descripción del Producto").exists().isString().isLength({ min: 10 }),
+  body("category", "Debe ingresar una categoría de Producto").exists().isString().isLength({ min: 6 }),
 ]
 
-
-module.exports = { valuesToCheck, validatorExpress, newProductDataValid };
+module.exports = { valuesToCheck, validatorExpress, valuesToCheckInventory, validatorUpload };

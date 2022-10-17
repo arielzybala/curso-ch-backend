@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("template/head") %>
+
+    <body>
+        <header>
+            <nav class="bar">
+                <div class="bar_logo">
+                    <a  href="/"><h6>HardwareBulls</h6></a>
+                </div>
+                <ul class="bar_listLinks">
+                    <li class="bar_link">
+                        <a  href="/api/products/admin/inventory">Inventario</a>
+                    </li>
+                    <li class="bar_link">
+                        <a href="/server">Servidor</a>
+                    </li>
+                    <li class="bar_link">
+                        <a  href="/api/orders">Ordenes de Compra</a>
+                    </li>
+                    <li class="bar_link">
+                        <a href="/logout">Cerrar Sesión
+                        </a>
+                    </li>
+                </ul>
+                <div class="bar_toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="container__frame">
+                <h2 class="container__label">
+                    Hola <%= email %>!
+                </h2>
+            </div>
+            <section class="runway">
+                <div class="runway__cardlogged">
+                    <div class="runway__frame">
+                        <div class="runway__headlines">
+                            <h3 class="runway__titleText">INVENTARIO</h3>
+                        </div>
+                        <div class="runway__btnBox">
+                            <button class="runway__btn">
+                                <a class="runway__ancor" href="/api/products/admin/inventory">GESTIONAR INVENTARIO</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="runway__cardlogged">
+                    <div class="runway__frame">
+                        <div class="runway__headlines">
+                            <h3 class="runway__titleText">SERVIDOR</h3>
+                        </div>
+                        <div class="runway__btnBox">
+                            <button class="runway__btn">
+                                <a class="runway__ancor" href="/server">CONFIGURACIÓN DEL SERVIDOR</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="runway__cardlogged">
+                    <div class="runway__frame">
+                        <div class="runway__headlines">
+                            <h3 class="runway__titleText">ORDENES DE COMPRA</h3>
+                        </div>
+                        <div class="runway__btnBox">
+                            <button class="runway__btn">
+                                <a class="runway__ancor" href="/orders">GESTIONAR ORDENES</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+            <script src="/js/main.js"></script>
+    </body>
+
+</html>

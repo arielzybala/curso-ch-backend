@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const { usersDao } = require("../../dao");
 const { logger } = require("../../utils/logger");
 
-const genNewJwt = async (req, res, next) => {
+const generateToken = async (req, res, next) => {
   const user = await usersDao.listByEmail(req.user.email);
   const payload = { id: user.id, role: user.role };
   const token = jwt.sign(payload, process.env.JWTSECRET, { expiresIn: "1h" });
@@ -20,7 +20,7 @@ const checkTokenJwt = async (token) =>
     return content;
   });
 
-const itsValidToken = async (req, res, next) => {
+const validatorToken = async (req, res, next) => {
   const token = req.cookies.jwt;
   if (!token) {
     return res
@@ -40,7 +40,7 @@ const itsValidToken = async (req, res, next) => {
   }
 };
 
-const haveAlreadyToken = async (req, res, next) => {
+const tokenInspect = async (req, res, next) => {
   const token = req.cookies.jwt;
   if (!token) {
     next();
@@ -49,9 +49,9 @@ const haveAlreadyToken = async (req, res, next) => {
       checkTokenJwt(token);
       res.redirect("/logged");
     } catch (error) {
-      next();
+      res.redirect("/failLogin");
     }
   }
 };
 
-module.exports = { genNewJwt, checkTokenJwt, haveAlreadyToken, itsValidToken };
+module.exports = { generateToken, checkTokenJwt, tokenInspect, validatorToken };

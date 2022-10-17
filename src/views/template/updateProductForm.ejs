@@ -1,0 +1,27 @@
+<div class="container wrap">
+    <div class="container__frame">
+        <h2 class="container__title">Actualización de Datos del Producto</h2>
+        <form class="container__form" id="updateProduct" action="/api/products/<%-data.id%>?_method=PUT" method="POST"  enctype="multipart/form-data">
+                <!--Nombre del producto-->
+                <label for="title" class="container__label">Nombre</label>
+                <input class="container__input" type="text" name="title" id="title" value="<%-data.title%>"
+                    required>
+                <!--Precio del producto-->
+                <label for="price" class="container__label">Price</label>
+                <input class="container__input" type="number" name="price" id="price" value="<%-data.price%>" required>
+                <!--Descripción del producto-->
+                <label for="text" class="container__label">Descripción del Producto</label>
+                <input class="container__input" type="text" name="text" id="text" value="<%-data.text%>" required>
+                <!--Catergoria del producto-->
+                <label for="category" class="container__label">Categoría del Producto</label>
+                <input class="container__input" type="category" name="category" id="text" value="<%-data.category%>"
+                    required>
+                <!--Imagen-->
+                <label for="thumbnail" class="container__label">Imagen del Producto</label>
+                <input class="container__input" type="file" name="thumbnail" id="thumbnail">
+
+                <!--SUBMIT-->
+                <input class="container__btn updateOneProduct" type="submit" value="ACTUALIZAR PRODUCTO">
+        </form>
+    </div>
+</div>

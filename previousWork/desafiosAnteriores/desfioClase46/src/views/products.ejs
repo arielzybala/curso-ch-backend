@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("template/headProducts") %>
+
+    <body>
+        <%- include("template/headerProducts") %>
+        <div class="wrap">
+            <% products.map(product => {%>
+                <div class="cardProduct">
+                <div class="cardProduct__img">
+                    <img class="cardProduct__thumbnail" alt="imagen de producto" src="../../media/products/<%-product.thumbnail%>">
+                </div>
+                <div class="cardProduct__frame">
+                    <div class="cardProduct__title">
+                        <h3><%-product.title-%></h3>
+                    </div>
+                    <div class="cardProduct__price">
+                        <p>$ <%-product.price-%></p>
+                    </div>
+                    <div class="cardProduct__btnBox">
+                        <button class="cardProduct__btn" id=<%-product.id-%>>
+                            Detalles
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <% });%>
+        </div>
+        <script src="../../js/main.js"></script>
+        <script src="../../js/productsCatalog.js"></script>
+    </body>
+
+</html>

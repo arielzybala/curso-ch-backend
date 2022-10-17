@@ -1,6 +1,6 @@
 const dtoFs = require("../../dto/dtoFs");
 
-module.exports = class ProductsDaoFs extends dtoFs {
+module.exports = class UsersDaoFs extends dtoFs {
   constructor() {
     super("users.json");
   }

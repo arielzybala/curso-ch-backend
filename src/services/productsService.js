@@ -13,11 +13,14 @@ class ProductService {
     return await productsDao.listById(id);
   }
 
-  async saveProduct(product) {
+  async saveProduct(product, file) {
+    product.thumbnail = file
     return await productsDao.save(product);
   }
 
-  async updateProduct(product) {
+  async updateProduct(product, file, id) {
+    product.thumbnail = file;
+    product.id = id;
     return await productsDao.update(product);
   }
 

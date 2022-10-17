@@ -177,7 +177,7 @@ header {
   background: linear-gradient(75deg, rgb(47, 79, 79) 5%, rgb(22, 51, 51) 100%);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 690px) {
   .bar_toggle {
     display: initial;
     z-index: 9;
@@ -204,7 +204,8 @@ header {
   .active {
     top: 0em;
   }
-
+}
+@media (max-width: 910px) {
   .container__tableHead {
     display: none;
   }
@@ -330,6 +331,7 @@ header {
   flex-flow: column;
   align-items: center;
   justify-content: space-between;
+
 }
 
 .cardProfile__main {
@@ -338,6 +340,7 @@ header {
   align-items: center;
   justify-content: center;
   padding-bottom: 2em;
+  overflow-wrap:break-word;
 }
 
 .cardProfile__frame {
@@ -606,8 +609,7 @@ p {
   justify-content: center;
 }
 
-.runway__shop,
-.runway__profile {
+.runway__cardlogged {
   margin: 10px;
   height: calc(15em + 12vw);
   width: calc(12em + 8vw);
@@ -675,4 +677,60 @@ p {
 .runway__ancor {
   text-decoration: none;
   color: white;
+}
+/*//////////////////////////////////*/
+.container__tableBtnDelete {
+  margin: 2px;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 0px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	background-color: rgb(255, 0, 0);
+	font-family: var(--headlines-fnt);
+	color: rgb(255, 255, 255);
+	text-shadow: 0px 1px 0px rgb(134, 134, 134);
+	font-size: 10px;
+}
+.container__tableBtnDelete:hover {
+	background-color: rgb(200, 20, 20);
+	text-shadow: 0px 1px 0px rgb(0, 0, 0);
+}
+
+.container__tableBtnUpdate {
+  margin: 2px;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 0px;
+	display: flex;
+  justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	background-color: rgb(147, 112, 219);
+	font-family: var(--headlines-fnt);
+	color: rgb(255, 255, 255);
+	text-shadow: 0px 1px 0px rgb(44, 44, 44);
+	font-size: 10px;
+}
+.container__tableBtnUpdate:hover {
+	background-color: rgb(106, 72, 173);
+	text-shadow: 0px 1px 0px rgb(132, 132, 132);
+}
+
+.container__tableBtnCounter {
+	padding: 5px 10px;
+	border-radius: 15px;
+	border: 0px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	background-color: rgb(207, 67, 67);
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: rgb(255, 255, 255);
+	font-size: 15px;
+  font-weight: 900;
+}
+.container__tableBtnCounter:hover {
+	background-color: rgb(255, 0, 0);
 }

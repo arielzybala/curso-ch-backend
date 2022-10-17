@@ -1,0 +1,43 @@
+<div class="container" id="cart">
+    <div class="container__frame">
+        <table>
+            <caption class="container__title">
+                PRODUCTOS EN STOCK
+            </caption>
+            <tbody>
+                <tr class="container__tableRow">
+                    <th class="container__tableHead">Imagen</th>
+                    <th class="container__tableHead">Nombre</th>
+                    <th class="container__tableHead">Descripción</th>
+                    <th class="container__tableHead">Categoría</th>
+                    <th class="container__tableHead">Precio C/U</th>
+                    <th class="container__tableHead">Acciones</th>
+                </tr>
+                <% inventory.forEach((products)=>{ %>
+                <tr class="container__tableRow">
+                    <td class="container__tableData container__tableData-lastData" data-label="Vista Previa:">
+                        <img class="container__img" alt="Producto de Electrónica"
+                            src="../../../media/products/<%= products.thumbnail %>">
+                    </td>
+                    <td class="container__tableData" data-label="Nombre:">
+                        <%= products.title %>
+                    </td>
+                    <td class="container__tableData" data-label="Descripción:">
+                        <%= products.text %>
+                    </td>
+                    <td class="container__tableData" data-label="Categoría:">
+                        <%= products.category %>
+                    </td>
+                    <td class="container__tableData" data-label="Precio Unitario">
+                        <%= products.price %>
+                    </td>
+                    <td class="container__tableData" data-label="Acciones">
+                        <button class="container__tableBtnUpdate updateProduct" id="<%- products.id %>">ACTUALIZAR</button>
+                        <button class="container__tableBtnDelete eraseProduct" id="<%- products.id %>">BORRAR</button>
+                    </td>
+                </tr>
+                <% });%>
+            </tbody>
+        </table>
+    </div>
+</div>

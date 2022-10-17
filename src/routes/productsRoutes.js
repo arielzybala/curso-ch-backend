@@ -1,18 +1,27 @@
 const express = require("express");
-const { Router } = express;
 const controller = require("../controllers/productsControllers");
-const { haveCartAlredy } = require("./middleware/checkCart");
+const { fileToUpload } = require("./middleware/multer");
+const { onlyAdmin } = require("./middleware/onlyAdmin");
+const { valuesToCheckInventory, validatorUpload } = require("./middleware/validatorExpress");
+const { Router } = express;
+const router = new Router();
 
-const productRouter = new Router();
+router.get("/", controller.getAllProducts);
 
-productRouter.get("/", haveCartAlredy, controller.getAllProducts);
+router.get("/:id", controller.getProductDetail);
 
-productRouter.get("/:id/", controller.getProductDetail);
+router.use(onlyAdmin)
 
-productRouter.post("/", controller.addOneProduct);
+router.get("/admin/inventory", controller.getAllProductsAsAdmin);
 
-productRouter.put("/", controller.updateOneProduct);
+router.get("/form/addProduct", controller.formAddOneProduct);
 
-productRouter.delete("/:id", controller.deleteOneProduct);
+router.post("/", fileToUpload.single("thumbnail"), valuesToCheckInventory, validatorUpload, controller.addOneProduct);
 
-module.exports = productRouter;
+router.delete("/:id", controller.deleteOneProduct);
+
+router.get("/update/:id/", controller.formUpdateProduct);
+
+router.put("/:id", fileToUpload.single("thumbnail"), valuesToCheckInventory, validatorUpload,  controller.updateOneProduct);
+
+module.exports = router;

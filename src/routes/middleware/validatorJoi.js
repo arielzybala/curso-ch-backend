@@ -1,15 +1,14 @@
-const { logger } = require("../../utils/logger")
+const { logger } = require("../../utils/logger");
 
 module.exports = (schema) => {
-    return async (req, res, next) =>{
-        try {
-console.log(req.body)
-            await schema.validateAsync(req.body)
+  return async (req, res, next) => {
+    try {
+      await schema.validateAsync(req.body);
 
-            next()
-        } catch (error) {
-            logger.warn(error)
-            res.render('errorValidation', {error: error.message})
-        }
+      next();
+    } catch (error) {
+      logger.warn(error);
+      res.render("errorValidation", { error: error.message });
     }
-}
+  };
+};

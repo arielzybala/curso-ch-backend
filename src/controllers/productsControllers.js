@@ -11,18 +11,32 @@ const getProductDetail = async (req, res, next) => {
   res.status(200).render("productDetail", { product: data });
 };
 
+const getAllProductsAsAdmin = async (req, res, next) => {
+  const data = await service.bringsAllProducts();
+  res.status(200).render("stockView", { inventory: data })
+}
+
+const formAddOneProduct = async (req, res, next) => {
+  res.status(200).render("formAddProduct")
+}
+
 const addOneProduct = async (req, res, next) => {
-  const data = await service.saveProduct(req.body);
+  await service.saveProduct(req.body, req.file.filename);
   res
     .status(201)
-    .json(`Se guardaron los siguientes datos como producto ${data}`);
+    .redirect("/api/products");
 };
 
+const formUpdateProduct = async (req, res, next) => {
+  const data = await service.bringsProductById(req.params.id)
+  res.status(200).render("formUpdateProduct", {data: data})
+}
+
 const updateOneProduct = async (req, res, next) => {
-  const data = await service.updateProduct(req.body);
+  await service.updateProduct(req.body, req.file.filename, req.params.id);
   res
     .status(202)
-    .json(`Se guardaron los siguientes datos como producto ${data}`);
+    .redirect("/api/products");
 };
 
 const deleteOneProduct = async (req, res, next) => {
@@ -32,7 +46,10 @@ const deleteOneProduct = async (req, res, next) => {
 
 module.exports = {
   getAllProducts,
+  getAllProductsAsAdmin,
   getProductDetail,
+  formAddOneProduct,
+  formUpdateProduct,
   addOneProduct,
   updateOneProduct,
   deleteOneProduct,

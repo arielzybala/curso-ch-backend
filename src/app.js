@@ -4,8 +4,9 @@ const express = require("express");
 const session = require("express-session");
 const path = require("path");
 const cp = require("cookie-parser");
-let morgan = require("morgan");
+const morgan = require("morgan");
 const cors = require("cors");
+const override = require('method-override')
 const mongoStore = require("connect-mongo");
 const http = require("http");
 const cluster = require("cluster");
@@ -47,24 +48,24 @@ app.use(
 );
 
 /**
- * 
- app.use(
-   session({
-    store: mongoStore.create({
-      mongoUrl: mongoAtlas.uri,
-      mongoOptions: mongoAtlas.advancedOptions,
-      ttl: 60,
-      retries: 0,
-      touchAfter: 24 * 3600, //con esto la sesión dura 24hs
-    }),
-    secret: mongoAtlas.secret,
-    resave: true,
-    saveUninitialized: true,
-    rolling: true,
-  })
-  );
-  */
-
+   * 
+   app.use(
+     session({
+       store: mongoStore.create({
+         mongoUrl: mongoAtlas.uri,
+         mongoOptions: mongoAtlas.advancedOptions,
+         ttl: 60,
+         retries: 0,
+         touchAfter: 24 * 3600, //con esto la sesión dura 24hs
+        }),
+        secret: mongoAtlas.secret,
+        resave: true,
+        saveUninitialized: true,
+        rolling: true,
+      })
+      );
+      */
+      app.use(override('_method'))
 app.use(passport.initialize());
 app.use(passport.session());
 app.use("/", routerMain, routerUser);

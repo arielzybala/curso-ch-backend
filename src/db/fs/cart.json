@@ -2,50 +2,38 @@
   {
     "products": [
       {
-        "title": "Microsoft Surface Pro 8",
-        "price": 450000,
-        "text": "Procesadores Intel Core 11° gen., 32 GB de RAM y hasta 2 TB de SSD.",
-        "thumbnail": "sp8.jpg",
-        "code": "msp8",
-        "id": 2,
-        "quantity": "1"
-      },
-      {
-        "title": "Dell XPS 13 OLED",
-        "price": 620000,
-        "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
-        "thumbnail": "dell13.jpg",
-        "code": "dxp13o",
-        "id": 1,
-        "quantity": "1"
+        "title": "Apple MacBook Air M2",
+        "price": 396000,
+        "text": "Procesador M2, 16 GB de RAM y hasta 2 TB de SSD.",
+        "thumbnail": "mbam2.jpg",
+        "code": "amam2",
+        "id": 3,
+        "quantity": 2
       }
     ],
     "id": 1
   },
   {
-    "products": [
-      {
-        "title": "Microsoft Surface Pro 8",
-        "price": 450000,
-        "text": "Procesadores Intel Core 11° gen., 32 GB de RAM y hasta 2 TB de SSD.",
-        "thumbnail": "sp8.jpg",
-        "code": "msp8",
-        "id": 2,
-        "quantity": "1"
-      },
-      {
-        "title": "Dell XPS 17 9720",
-        "price": 899999,
-        "text": "Procesador Core i9 12° gen., 16 GB de RAM y hasta 1 TB SSD.",
-        "thumbnail": "dell17.jpg",
-        "code": "dx179",
-        "id": 6,
-        "quantity": "1"
-      }
-    ],
+    "products": [],
     "id": 2
   },
   {
+    "products": [],
+    "id": 3
+  },
+  {
+    "products": [],
+    "id": 4
+  },
+  {
+    "products": [],
+    "id": 5
+  },
+  {
+    "products": [],
+    "id": 6
+  },
+  {
     "products": [
       {
         "title": "Microsoft Surface Pro 8",
@@ -54,22 +42,17 @@
         "thumbnail": "sp8.jpg",
         "code": "msp8",
         "id": 2,
-        "quantity": "1"
+        "quantity": 3
       }
     ],
-    "id": 3
+    "id": 7
+  },
+  {
+    "products": [],
+    "id": 8
   },
   {
     "products": [
-      {
-        "title": "Acer Swift 3 Ryzen",
-        "price": 208490,
-        "text": "Procesador Ryzen 7 4700U, 8 GB de RAM y 512 GB SSD.",
-        "thumbnail": "as3r.jpg",
-        "code": "as3r",
-        "id": 4,
-        "quantity": 2
-      },
       {
         "title": "Apple MacBook Air M2",
         "price": 396000,
@@ -78,30 +61,128 @@
         "code": "amam2",
         "id": 3,
         "quantity": 2
-      },
-      {
-        "title": "Dell XPS 17 9720",
-        "price": 899999,
-        "text": "Procesador Core i9 12° gen., 16 GB de RAM y hasta 1 TB SSD.",
-        "thumbnail": "dell17.jpg",
-        "code": "dx179",
-        "id": 6,
-        "quantity": 2
-      },
-      {
-        "title": "iPhone 13 Pro Max ",
-        "price": 552000,
-        "text": "OLED de 6,7 pulgadas, resolución de 2.778 x 1.284 px, conexión 5G y procesador A15.",
-        "thumbnail": "i13pm.jpg",
-        "code": "i13pm",
-        "id": 7,
-        "quantity": 6
       }
     ],
-    "id": 4
+    "id": 9
   },
   {
     "products": [],
-    "id": 5
+    "id": 10
+  },
+  {
+    "products": [],
+    "id": 11
+  },
+  {
+    "products": [],
+    "id": 12
+  },
+  {
+    "products": [],
+    "id": 13
+  },
+  {
+    "products": [],
+    "id": 14
+  },
+  {
+    "products": [],
+    "id": 15
+  },
+  {
+    "products": [],
+    "id": 16
+  },
+  {
+    "products": [],
+    "id": 17
+  },
+  {
+    "products": [],
+    "id": 18
+  },
+  {
+    "products": [],
+    "id": 19
+  },
+  {
+    "products": [],
+    "id": 20
+  },
+  {
+    "products": [],
+    "id": 21
+  },
+  {
+    "products": [],
+    "id": 22
+  },
+  {
+    "products": [],
+    "id": 23
+  },
+  {
+    "products": [],
+    "id": 24
+  },
+  {
+    "products": [],
+    "id": 25
+  },
+  {
+    "products": [],
+    "id": 26
+  },
+  {
+    "products": [],
+    "id": 27
+  },
+  {
+    "products": [],
+    "id": 28
+  },
+  {
+    "products": [],
+    "id": 29
+  },
+  {
+    "products": [],
+    "id": 30
+  },
+  {
+    "products": [],
+    "id": 31
+  },
+  {
+    "products": [],
+    "id": 32
+  },
+  {
+    "products": [],
+    "id": 33
+  },
+  {
+    "products": [],
+    "id": 34
+  },
+  {
+    "products": [],
+    "id": 35
+  },
+  {
+    "products": [],
+    "id": 36
+  },
+  {
+    "products": [],
+    "id": 37
+  },
+  {
+    "products": [],
+    "id": 38
+  },
+  {
+    "products": [],
+    "id": 39
   }
 ]

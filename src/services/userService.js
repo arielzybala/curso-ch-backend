@@ -7,10 +7,10 @@ class UserService {
   constructor() {
     this.dao = usersDao;
   }
-
   async bringsCodesPhone() {
     return await phoneCodes();
   }
+
   async sendEmailToAdmin(emailUser, message) {
     const user = await usersDao.listByEmail(emailUser);
     await handleEmail(
@@ -22,6 +22,11 @@ class UserService {
   async takeUserFromCookie(cookieJWT) {
     const user = await checkTokenJwt(cookieJWT);
     return await usersDao.listById(user.id);
+  }
+
+  async takeUserById(id) {
+    const user = await usersDao.listById(id);
+    return user;
   }
 }
 

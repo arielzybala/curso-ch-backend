@@ -11,11 +11,11 @@ const getAll = async (req, res, next) => {
 };
 
 const putInCart = async (req, res, next) => {
-  await service.saveInCart(
-    Number(req.body.idProduct),
-    req.body.quantity,
-    req.cookies.cart.id
-  );
+    await service.saveInCart(
+      Number(req.body.idProduct),
+      req.body.quantity,
+      req.cookies.cart.id
+    );
 };
 
 const deleteCart = async (req, res, next) => {

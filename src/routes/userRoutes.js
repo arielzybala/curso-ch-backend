@@ -1,42 +1,45 @@
 const express = require("express");
-const { Router } = express;
-const userRouter = new Router();
-const userController = require("../controllers/userControllers");
-const { logUserSchema } = require("../utils/handleJoi");
-
-///////////////////////////////////////////////////////////////
-const {
-  genNewJwt,
-  itsValidToken,
-  haveAlreadyToken,
-} = require("./middleware/jsonWebToken");
-const uploader = require("./middleware/multer");
+const controller = require("../controllers/userControllers");
 const passport = require("./middleware/passport");
 const validatorJoi = require("./middleware/validatorJoi");
+const { uploader } = require("./middleware/multer");
+const { Router } = express;
+const { logUserSchema } = require("../utils/handleJoi");
 const {
   valuesToCheck,
   validatorExpress,
 } = require("./middleware/validatorExpress");
+const {
+  generateToken,
+  validatorToken,
+  tokenInspect,
+} = require("./middleware/jsonWebToken");
+const { openCart } = require("./middleware/openCart");
+const { userRole, verifyRole, userRoleSignUp, userRoleLogin } = require("./middleware/onlyAdmin");
+const router = new Router();
 
 /////////////////////////////////////////////////////////////
-userRouter.get("/login", haveAlreadyToken, userController.getLogin);
+router.get("/login", tokenInspect, controller.getLogin);
 
-userRouter.post(
+router.post(
   "/login",
   validatorJoi(logUserSchema),
   passport.authenticate("login", {
     session: false,
     failureRedirect: "/failLogin",
   }),
-  genNewJwt,
-  userController.postLogin
+  generateToken,
+  openCart,
+  userRoleLogin,
+  controller.postLogin
 );
-userRouter.get("/failLogin", userController.getFailLogin);
+
+router.get("/failLogin", controller.getFailLogin);
 
 /////////////////////////////////////////////////////////////
-userRouter.get("/signup", haveAlreadyToken, userController.getSignup);
+router.get("/signup", tokenInspect, controller.getSignup);
 
-userRouter.post(
+router.post(
   "/signup",
   uploader.single("avatar"),
   valuesToCheck,
@@ -45,17 +48,22 @@ userRouter.post(
     session: false,
     failureRedirect: "/failSignup",
   }),
-  genNewJwt,
-  userController.postSignup
+  generateToken,
+  openCart,
+  userRoleSignUp,
+  controller.postSignup
 );
 
-userRouter.get("/failSignup", userController.getFailSignUp);
+router.get("/failSignup", controller.getFailSignUp);
 
 /////////////////////////////////////////////////////////////
-userRouter.get("/profile", itsValidToken, userController.getProfile);
 
-userRouter.get("/logged", itsValidToken, userController.getLogged);
+router.get("/profile", validatorToken, controller.getProfile);
 
-userRouter.get("/logout", userController.getLogout);
+router.get("/logged", verifyRole, validatorToken, controller.getLogged);
 
-module.exports = userRouter;
+router.get("/logout", controller.getLogout);
+
+router.get("/onlyUser", controller.onlyUser);
+
+module.exports = router;

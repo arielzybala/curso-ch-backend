@@ -19,4 +19,17 @@ const storage = multer.diskStorage({
 });
 const uploader = multer({ storage: storage });
 
-module.exports = uploader;
+const deposit = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./public/media/products");
+  },
+  filename: async function (req, file, cb) {
+    cb("", file.filename + '-' + String(Date.now()) + "." + mimeTypes.extension(file.mimetype))
+  },
+});
+const fileToUpload = multer({ storage: deposit });
+
+module.exports = fileToUpload;
+
+
+module.exports = {uploader, fileToUpload};

@@ -56,16 +56,19 @@ const getLogged = async (req, res, next) => {
 //LOGOUT///////////////////////////////////////////////////
 
 const getLogout = async (req, res, next) => {
+  if (!req.cookies.jwt) {
+    return res
+      .status(401)
+      .render("error", { message: "No tiene una sesión iniciada" });
+  }
   const user = await service.takeUserFromCookie(req.cookies.jwt);
   if (!user.email) {
     logger.error(`No hay un usuario conectado`);
-    return req.session.destroy(() => {
-      res
-        .clearCookie("jwt")
-        .clearCookie("cart")
-        .send({ error: "Error al cerrar la sesión", body: err });
-    });
+    return req
+      .status(401)
+      .render("error", { message: "Su Token no es correcto" });
   }
+
   //
   req.session.destroy(() => {
     res

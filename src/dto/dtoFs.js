@@ -60,6 +60,7 @@ module.exports = class dtoFs {
   async deleteById(id) {
     const objs = await this.listAll();
     const index = objs.findIndex((e) => e.id == id);
+    console.log(index)
     if (index == -1) {
       throw new Error(`Error al borrar: no se encontró el id ${id}`);
     }

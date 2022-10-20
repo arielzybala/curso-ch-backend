@@ -41,7 +41,7 @@ const updateOneProduct = async (req, res, next) => {
 
 const deleteOneProduct = async (req, res, next) => {
   await service.deleteProduct(req.params.id);
-  res.status(204).json(`El producto con id: ${req.params.id}, fue eliminado`);
+  res.status(204).redirect("/api/orders");
 };
 
 module.exports = {

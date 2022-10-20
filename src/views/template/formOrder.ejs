@@ -1,0 +1,55 @@
+<div class="container wrap">
+    <div class="container__frame">
+        <h2 class="container__title">DETALLES DE LA ORDEN</h2>
+         <!--Numero de orden-->
+         <p class="container__label"><strong>Numero de orden: </strong>
+            <%- data.orderNumber %>
+        </p>
+        <!--Lista de Productos elegidos por el usuario-->
+        <h2 class="container__title" style="font-size: 1.2em;">Productos Solicitados</h2>
+        <ul>
+            <% data.items.forEach(value=>{ %>
+                <li>
+                    <p class="container__label"><strong>Nombre del Producto:</strong>
+                        <%- value.title %>
+                    </p>
+                    <p class="container__label"><strong>Precio del Producto:</strong>
+                        <%- value.price %>
+                    </p>
+                </li>
+                <br>
+                <% }) %>
+            </ul>
+            <form class="container__form" id="updateProduct" method="POST" action="/api/orders/<%-data.id%>?_method=PUT">
+            <!--Email del Usuario-->
+            <label for="email" class="container__label">Email de Usuario</label>
+            <input class="container__input" type="email" name="email" id="email" value="<%- data.email %>" required>
+            <!--Número de la Orden-->
+            <input class="container__input" type="number" name="orderNumber" id="orderNumber" value="<%- data.orderNumber %>" hidden required>
+            <!--Dirección de Entrega-->
+            <label for="address" class="container__label">Domicilio</label>
+            <input class="container__input" type="text" name="address" id="address" value="<%- data.address %>"
+                required>
+            <!--Estado de la Orden-->
+            <label for="state" class="container__label">Estado</label>
+            <select name="state" id="state" class="container__label">
+                <option value="<%-data.state%>" selected hidden>
+                    <%-data.state%>
+                </option>
+                <option value="generada">Generada</option>
+                <option value="cancelada">Cancelada</option>
+                <option value="entregada">Entregada</option>
+            </select>
+            <!--SUBMIT-->
+            <input class="container__btn" type="submit" value="ACTUALIZAR ORDEN">
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="container__frame">
+        <h2 class="container__subtitle">Panel de Ordenes de Compras</h2>
+        <a href="/api/orders" class="container__btn">
+            VOLVER
+        </a>
+    </div>
+</div>

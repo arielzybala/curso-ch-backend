@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -36,39 +37,9 @@
             </div>
         </nav>
     </header>
-    <div class="container wrap">
-        <div class="cardProfile">
-            <div class="cardProfile__main">
-                <p><strong>Argumetos de Entrada: </strong></p><p>
-                    <%- data.ArgumentsInput%>
-                </p>
-                <p><strong>Nombre de la Plataforma: </strong></p><p>
-                    <%- data.NamePlatform%>
-                </p>
-                <p><strong>Version NodeJS: </strong></p><br><p>
-                    <%- data.VersionNodeJS%>
-                </p>
-                <p><strong>Memoria Total Reservada: </strong></p><p>
-                    <%- data.TotalReservedMemory%>
-                </p>
-                <p><strong>Ruta de Ejecución: </strong></p><p>
-                    <%- data.PathExecution%>
-                </p>
-                <p><strong>Identificador del Proceso: </strong></p><p>
-                    <%- data.ProcessID%>
-                </p>
-                <p><strong>Carpeta del Proyecto: </strong></p><p>
-                    <%- data.ProjectFolder%>
-                </p>
-                <p><strong>Numero De CPUS: </strong></p><p>
-                    <%- data.NumberCPUs%>
-                </p>
-            </div>
-        </div>
-    </div>
-
+    <%- include("template/tableOrders") %>
 </body>
 <script src="/js/main.js"></script>
-
+<script src="/js/btnsOrdersView.js"></script>
 
 </html>

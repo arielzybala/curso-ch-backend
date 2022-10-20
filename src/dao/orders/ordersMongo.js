@@ -3,6 +3,9 @@ const dtoMongo = require("../../dto/dtoMongo");
 module.exports = class OrdersDaoMongo extends dtoMongo {
   constructor() {
     super("orders", {
+      userId:{
+        type: String,
+      },
       email: {
         type: String,
         required: true,

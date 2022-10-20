@@ -6,7 +6,7 @@ const path = require("path");
 const cp = require("cookie-parser");
 const morgan = require("morgan");
 const cors = require("cors");
-const override = require('method-override')
+const override = require("method-override");
 const mongoStore = require("connect-mongo");
 const http = require("http");
 const cluster = require("cluster");
@@ -24,6 +24,7 @@ const { mongoAtlas } = require("./config");
 const routerMain = require("./routes/mainRoutes");
 const routerUser = require("./routes/userRoutes");
 const routerCart = require("./routes/cartRoutes");
+const routerOrders = require("./routes/ordersRoutes");
 const routerProducts = require("./routes/productsRoutes");
 const passport = require("./routes/middleware/passport");
 const { logger } = require("./utils/logger");
@@ -65,12 +66,13 @@ app.use(
       })
       );
       */
-      app.use(override('_method'))
+app.use(override("_method"));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use("/", routerMain, routerUser);
 app.use("/api/cart", routerCart);
 app.use("/api/products", routerProducts);
+app.use("/api/orders", routerOrders);
 
 require("./controllers/sockets/chatControllers")(io);
 

@@ -1,10 +1,12 @@
-const { cartDao } = require("../../dao");
+
+const { CartService } = require("../../services/cartServices");
+const service = new CartService()
 
 const openCart = async (req, res, next) => {
   if (req.cookies.cart) {
     next();
   } else {
-    let cart = await cartDao.save();
+    let cart = await service.createCart();
     res.cookie("cart", cart, { maxAge: 3600 * 1000 });
     next();
   }

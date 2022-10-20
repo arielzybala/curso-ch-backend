@@ -1,20 +1,27 @@
 const btnOrder = document.getElementsByClassName("orderToBuy");
 
-btnOrder[0].addEventListener("click", createOrder)
+btnOrder[0].addEventListener("click", createOrder);
 
-function createOrder (e) {
-    e.preventDefault()
-    e.stopPropagation()
-    let data = {idProduct: e.target.id}
-    console.log(data)
-    const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      };
-    
-      alert("Ha realizado la compra")
-    return fetch(`/api/cart/${e.target.id}/sendOrder`, options);
+async function createOrder(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  const check = document.cookie.toString();
+  if (!check.includes("jwt")) {
+    alert("Debe tener una sesión iniciada");
+    return location.href = `${e.view.window.origin}/login`;
+  }
+  return await fetch(`${e.view.window.origin}/api/orders`, {
+    method: "POST",
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`Error! status: ${res.status}`)
+      }
+      alert("Orden Enviada");
+      return location.href = `${e.view.window.origin}/api/products`;
+    })
+    .catch((error) => {
+      alert("Orden Enviada");
+      console.log(error);
+    });
 }

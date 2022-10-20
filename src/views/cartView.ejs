@@ -9,13 +9,38 @@
     </head>
 
     <body>
-        <%- include("template/headerProducts") %>
-        <%- include("template/tableCart") %>
-        <div class="container center">
-            <div class="container__frame">
-                <h5 class="container__title" id="totalToPay">Total a Pagar: $ <%- total %></h5>
+        <header>
+            <nav class="bar">
+                <div class="bar_logo">
+                    <a  href="/"><h6>HardwareBulls</h6></a>
+                </div>
+                <ul class="bar_listLinks">
+                    <li class="bar_link">
+                        <a href="/api/products">Tienda
+                        </a>
+                    </li>
+                    <li class="bar_link">
+                        <a  href="/profile">Perfil Usuario</a>
+                    </li>
+                    <li class="bar_link">
+                        <a href="/logout">Cerrar Sesión
+                        </a>
+                    </li>
+                </ul>
+                <div class="bar_toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+        <div class="wrap centerTop">
+            <%- include("template/tableCart") %>
+            <div class="container center">
+                <div class="container__frame">
+                    <h5 class="container__title" id="totalToPay">Total a Pagar: $ <%- total %></h5>
+                </div>
+                <a class="container__btn orderToBuy" id="<%-id%>">Finalizar Compra</a>
             </div>
-            <a class="container__btn orderToBuy" id=`id`>Finalizar Compra</a>
+            <%- include("template/tableOrdersForUser") %>
         </div>
     </body>
     <script src="/js/main.js"></script>

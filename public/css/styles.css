@@ -514,7 +514,7 @@ p {
 
 .viewDetail__title {
   padding: 0 10px;
-  font-size: calc(0.8em + 3vw);
+  font-size: calc(0.8em + 2.5vw);
   font-family: var(--headlines-fnt);
 }
 .viewDetail__description {
@@ -574,6 +574,14 @@ p {
     rgb(232, 255, 255) 100%
   );
 }
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.centerTop {
+  justify-content: center;
+  align-items: flex-start;
+}
 
 @media (max-width: 768px) {
   .viewDetail {
@@ -583,7 +591,12 @@ p {
     justify-content: center;
   }
   .viewDetail__frame {
-    height: calc(100px + 40vw);
+    height: calc(100px + 65vw);
+  }
+  .viewDetail__title {
+    padding: 0 5px;
+    font-size: calc(0.6em + 2.5vw);
+    font-family: var(--headlines-fnt);
   }
   .viewDetail__price,
   .viewDetail__description p {

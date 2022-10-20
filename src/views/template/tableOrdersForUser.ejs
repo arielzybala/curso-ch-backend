@@ -1,0 +1,49 @@
+<div  class="container" id="cart">
+    <div  class="container__frame">
+        <table>
+            <caption class="container__title">
+                ORDENES ANTERIORES
+            </caption>
+            <tbody>
+                <tr class="container__tableRow">
+                    <th class="container__tableHead">Correo de Usuario</th>
+                    <th class="container__tableHead">Dirección de Entrega</th>
+                    <th class="container__tableHead">Orden de Compra</th>
+                    <th class="container__tableHead">Estado</th>
+                    <th class="container__tableHead">Productos</th>
+                </tr>
+                <% dataOrders.forEach((orders)=>{ %>
+                    <tr class="container__tableRow">
+                        <td class="container__tableData" data-label="Email de Usuario">
+                            <%= orders.email %>
+                        </td>
+                        <td class="container__tableData" data-label="Dirección de Entrega">
+                            <%= orders.address %>
+                        </td>
+                        <td class="container__tableData" data-label="Número de Orden">
+                            <%= orders.orderNumber %>
+                        </td>
+                        <td class="container__tableData" data-label="Estado de la Orden">
+                            <%= orders.state %>
+                        </td>
+                        <td class="container__tableData" data-label="Productos">
+                            <ul>
+                                <% orders.items.forEach(value=>{ %>
+                                    <li>
+                                        <p class="container__label"><strong>Nombre del Producto:</strong>
+                                            <%- value.title %>
+                                        </p>
+                                        <p class="container__label"><strong>Precio del Producto:</strong>
+                                            <%- value.price %>
+                                        </p>
+                                    </li>
+                                    <br>
+                                    <% }) %>
+                            </ul> 
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -25,8 +25,7 @@ module.exports = class OrdersDaoMongo extends dtoMongo {
       state: {
         type: String,
         required: true,
-      },
-      timestamps: true,
+      }
     });
   }
 };

@@ -40,16 +40,17 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname + "/views"));
 app.use(cp());
 
+/**
+   * 
 app.use(
   session({
     secret: "valorSecreto",
     resave: true,
     saveUninitialized: true,
   })
-);
-
-/**
-   * 
+  );
+  */
+  
    app.use(
      session({
        store: mongoStore.create({
@@ -65,7 +66,6 @@ app.use(
         rolling: true,
       })
       );
-      */
 app.use(override("_method"));
 app.use(passport.initialize());
 app.use(passport.session());

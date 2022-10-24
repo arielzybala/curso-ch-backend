@@ -1,4 +1,4 @@
-const socket = io('https://secure-ridge-40503.herokuapp.com/chat', {transports: ['websocket']});
+const socket = io(window.location, {transports: ['websocket']});
 
 socket.on("server:renderMessages", (data) => {
   loadMessages(data);

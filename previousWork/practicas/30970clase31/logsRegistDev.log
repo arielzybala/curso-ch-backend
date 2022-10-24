@@ -1,4 +1,0 @@
-[2022-08-14T17:27:26.955] [TRACE] development - inicio el server en puerto 8080
-[2022-08-14T17:27:35.985] [INFO] development - Los números ingresados estan okey
-[2022-08-14T17:27:35.988] [WARN] development - La suma es:5
-[2022-08-14T17:27:40.778] [ERROR] development - Numero 1 o 2, no son un número

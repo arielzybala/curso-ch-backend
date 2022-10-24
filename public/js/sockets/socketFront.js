@@ -1,4 +1,4 @@
-const socket = io(window.location, {transports: ['websocket']});
+const socket = io(window.location.href, {transports: ['websocket']});
 
 socket.on("server:renderMessages", (data) => {
   loadMessages(data);

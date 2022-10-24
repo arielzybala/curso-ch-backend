@@ -1,6 +1,8 @@
-const socket = io(`${window.location.href}`, {transports: ['websocket']});
+const socket = io();
+console.log(socket)
 
 socket.on("server:renderMessages", (data) => {
+  console.log(socket)
   loadMessages(data);
 });
 

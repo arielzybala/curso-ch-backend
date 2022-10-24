@@ -18,7 +18,7 @@ const args = yargs.alias({ p: "PORT" }).argv;
 const PORT = args.PORT || process.env.PORT || 8080; //Quedo modificado así por Heroku
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {transports: ['websocket']});
 const numCPUS = cpus().length;
 const { mongoAtlas } = require("./config");
 const routerMain = require("./routes/mainRoutes");
@@ -29,6 +29,7 @@ const routerOrders = require("./routes/ordersRoutes");
 const routerProducts = require("./routes/productsRoutes");
 const passport = require("./routes/middleware/passport");
 const { logger } = require("./utils/logger");
+const {socketIO} = require('socket.io')
 
 app.use(compression());
 app.use(express.json());

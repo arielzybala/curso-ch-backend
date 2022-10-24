@@ -8,7 +8,7 @@ module.exports = class dtoFs {
 
   async listById(id) {
     const objs = await this.listAll();
-    const result = objs.find((e) => e.id == id);
+    const result = objs.find((e) => e.id == (id));
     return result;
   }
 
@@ -22,16 +22,17 @@ module.exports = class dtoFs {
   }
 
   async save(obj) {
+    
     const objs = await this.listAll();
 
     let newId;
     if (objs.length == 0) {
-      newId = 1;
+      newId = "1";
     } else {
-      newId = objs[objs.length - 1].id + 1;
+      newId = parseInt(objs[objs.length - 1].id) + 1;
     }
 
-    const newObj = { ...obj, id: newId };
+    const newObj = { ...obj, id: newId.toString() };
     objs.push(newObj);
 
     try {
@@ -60,7 +61,6 @@ module.exports = class dtoFs {
   async deleteById(id) {
     const objs = await this.listAll();
     const index = objs.findIndex((e) => e.id == id);
-    console.log(index)
     if (index == -1) {
       throw new Error(`Error al borrar: no se encontró el id ${id}`);
     }

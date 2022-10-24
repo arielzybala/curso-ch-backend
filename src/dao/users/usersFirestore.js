@@ -12,9 +12,9 @@ module.exports = class UsersDaoFirestore extends dtoFirestore {
       return false;
     } else {
       newDoc.forEach((doc) => {
-        result.push(doc.data());
+        result.push({ id: doc.id, ...doc.data() });
       });
-      return result;
+      return result[0];
     }
   }
 };

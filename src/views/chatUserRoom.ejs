@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <title>HardwareBulls</title>
+</head>
+
+<body>
+    <header>
+        <nav class="bar">
+            <div class="bar_logo">
+                <a href="/">
+                    <h6>HardwareBulls</h6>
+                </a>
+            </div>
+            <ul class="bar_listLinks">
+                <li class="bar_link">
+                    <a href="/logged">Volver</a>
+                </li>
+                <li class="bar_link">
+                    <a href="/logout">Cerrar Sesión
+                    </a>
+                </li>
+            </ul>
+            <div class="bar_toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="wrap centerTop">
+        <div class="container">
+            <div class="container__frame">
+                <h2 class="container__title">Usuario</h2>
+                <div class="container__boxMessages">
+                    <ul class="container__ul wrap">
+                        <li class="container__li container__li--email">
+                            <%-author.email%>
+                        </li>
+                        <li class="container__li container__li--message">
+                            <img class="container__img" alt="Imagen previa de Productos"
+                                src='../../uploads/<%-author.avatar%>'>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container__frame">
+                <h2 class="container__title">Mensajes</h2>
+                <div class="container__boxMessages">
+                    <ul class="container__ul" style="flex-flow:column;">
+                        <% author.message.map(m=> {%>
+                            <li class="container__li container__li--time">
+                                <%- new Date(m.time).toLocaleString('es-ES') %>
+                            </li>
+                            <li class="container__li container__li--message">
+                                <%- m.text %>
+                            </li>
+                            <% });%>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container__frame">
+                <h2 class="container__title">Responder Por Correo</h2>
+                <form class="container__form" id="formEmail" method="POST" action="/chatUser/response/<%-author.email%>">
+                    <label for="emailRes" class="container__label">Mensaje</label>
+                    <textarea class="container__input" name="emailRes" id="emailRes" rows="4"
+                    placeholder="Ingrese un Mensaje" required>Respuesta</textarea>
+                    
+                    <input class="container__btn" type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+        <script src="/js/main.js"></script>
+
+</body>
+
+</html>

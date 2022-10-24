@@ -1,9 +1,9 @@
 const nodemailer = require("nodemailer");
 const { logger } = require("./logger");
 
-module.exports.handleEmail = async (data, addressee, message) => {
+module.exports.handleEmail = async (data, address, message) => {
   data = `${message}: ${JSON.stringify(data)}`;
-  addressee = JSON.stringify(addressee);
+  address = JSON.stringify(address);
   const transport = nodemailer.createTransport({
     service: "gmail",
     port: 587,
@@ -15,9 +15,9 @@ module.exports.handleEmail = async (data, addressee, message) => {
   //el pas queda de variable de entorno
   const matter = "HardwareBuls"; 
   const content = data; 
-  const receptor = addressee; 
+  const receptor = address; 
 
-  let opciones = {
+  let options = {
     from: `HardwareBulls <${process.env.USERNM}>`,
     to: receptor,
     html: content,
@@ -25,7 +25,7 @@ module.exports.handleEmail = async (data, addressee, message) => {
   };
   try{
     await transport
-      .sendMail(opciones)
+      .sendMail(options)
       .then((result) => {
         logger.info(result);
       })

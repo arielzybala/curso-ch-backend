@@ -9,10 +9,30 @@
     </head>
 
     <body>
-        <%- include("template/headerProducts") %>
-        <%- include("template/chatForm") %>
-        <%- include("template/chatBox") %>
-
+        <header>
+            <nav class="bar">
+                <div class="bar_logo">
+                    <a  href="/"><h6>HardwareBulls</h6></a>
+                </div>
+                <ul class="bar_listLinks">
+                    <li class="bar_link">
+                        <a  href="/logged">Volver</a>
+                    </li>
+                    <li class="bar_link">
+                        <a href="/logout">Cerrar Sesión
+                        </a>
+                    </li>
+                </ul>
+                <div class="bar_toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+        <div class="wrap centerTop">
+            <%- include("template/chatForm") %>
+            <%- include("template/chatBox") %>
+        </div>
+            
 
 <script src="/socket.io/socket.io.js "></script>
 <script src="/js/sockets/tools/regex.js"></script>
@@ -20,6 +40,7 @@
 <script src="/js/sockets/interface/ui.js"></script>
 <script src="/js/sockets/socketFront.js"></script>
 <script src="/js/sockets/main.js"></script>
+<script src="/js/main.js"></script>
 
 </body>
 

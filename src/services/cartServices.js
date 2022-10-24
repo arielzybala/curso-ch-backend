@@ -12,10 +12,20 @@ class CartService {
     const tokenUser = await checkTokenJwt(token);
     const orders = await ordersDao.listAll()
     const oldOrders = orders.filter((e)=> e.userId == tokenUser.id);
-    console.log(oldOrders)
     const data = await this.dao.listById(id);
     const total = await orderAmount(data);
     return { data: data, total: total , orders: oldOrders};
+  }
+
+  async bringCartById(id) {
+   return await this.dao.listById(id);
+  }
+
+  async removeProduct (id, idProduct) {
+    const cart = await this.dao.listById(id);
+    const cartCleaned = cart.products.filter((e)=> e.id != idProduct)
+    cart.products = cartCleaned
+    return await this.dao.update(cart);
   }
 
   async bringsProductById(id) {

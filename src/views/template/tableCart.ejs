@@ -26,6 +26,9 @@
                         <td class="container__tableData" data-label="Precio Unitario">
                             <%= products.price %>
                         </td>
+                        <td class="container__tableData" data-label="Acciones">
+                            <button class="container__tableBtnDelete eraseProduct" id="<%= products.id %>">BORRAR</button>
+                        </td>
                     </tr>
                     <% }) %>
             </tbody>

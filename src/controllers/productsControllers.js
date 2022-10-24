@@ -6,9 +6,22 @@ const getAllProducts = async (req, res, next) => {
   res.status(200).render("products", { products: data });
 };
 
+const getCategoryProducts = async(req, res, next) =>{
+  const data = await service.bringsProductByCategory(req.query.category);
+  res.status(200).render("productsCategory", { products: data });
+}
+
 const getProductDetail = async (req, res, next) => {
-  const data = await service.bringsProductById(req.params.id);
-  res.status(200).render("productDetail", { product: data });
+  try {
+    const data = await service.bringsProductById(req.params.id)
+    res.status(200).render("productDetail", { product: data });
+    
+  } catch (error) {
+    
+    res.status(404).render("noStock", {message: "El producto ya no se encuentra disponible"})
+  }
+  
+  
 };
 
 const getAllProductsAsAdmin = async (req, res, next) => {
@@ -24,7 +37,7 @@ const addOneProduct = async (req, res, next) => {
   await service.saveProduct(req.body, req.file.filename);
   res
     .status(201)
-    .redirect("/api/products");
+    .redirect("/api/products/admin/inventory");
 };
 
 const formUpdateProduct = async (req, res, next) => {
@@ -36,7 +49,7 @@ const updateOneProduct = async (req, res, next) => {
   await service.updateProduct(req.body, req.file.filename, req.params.id);
   res
     .status(202)
-    .redirect("/api/products");
+    .redirect("/api/products/admin/inventory");
 };
 
 const deleteOneProduct = async (req, res, next) => {
@@ -46,6 +59,7 @@ const deleteOneProduct = async (req, res, next) => {
 
 module.exports = {
   getAllProducts,
+  getCategoryProducts,
   getAllProductsAsAdmin,
   getProductDetail,
   formAddOneProduct,

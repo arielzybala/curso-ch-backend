@@ -1,14 +1,16 @@
 const express = require("express");
 const controller = require("../controllers/productsControllers");
 const { fileToUpload } = require("./middleware/multer");
-const { onlyAdmin } = require("./middleware/onlyAdmin");
+const { onlyAdmin, redirectAdmin } = require("./middleware/onlyAdmin");
 const { valuesToCheckInventory, validatorUpload } = require("./middleware/validatorExpress");
 const { Router } = express;
 const router = new Router();
 
-router.get("/", controller.getAllProducts);
+router.get("/", redirectAdmin, controller.getAllProducts);
 
-router.get("/:id", controller.getProductDetail);
+router.get("/cat/", redirectAdmin, controller.getCategoryProducts);
+
+router.get("/:id", redirectAdmin, controller.getProductDetail);
 
 router.use(onlyAdmin)
 

@@ -10,7 +10,7 @@ const getLogin = async (req, res, next) => {
 const postLogin = async (req, res, next) => {
   const content = req.headers.authorization;
   res
-    .cookie("jwt", content, { maxAge: 3600 * 1000 })
+    .cookie("jwt", content, { maxAge: process.env.TERMLIMIT })
     .render("logged", { email: req.user.email });
 };
 
@@ -25,7 +25,7 @@ const postSignup = async (req, res, next) => {
   await service.sendEmailToAdmin(req.user.email, "Datos del Nuevo Usuario");
   const token = req.headers.authorization;
   res
-    .cookie("jwt", token, { maxAge: 3600 * 1000 })
+    .cookie("jwt", token, { maxAge: process.env.TERMLIMIT })
     .render("logged", { email: req.user.email });
 };
 

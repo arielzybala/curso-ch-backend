@@ -10,16 +10,5 @@ let timeChat = "";
 
 formChat.addEventListener("submit", (e) => {
   e.preventDefault();
-  validEmail(emailChat.value)
-    ? saveMessage(
-      emailChat.value,
-      nameChat.value,
-      lastNameChat.value,
-      yearsOldChat.value,
-      nickNameChat.value,
-      urlAvatarChat.value,
-      messageChat.value,
-      timeChat = formatDate()
-      )
-    : alert("error al redactar el correo");
+  saveMessage(messageChat.value, (timeChat = new Date()));
 });

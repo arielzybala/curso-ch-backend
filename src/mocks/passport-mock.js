@@ -20,8 +20,6 @@ passport.use(
           return done(null, false);
         } else {
           let user = req.body;
-          console.log(req.body.filename)
-          console.log(req.file.filename)
           user.avatar = req.file.filename
           user.password = await hashPassword(password);
           user.rol = "user";

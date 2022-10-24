@@ -26,10 +26,11 @@ const createOneOrder = async (req, res, _next) => {
       .render("error", { message: "No tiene una sesión iniciada" });
   }
   await service.createOrder(req.cookies.cart.id, req.cookies.jwt);
+  //Una vez creada la orden el carrito debe volver a 0
   let cart = await serviceCart.createCart();
   res
     .status(201)
-    .cookie("cart", cart, { maxAge: 3600 * 1000 })
+    .cookie("cart", cart, { maxAge: process.env.TERMLIMIT })
     .json({ msg: "ok" });
 };
 

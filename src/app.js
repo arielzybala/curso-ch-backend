@@ -1,5 +1,5 @@
 const NODE_ENV = process.env.NODE_ENV || "development";
-require("dotenv").config({ path: `.env.${NODE_ENV}` }); //Esto es por si hay que usar un .env.production, en algún momento
+require("dotenv").config({ path: `.env.${NODE_ENV}` }); //
 const express = require("express");
 const session = require("express-session");
 const path = require("path");
@@ -23,6 +23,7 @@ const numCPUS = cpus().length;
 const { mongoAtlas } = require("./config");
 const routerMain = require("./routes/mainRoutes");
 const routerUser = require("./routes/userRoutes");
+const routerChat = require("./routes/chatRoutes");
 const routerCart = require("./routes/cartRoutes");
 const routerOrders = require("./routes/ordersRoutes");
 const routerProducts = require("./routes/productsRoutes");
@@ -40,41 +41,31 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname + "/views"));
 app.use(cp());
 
-/**
-   * 
 app.use(
   session({
-    secret: "valorSecreto",
+    store: mongoStore.create({
+      mongoUrl: mongoAtlas.uri,
+      mongoOptions: mongoAtlas.advancedOptions,
+      ttl: 60,
+      retries: 0,
+      touchAfter: process.env.TERMLIMIT
+    }),
+    secret: mongoAtlas.secret,
     resave: true,
     saveUninitialized: true,
+    rolling: true,
   })
-  );
-  */
-  
-   app.use(
-     session({
-       store: mongoStore.create({
-         mongoUrl: mongoAtlas.uri,
-         mongoOptions: mongoAtlas.advancedOptions,
-         ttl: 60,
-         retries: 0,
-         touchAfter: 24 * 3600, //con esto la sesión dura 24hs
-        }),
-        secret: mongoAtlas.secret,
-        resave: true,
-        saveUninitialized: true,
-        rolling: true,
-      })
-      );
+);
+
 app.use(override("_method"));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use("/", routerMain, routerUser);
+app.use("/", routerMain, routerUser, routerChat);
 app.use("/api/cart", routerCart);
 app.use("/api/products", routerProducts);
 app.use("/api/orders", routerOrders);
 
-require("./controllers/sockets/chatControllers")(io);
+require("./controllers/sockets/webSocketChatController")(io);
 
 if (process.env.SERVERMODE == "FORK") {
   server.listen(PORT, (err) => {

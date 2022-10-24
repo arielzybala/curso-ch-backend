@@ -10,6 +10,24 @@
 
     <body>
         <%- include("template/headerProducts") %>
+        <div class="container wrap">
+            <div class="container__frame" style="margin: 10px;">
+                <h2 class="cardProduct__title">CATEGORIAS:</h2>
+            </div>
+            <div class="container__frame">
+                <ul>
+                    <li class="cardProduct__title hover" >
+                        <a href="/api/products/cat/?category=notebook" style="color: black;">Notebooks</a>
+                    </li>
+                    <li class="cardProduct__title hover">
+                        <a href="/api/products/cat/?category=tablet" style="color: black;">Tablets</a>
+                    </li>
+                    <li class="cardProduct__title hover">
+                        <a href="/api/products/cat/?category=phone" style="color: black;">Celulares</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="wrap">
             <% products.map(product => {%>
                 <div class="cardProduct">

@@ -29,7 +29,4 @@ const deposit = multer.diskStorage({
 });
 const fileToUpload = multer({ storage: deposit });
 
-module.exports = fileToUpload;
-
-
 module.exports = {uploader, fileToUpload};

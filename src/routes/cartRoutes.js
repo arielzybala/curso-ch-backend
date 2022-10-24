@@ -1,5 +1,6 @@
 const express = require("express");
 const controllers = require("../controllers/cartControllers");
+const { validatorToken } = require("./middleware/jsonWebToken");
 const { checkCartOpen } = require("./middleware/openCart");
 const { Router } = express;
 const router = new Router();
@@ -7,11 +8,13 @@ const router = new Router();
 router.use(checkCartOpen); /* ESTE MIDDLEWARE:
 TIENE LA FUNCIÓN DE CREAR EL CARRITO EN LA BASE DE DATOS Y DEJARLO EN UNA COOKIE, O NEXT()*/
 
-router.get("/", controllers.getAll);
+router.get("/", validatorToken, controllers.getCart);
 
-router.put("/:id/", controllers.putInCart);
+router.put("/:id/", validatorToken, controllers.putInCart);
 
-router.delete("/:id/", controllers.deleteCart);
+router.delete("/delete/:id", validatorToken, controllers.putOffCart);
+
+router.delete("/:id/", validatorToken, controllers.deleteCart);
 
 module.exports = router;
 

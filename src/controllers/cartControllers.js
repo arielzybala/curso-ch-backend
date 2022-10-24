@@ -1,7 +1,7 @@
 const { CartService } = require("../services/cartServices");
 const service = new CartService();
 
-const getAll = async (req, res, next) => {
+const getCart = async (req, res, next) => {
   const cart = await service.bringCartSummary(req.cookies.cart.id, req.cookies.jwt);
   res.render("cartView", {
     cart: cart.data.products,
@@ -13,12 +13,18 @@ const getAll = async (req, res, next) => {
 
 const putInCart = async (req, res, _next) => {
   await service.saveInCart(
-      Number(req.body.idProduct),
+      req.params.id,
       req.body.quantity,
       req.cookies.cart.id
     );
     res.status(206)
 };
+
+const putOffCart = async (req, res, _next) => {
+  await service.removeProduct(req.cookies.cart.id, req.params.id);
+  res.status(202)
+}
+
 
 const deleteCart = async (req, res, next) => {
   await service.deleteProduct(req.params.id);
@@ -27,7 +33,8 @@ const deleteCart = async (req, res, next) => {
 
 
 module.exports = {
-  getAll,
+  getCart,
   deleteCart,
   putInCart,
+  putOffCart,
 };

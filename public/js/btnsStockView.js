@@ -11,9 +11,9 @@ function deleteProductEvent(e) {
   const options = {
     method: "DELETE",
   };
-  fetch(`${e.view.window.origin}/api/products/${nodeBtn}`, options).then(() => {
-    window.location.reload();
-  });
+  fetch(`${e.view.window.origin}/api/products/${nodeBtn}`, options)
+  alert("Producto Borrado");
+  return window.location.reload();
 }
 
 const updateBtn = document.getElementsByClassName("updateProduct");

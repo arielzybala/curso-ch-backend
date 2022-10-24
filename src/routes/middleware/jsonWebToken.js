@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const { usersDao } = require("../../dao");
 const { logger } = require("../../utils/logger");
 
-const generateToken = async (req, res, next) => {
+const generateToken = async (req, _res, next) => {
   const user = await usersDao.listByEmail(req.user.email);
   const payload = { id: user.id, role: user.role };
   const token = jwt.sign(payload, process.env.JWTSECRET, { expiresIn: "1h" });
@@ -54,4 +54,22 @@ const tokenInspect = async (req, res, next) => {
   }
 };
 
-module.exports = { generateToken, checkTokenJwt, tokenInspect, validatorToken };
+const checkItsLogged = async (req, res, next) => {
+  const token = req.cookies.jwt;
+  if (!token) {
+    return next();
+  }
+  jwt.verify(token, process.env.JWTSECRET, async (err, content) => {
+    if (err) {
+      logger.warn("Token invalido", { err });
+      return next();
+    }
+    const data = await usersDao.listById(content.id);
+    if (!data) {
+      return next();
+    }
+    return res.redirect("/logged")
+  });
+};
+
+module.exports = { generateToken, checkTokenJwt, tokenInspect, validatorToken, checkItsLogged };

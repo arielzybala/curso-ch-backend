@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <title>HardwareBulls</title>
+</head>
+
+<body>
+    <header>
+        <nav class="bar">
+            <div class="bar_logo">
+                <a href="/">
+                    <h6>HardwareBulls</h6>
+                </a>
+            </div>
+            <ul class="bar_listLinks">
+                <li class="bar_link">
+                    <a href="/api/products/admin/inventory">Inventario</a>
+                </li>
+                <li class="bar_link">
+                    <a href="/server">Servidor</a>
+                </li>
+                <li class="bar_link">
+                    <a href="/api/orders">Ordenes de Compra</a>
+                </li>
+                <li class="bar_link">
+                    <a href="/logout">Cerrar Sesión
+                    </a>
+                </li>
+            </ul>
+            <div class="bar_toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+        <% error.forEach(function(message){ %>
+            <div class="container">
+                <div class="container__frame">
+                    <h2 class="container__title">Error: <%- message.msg %></h2>
+                </div>
+                <% }) %>
+                
+                <script src="<%-scripts%>"></script>
+    </body>
+
+</html>

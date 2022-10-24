@@ -1,20 +1,25 @@
 const boxMsg = document.querySelector("#boxMsg");
 
 const loadMessages = (data) => {
+ 
     let htmlMsg = data.map((m) => {
         return `
-          <ul class="container__ul">
+          <ul class="container__ul wrap">
           <li class="container__li container__li--email">
-              ${m.author.emailChat}
+              ${m[2].email}
           </li>
           <li class="container__li container__li--time">
-              ${m.time}
+              ${new Date(m[1].time).toLocaleString('es-ES')}
           </li>
           <li class="container__li container__li--message">
-              ${m.text}
+              ${m[0].text}
           </li>
           <li class="container__li container__li--message">
-          <img class="container__img" alt="Imagen previa de Productos" src='${m.author.urlAvatarChat}'>
+          <img class="container__img" alt="Imagen previa de Productos" src='./uploads/${m[3].avatar}'>
+          </li>
+          <li class="container__li wrap center">
+           VER SÓLO SUS <button class="container__tableBtnUpdate"><a href="/chatUser/${m[2].email}">MENSAJES</a></button>
+          </li>
       </li>
       </ul>
           `;
@@ -23,4 +28,3 @@ const loadMessages = (data) => {
 
       boxMsg.innerHTML = htmlMsg;
   }
-

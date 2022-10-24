@@ -9,6 +9,12 @@ class ProductService {
     return await productsDao.listAll();
   }
 
+  async bringsProductByCategory(category){
+    const data = await productsDao.listAll()
+    const products = data.filter((obj)=> obj.category == category)
+    return await products
+  }
+
   async bringsProductById(id) {
     return await productsDao.listById(id);
   }

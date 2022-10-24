@@ -3,7 +3,6 @@ const { logger } = require("../../utils/logger");
 const { UserService } = require("../../services/userService");
 const service = new UserService();
 
-
 const userRoleLogin = async (req, res, next) => {
   const data = req.headers.authorization;
   jwt.verify(data, process.env.JWTSECRET, async (err, content) => {
@@ -13,7 +12,7 @@ const userRoleLogin = async (req, res, next) => {
     const user = await service.takeUserById(content.id);
     if (user.role == "admin") {
       return res
-        .cookie("jwt", data, { maxAge: 3600 * 1000 })
+        .cookie("jwt", data, { maxAge: process.env.TERMLIMIT })
         .status(200)
         .render("loggedAdmin", { email: user.email });
     }
@@ -31,14 +30,13 @@ const userRoleSignUp = async (req, res, next) => {
     if (user.role == "admin") {
       await service.sendEmailToAdmin(user.email, "Datos del Nuevo Usuario");
       return res
-        .cookie("jwt", data, { maxAge: 3600 * 1000 })
+        .cookie("jwt", data, { maxAge: process.env.TERMLIMIT })
         .status(200)
         .render("loggedAdmin", { email: user.email });
     }
     return next();
   });
 };
-
 
 const onlyAdmin = async (req, res, next) => {
   const token = req.cookies.jwt;
@@ -51,6 +49,20 @@ const onlyAdmin = async (req, res, next) => {
       return next();
     }
     return res.redirect("/");
+  });
+};
+
+const redirectAdmin = async (req, res, next) => {
+  const token = req.cookies.jwt;
+  if (!token) {
+    return res.redirect("/");
+  }
+  jwt.verify(token, process.env.JWTSECRET, async (err, content) => {
+    const data = await service.takeUserById(content.id);
+    if (data.role == "admin") {
+      return res.redirect("/login");
+    }
+    return next();
   });
 };
 
@@ -72,4 +84,4 @@ const verifyRole = async (req, res, next) => {
   });
 };
 
-module.exports = { onlyAdmin, userRoleLogin, userRoleSignUp, verifyRole };
+module.exports = { onlyAdmin, redirectAdmin, userRoleLogin, userRoleSignUp, verifyRole };

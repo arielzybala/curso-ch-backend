@@ -24,7 +24,6 @@ passport.use(
           })
         );
       } else {
-        console.log(req.body);
         let user = req.body;
         user.avatar = req.file.filename;
         user.password = await hashPassword(password);

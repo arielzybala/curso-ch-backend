@@ -7,7 +7,7 @@ const openCart = async (req, res, next) => {
     next();
   } else {
     let cart = await service.createCart();
-    res.cookie("cart", cart, { maxAge: 3600 * 1000 });
+    res.cookie("cart", cart, { maxAge: process.env.TERMLIMIT });
     next();
   }
 };

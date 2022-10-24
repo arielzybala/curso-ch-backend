@@ -2,152 +2,30 @@
   {
     "products": [
       {
-        "title": "Apple MacBook Air M2",
-        "price": 396000,
-        "text": "Procesador M2, 16 GB de RAM y hasta 2 TB de SSD.",
-        "thumbnail": "mbam2.jpg",
-        "code": "amam2",
-        "id": 3,
-        "quantity": 2
-      }
-    ],
-    "id": 1
-  },
-  {
-    "products": [
-      {
-        "title": "Dell XPS 13 OLED",
-        "price": 620000,
-        "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
-        "thumbnail": "dell13.jpg",
-        "code": "dxp13o",
-        "id": 1,
-        "quantity": "1"
-      }
-    ],
-    "id": 2
-  },
-  {
-    "products": [
-      {
-        "title": "Apple MacBook Pro 16",
-        "price": 571699,
-        "text": "Procesador M1 Pro, 12 GB de RAM y hasta 1 TB SSD.",
-        "thumbnail": "ambp16.jpg",
-        "code": "amp16",
-        "id": 5,
-        "quantity": "1"
-      },
-      {
-        "title": "Dell XPS 13 OLED",
-        "price": 620000,
-        "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
-        "thumbnail": "dell13.jpg",
-        "code": "dxp13o",
-        "id": 1,
-        "quantity": "5"
-      }
-    ],
-    "id": 3
-  },
-  {
-    "products": [
-      {
-        "title": "Dell XPS 13 OLED",
-        "price": 620000,
-        "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
-        "thumbnail": "dell13.jpg",
-        "code": "dxp13o",
-        "id": 1,
-        "quantity": "1"
-      }
-    ],
-    "id": 4
-  },
-  {
-    "products": [
-      {
-        "title": "Dell XPS 13 OLED",
-        "price": 620000,
-        "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
-        "thumbnail": "dell13.jpg",
-        "code": "dxp13o",
-        "id": 1,
-        "quantity": "1"
-      }
-    ],
-    "id": 5
-  },
-  {
-    "products": [
-      {
-        "title": "Dell XPS 13 OLED",
-        "price": 620000,
-        "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
-        "thumbnail": "dell13.jpg",
-        "code": "dxp13o",
-        "id": 1,
-        "quantity": 6
-      }
-    ],
-    "id": 6
-  },
-  {
-    "products": [],
-    "id": 7
-  },
-  {
-    "products": [],
-    "id": 8
-  },
-  {
-    "products": [],
-    "id": 9
-  },
-  {
-    "products": [],
-    "id": 10
-  },
-  {
-    "products": [
-      {
-        "title": "Dell XPS 13 OLED",
-        "price": 620000,
-        "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
-        "thumbnail": "dell13.jpg",
-        "code": "dxp13o",
-        "id": 1,
-        "quantity": 2
-      },
-      {
         "title": "Microsoft Surface Pro 8",
         "price": 450000,
         "text": "Procesadores Intel Core 11° gen., 32 GB de RAM y hasta 2 TB de SSD.",
         "thumbnail": "sp8.jpg",
-        "code": "msp8",
-        "id": 2,
+        "category": "notebook",
+        "id": "2",
         "quantity": 2
-      },
+      }
+    ],
+    "id": "1"
+  },
+  {
+    "products": [
       {
         "title": "Acer Swift 3 Ryzen",
         "price": 208490,
         "text": "Procesador Ryzen 7 4700U, 8 GB de RAM y 512 GB SSD.",
         "thumbnail": "as3r.jpg",
-        "code": "as3r",
-        "id": 4,
+        "category": "notebook",
+        "id": "4",
         "quantity": 2
-      },
-      {
-        "title": "Samsung Galaxy S22 Ultra",
-        "price": 899999,
-        "text": "Dynamic AMOLED 2x de 6,8 pulgadas, procesador Exynos 2200 de ocho núcleos y batería 5.000 mAh",
-        "thumbnail": "sgs22u.jpg",
-        "code": "sgs22u",
-        "id": 8,
-        "quantity": 6
       }
     ],
-    "id": 11
+    "id": "2"
   },
   {
     "products": [
@@ -156,56 +34,50 @@
         "price": 620000,
         "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
         "thumbnail": "dell13.jpg",
-        "code": "dxp13o",
-        "id": 1,
-        "quantity": 7
+        "category": "notebook",
+        "id": "1",
+        "quantity": 2
       }
     ],
-    "id": 12
+    "id": "3"
   },
   {
     "products": [
+      {
+        "title": "Microsoft Surface Pro 8",
+        "price": 450000,
+        "text": "Procesadores Intel Core 11° gen., 32 GB de RAM y hasta 2 TB de SSD.",
+        "thumbnail": "sp8.jpg",
+        "category": "notebook",
+        "id": "2",
+        "quantity": 2
+      },
       {
         "title": "Dell XPS 13 OLED",
         "price": 620000,
         "text": "Core i7-1185G7, 32 GB de RAM, 2TB de SSD y la pantalla OLED 16 pulgadas.",
         "thumbnail": "dell13.jpg",
-        "code": "dxp13o",
-        "id": 1,
-        "quantity": 2
-      },
-      {
-        "title": "Microsoft Surface Pro 8",
-        "price": 450000,
-        "text": "Procesadores Intel Core 11° gen., 32 GB de RAM y hasta 2 TB de SSD.",
-        "thumbnail": "sp8.jpg",
-        "code": "msp8",
-        "id": 2,
+        "category": "notebook",
+        "id": "1",
         "quantity": 2
       }
     ],
-    "id": 13
+    "id": "31"
   },
   {
     "products": [],
-    "id": 14
-  },
-  {
-    "products": [
-      {
-        "title": "Microsoft Surface Pro 8",
-        "price": 450000,
-        "text": "Procesadores Intel Core 11° gen., 32 GB de RAM y hasta 2 TB de SSD.",
-        "thumbnail": "sp8.jpg",
-        "code": "msp8",
-        "id": 2,
-        "quantity": 2
-      }
-    ],
-    "id": 15
+    "id": "311"
   },
   {
     "products": [],
-    "id": 16
+    "id": "3111"
+  },
+  {
+    "products": [],
+    "id": "31111"
+  },
+  {
+    "products": [],
+    "id": "31112"
   }
 ]

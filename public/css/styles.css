@@ -80,6 +80,10 @@ header {
   display: none;
 }
 
+.hover:hover {
+  color:rgb(15, 15, 121);
+  font-weight: 900;
+}
 .container {
   margin: 0.5em;
   border-radius: 5pc;
@@ -251,6 +255,7 @@ header {
 .container__input-Numbers::-webkit-inner-spin-button,
 .container__input-Numbers::-webkit-outer-spin-button {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .container__input-fileBtn {

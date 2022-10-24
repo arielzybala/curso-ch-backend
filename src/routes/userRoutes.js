@@ -15,7 +15,7 @@ const {
   tokenInspect,
 } = require("./middleware/jsonWebToken");
 const { openCart } = require("./middleware/openCart");
-const { userRole, verifyRole, userRoleSignUp, userRoleLogin } = require("./middleware/onlyAdmin");
+const { verifyRole, userRoleSignUp, userRoleLogin } = require("./middleware/onlyAdmin");
 const router = new Router();
 
 /////////////////////////////////////////////////////////////

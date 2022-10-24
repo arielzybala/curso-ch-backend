@@ -1,6 +1,12 @@
 const nodemailer = require("nodemailer");
 const { logger } = require("./logger");
 
+/*
+Esta función espera recibir 3 datos:
+1 el correo al que será enviado.
+2 el contenido del correo
+3 la leyenda previa que da contexto a la data que se esta enviando por correo
+*/
 module.exports.handleEmail = async (data, address, message) => {
   data = `${message}: ${JSON.stringify(data)}`;
   address = JSON.stringify(address);

@@ -13,7 +13,7 @@ class UserService {
 
   async sendEmailToAdmin(emailUser, message) {
     const user = await usersDao.listByEmail(emailUser);
-    await handleEmail(
+    return await handleEmail(
       [user.email, user.nickname, user.address, user.phone],
       process.env.USERNM,
       message

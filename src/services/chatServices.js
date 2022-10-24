@@ -28,11 +28,10 @@ class ChatService {
         )
       );
     });
-    //con el flat lo aplano, para que todos los mensajes queden uno a tras del otro con el contenido justo y necesario la que el archivo ui tenga 0 trabajo
+    //con el flat lo aplano, para que todos los mensajes queden una misma tira de array
     const allMessages = messages.flatMap((e) => e);
-    //con el sort así, y el replace, las fechas se ordenan de el último mensaje enviado al primero que haya sido enviado.
+    //sort para que las fechas luego se impriman en orden, desde el último mensaje enviado hasta el primero que haya sido enviado.
     const sortAllMessages = allMessages.sort((a, b) => {
-      // let currVal = (a[1].time).replace(/ /g,'').valueOf()
       let currVal = new Date(a[1].time);
       let nextVal = new Date(b[1].time);
       if (currVal > nextVal) return -1;
@@ -44,28 +43,39 @@ class ChatService {
 
   async listByEmail(email) {
     const db = await this.dao.listAll();
+    
     if (db.length <= 0) return [];
+
     const indexAuthor = db.findIndex((e) => e.author.email == email);
+    
     return await db[indexAuthor].author;
   }
 
+/*
+OBSERVACIÓN: Esto contradice las pautas del proyecto final
+
+MOTIVO: No tiene sentido lo solicitado. Para dar una contestación ya esta el chat grupal
+al ver sólo los mensajes de un usuario, es mejor habilitar la posibilidad de responder de manera individual
+*/
   async sendEmailResponse(data, email, token) {
-    if (!token) {
-      return logger.error("No hay token");
-    }
     jwt.verify(token, process.env.JWTSECRET, async (err, content) => {
       if (err) return logger.error("Token invalido");
 
       const user = await service.takeUserById(content.id);
-
+      //Handlea un correo para contestar a las preguntas del usuario.
       let message = `El usuario ${user.nickname}, con correo: ${user.email} le ha respondido: `;
       return await handleEmail(data, email, message);
     });
   }
 
   async saveMessage(cookies, messages) {
+    /*
+    Parsea las cookies y despues se usa la del token 
+    para hacerla pasar por un servicio de usuario que hace todo el trabajo
+    */
     const cookiesParsed = cookie.parse(cookies);
     const user = await service.takeUserFromCookie(cookiesParsed["jwt"]);
+    
     const db = await this.dao.listAll();
     //check para db sin comentarios
     if (db.length >= 0) {

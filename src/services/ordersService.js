@@ -20,12 +20,16 @@ class OrderService {
 
   async createOrder(cartId, tokenUser) {
 
-    const token = await checkTokenJwt(tokenUser);
+    const token = await checkTokenJwt(tokenUser);/* La función recibe el token 
+    y de manera segura lo vuelve legible, para luego tomar la data y conectar con la db
+    */
     const user = await usersDao.listById(token.id);
     const cart = await cartDao.listById(cartId);
     const products = await productsDao.listAll();
 
-    //Para controlar que lo que llega del front esta ok
+    /*
+    CheckIdandPrice, cruza datos para ver que no se contradigan con los existentes
+    */
     const DataFromFrontTest = await checkIdandPrice(products, cart.products);
     if (!DataFromFrontTest) {
       handleEmail(
@@ -34,10 +38,14 @@ class OrderService {
         "Se ingresaron datos distintos a los de la base de datos por este usuario"
       );
     }
+    /*
+    orderAmount multiplica precio por cantidad de unidades en cada producto, los suma y devuelve el total a pagar
+    */
     const totalToPay = await orderAmount(cart);
 
     const dataOfOrders = await this.dao.listAll();
-    const numberOfOrders = dataOfOrders.length + 1;
+    
+    const numberOfOrders = dataOfOrders.length + 1;//Cara darle un "numero de orden de compra"
 
     const listOfOrder = cart.products.map((e) => [
       { Producto: e.title, Precio: `$ ${e.price}`, Cantidad: e.quantity },
@@ -45,13 +53,14 @@ class OrderService {
     listOfOrder.push(`Total a Pagar: $ ${totalToPay}`);
     
 
-    //correo al usuario
+    //Correo al usuario con la orden creada
     await handleEmail(
       listOfOrder,
       process.env.USERNM,
       "Productos que ha ingresado en su orden de compras"
     );
-    return await this.dao.save({
+
+    return await this.dao.save({ //Guarda la orden.
       userId: user.id,
       email: user.email,
       address: user.address,
@@ -59,9 +68,6 @@ class OrderService {
       items: cart.products,
       state: "generada",
     });
-    //mensaje de whapps
-    // const phone = (user.codesCountry + user.phone).toString();
-    // await sendMessage(phone, listOfOrder);
   }
 
   async updateOrder(order, items, id) {

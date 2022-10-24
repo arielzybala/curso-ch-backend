@@ -24,12 +24,14 @@ passport.use(
           })
         );
       } else {
+        //ESTE ES EL PUNTO DONDE SE CREA AL USUARIO
         let user = req.body;
         user.avatar = req.file.filename;
         user.password = await hashPassword(password);
         user.repeatPassword = user.password;
         user.role = "user";
         await usersDao.save(user);
+        ///////////////////////////////////////////
         return done(null, user);
       }
     } catch (error) {

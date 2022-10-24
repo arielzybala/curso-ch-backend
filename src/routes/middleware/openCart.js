@@ -1,7 +1,7 @@
-
 const { CartService } = require("../../services/cartServices");
 const service = new CartService()
 
+//ESTE MIDD CREA EL CARRITO
 const openCart = async (req, res, next) => {
   if (req.cookies.cart) {
     next();
@@ -12,6 +12,7 @@ const openCart = async (req, res, next) => {
   }
 };
 
+//ESTE MIDD VERIFICA QUE EL CARRITO EXISTA ENTRE LAS COOKIES, SINO PIDE UNA SESSIÓN ACTIVA
 const checkCartOpen = async (req, res, next) => {
   if (req.cookies.cart) {
     next();

@@ -18,7 +18,8 @@ const args = yargs.alias({ p: "PORT" }).argv;
 const PORT = args.PORT || process.env.PORT || 8080; //Quedo modificado así por Heroku
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+//const io = new Server(server);
+const io = socketIO(server, {transports: ['websocket']});
 const numCPUS = cpus().length;
 const { mongoAtlas } = require("./config");
 const routerMain = require("./routes/mainRoutes");
@@ -37,10 +38,18 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(morgan("combined"));
 app.use(cors());
 
+/*
+OSERBACIÓN: Las views son muchos archivos. 
+Faltó pensar más como hacer que distintas view's usen los mismos módulos.
+*/
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname + "/views"));
 app.use(cp());
 
+/*
+EXPLICACIÓN: La sessión tiene nula funcionalidad, porque al usar JWT y Passport, 
+Las cosas que podría llegar a usar y llevar dentro, se solucionaron con cookies.
+*/
 app.use(
   session({
     store: mongoStore.create({

@@ -1,7 +1,9 @@
 const { body, validationResult } = require("express-validator");
 
 
-const validatorExpress = (req, res, next) => {
+/////////////////FUNCIONES VALIDADORAS DEL CONTENIDO
+
+const validatorExpress = (req, res, next) => {//El nombre no es claro, debería ser x ej: ValidatorUserInputs
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     const message = errors.array();
@@ -13,7 +15,7 @@ const validatorExpress = (req, res, next) => {
   next();
 };
 
-const validatorUpload = (req, res, next) => {
+const validatorUpload = (req, res, next) => { //El nombre no es claro, debería aludir al input y a la db donde ingresan
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     const message = errors.array();
@@ -37,6 +39,8 @@ const validatorUploadOrder = (req, res, next) => {
   next();
 };
 
+////////////////////////VALIDADORES DISEÑADOS 
+
 const passwordConfirmation = async (value, { req }) => {
   if (value !== req.body.password) {
     throw new Error("Los Passwords ingresados no son iguales");
@@ -49,6 +53,8 @@ const categoryCheck = (_value, { req }) => {
   const check = categories.includes(req.body.category);
   return check;
 };
+
+///////////////////////ARRAYS DE VALIDADORES COMUNES Y DISEÑADOS
 
 const valuesToCheck = [
   body("email", "El email ingresado no es correcto").exists().isEmail(),

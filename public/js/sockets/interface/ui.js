@@ -15,7 +15,7 @@ const loadMessages = (data) => {
               ${m[0].text}
           </li>
           <li class="container__li container__li--message">
-          <img class="container__img" alt="Imagen previa de Productos" src='./uploads/${m[3].avatar}'>
+          <img class="container__img" alt="Imagen previa de Productos" src='./uploads/${m[4].avatar}'>
           </li>
           <li class="container__li wrap center">
            VER SÓLO SUS <button class="container__tableBtnUpdate"><a href="/chatUser/${m[2].email}">MENSAJES</a></button>

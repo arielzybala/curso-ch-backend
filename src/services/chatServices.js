@@ -23,7 +23,8 @@ class ChatService {
             { time: arrayMsg[indexArrayMsg].time },
           ].concat(
             { email: object.author.email },
-            { avatar: object.author.avatar }
+            { id: object.author.idUser },
+            { avatar: object.author.avatar}
           )
         )
       );
@@ -68,13 +69,13 @@ al ver sólo los mensajes de un usuario, es mejor habilitar la posibilidad de re
     });
   }
 
-  async saveMessage(cookies, messages) {
+  async saveMessage(messages) {
+    console.log(messages)
     /*
     Parsea las cookies y despues se usa la del token 
     para hacerla pasar por un servicio de usuario que hace todo el trabajo
     */
-    const cookiesParsed = cookie.parse(cookies);
-    const user = await service.takeUserFromCookie(cookiesParsed["jwt"]);
+    const user = await service.takeUserById(messages.id);
     
     const db = await this.dao.listAll();
     //check para db sin comentarios

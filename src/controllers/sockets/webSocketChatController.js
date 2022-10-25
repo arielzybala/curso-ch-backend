@@ -10,7 +10,7 @@ const chatSocketController = (io) => {
 
     socket.on("user:saveMessage", async (message) => {
       //Tomo los datos de la cookie, para que el usuario solo tenga que agregar comentario.
-      let load = await service.saveMessage(socket.handshake.headers.cookie, message);
+      let load = await service.saveMessage(message.cookie, message);
 
       io.sockets.emit("server:renderMessages", load);
     });

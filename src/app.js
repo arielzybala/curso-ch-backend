@@ -12,7 +12,7 @@ const http = require("http");
 const cluster = require("cluster");
 const compression = require("compression");
 const { cpus } = require("os");
-const { Server } = require("socket.io");
+const {Server} = require("socket.io");
 const yargs = require("yargs/yargs")(process.argv.slice(2));
 const args = yargs.alias({ p: "PORT" }).argv;
 const PORT = args.PORT || process.env.PORT || 8080; //Quedo modificado así por Heroku
@@ -65,6 +65,7 @@ app.use(
     rolling: true,
   })
 );
+require("./controllers/sockets/webSocketChatController")(io);
 
 app.use(override("_method"));
 app.use(passport.initialize());
@@ -74,7 +75,6 @@ app.use("/api/cart", routerCart);
 app.use("/api/products", routerProducts);
 app.use("/api/orders", routerOrders);
 
-require("./controllers/sockets/webSocketChatController")(io);
 
 if (process.env.SERVERMODE == "FORK") {
   server.listen(PORT, (err) => {
